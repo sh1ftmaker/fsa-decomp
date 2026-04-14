@@ -2,7 +2,7 @@
 
 A work-in-progress decompilation of The Legend of Zelda: Four Swords Adventures (GameCube, USA).
 
-[![Progress](https://img.shields.io/endpoint?url=https://decomp.me/api/project/TODO/badge/)](https://decomp.me/project/TODO)
+[![decomp.me](https://img.shields.io/badge/decomp.me-preset%20pending-yellow)](https://github.com/decompme/decomp.me/issues/1900)
 
 ## Overview
 
@@ -54,7 +54,9 @@ Run `objdiff` (or `build/tools/objdiff-cli`) in the project root. Functions can 
 
 ### decomp.me scratches
 
-Create a scratch on [decomp.me](https://decomp.me) using the **FSA (DOL)** preset. This lets you iterate on functions in the browser without a local build setup.
+A dedicated FSA preset has been requested at [decompme/decomp.me#1900](https://github.com/decompme/decomp.me/issues/1900). Once approved, you can create scratches on [decomp.me](https://decomp.me) using the **Four Swords Adventures (DOL)** preset. This lets you iterate on functions in the browser without a local build setup.
+
+In the meantime, the Wind Waker DOL preset (same compiler: `mwcc_242_81 GC/1.3.2`) can be used as a substitute.
 
 ## Project Structure
 
