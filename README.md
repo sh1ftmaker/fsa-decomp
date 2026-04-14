@@ -2,8 +2,6 @@
 
 A work-in-progress decompilation of The Legend of Zelda: Four Swords Adventures (GameCube, USA).
 
-[![decomp.me](https://img.shields.io/badge/decomp.me-preset%20pending-yellow)](https://github.com/decompme/decomp.me/issues/1900)
-
 ## Overview
 
 | Property | Value |
@@ -18,54 +16,65 @@ A work-in-progress decompilation of The Legend of Zelda: Four Swords Adventures 
 
 ### Prerequisites
 
-- Python 3.6+
-- ninja
+- **Python** 3.6+ — [python.org](https://www.python.org/downloads/)
+- **ninja** — [github.com/ninja-build/ninja/releases](https://github.com/ninja-build/ninja/releases) (or `winget install Ninja-build.Ninja` / `brew install ninja`)
 - A copy of the original game (not provided)
 
-All other tools (compiler, dtk, objdiff) are downloaded automatically.
+All other tools — including the Metrowerks compiler, dtk, and objdiff — are downloaded automatically on the first build.
 
-### Setup
+### Game extraction
 
-1. Extract the game using Dolphin Emulator:
-   - Right-click the game → Properties → Filesystem tab → Right-click the root → Export Partition Root
-   - Place the result in `orig/` so that `orig/sys/main.dol` exists
+Extract the game using [Dolphin Emulator](https://dolphin-emu.org/download/):
 
-2. Build:
-   ```bash
-   python3 configure.py
-   ninja
-   ```
+1. Add the game to Dolphin
+2. Right-click → Properties → Filesystem tab
+3. Right-click the root → **Export Partition Root**
+4. Place the exported files in `orig/` so that `orig/sys/main.dol` exists
 
-The first build will download all required tools including the Metrowerks compiler.
+### Build (Linux / macOS)
+
+```sh
+python3 configure.py
+ninja
+```
+
+### Build (Windows)
+
+```bat
+python configure.py
+ninja
+```
+
+On Windows, the Metrowerks compiler runs natively — no Wine or WSL required.
+
+> **Note for macOS:** Wine must be installed (`brew install --cask wine-stable`) since `wibo` only runs on Linux.
 
 ### Verifying with objdiff
 
-Run `objdiff` (or `build/tools/objdiff-cli`) in the project root. Functions can be browsed and compared in the `fsa_game_code/main/main` unit.
+Download [objdiff](https://github.com/encounter/objdiff/releases) and open it in the project root. All 11,556 functions from the original DOL are browsable under `fsa_game_code/main/main`. Green functions are matching; red are not yet decompiled.
 
 ## Contributing
 
 ### Decompiling a function
 
 1. Find a function of interest in objdiff
-2. Write equivalent C/C++ code in `src/`
-3. Register it in `configure.py` under `config.libs`
-4. Update `config/G4SE01/splits.txt` to split it into its own unit
-5. Run `ninja` and verify the match in objdiff
+2. Write equivalent C/C++ source in `src/`
+3. Add it to `configure.py` under `config.libs`
+4. Update `config/G4SE01/splits.txt` to map its address range to the new source file
+5. Run `ninja` and verify the match turns green in objdiff
 
 ### decomp.me scratches
 
-A dedicated FSA preset has been requested at [decompme/decomp.me#1900](https://github.com/decompme/decomp.me/issues/1900). Once approved, you can create scratches on [decomp.me](https://decomp.me) using the **Four Swords Adventures (DOL)** preset. This lets you iterate on functions in the browser without a local build setup.
-
-In the meantime, the Wind Waker DOL preset (same compiler: `mwcc_242_81 GC/1.3.2`) can be used as a substitute.
+You can work on individual functions in the browser at [decomp.me](https://decomp.me) without a local build setup. Use the **Wind Waker (DOL)** preset — it uses the same compiler (`GC/1.3.2`) as FSA.
 
 ## Project Structure
 
 ```
 configure.py          - Build configuration and object list
 config/G4SE01/
-  splits.txt          - Maps DOL sections to source files
+  splits.txt          - Maps DOL address ranges to source files
   symbols.txt         - Symbol name definitions
-  build.sha1          - Expected hash of matching build
+  build.sha1          - Expected SHA1 of a fully-matching build
 src/                  - Decompiled C/C++ source files
 orig/                 - Original game files (not in repo)
 build/                - Build output (not in repo)
@@ -73,8 +82,8 @@ build/                - Build output (not in repo)
 
 ## Related Projects
 
-- [zeldaret/ww](https://github.com/zeldaret/ww) - Wind Waker decompilation (same engine)
-- [zeldaret/oot](https://github.com/zeldaret/oot) - Ocarina of Time decompilation
+- [zeldaret/ww](https://github.com/zeldaret/ww) — Wind Waker decompilation (same engine)
+- [zeldaret/oot](https://github.com/zeldaret/oot) — Ocarina of Time decompilation
 
 ## License
 
