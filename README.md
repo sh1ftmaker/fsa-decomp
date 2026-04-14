@@ -51,7 +51,18 @@ On Windows, the Metrowerks compiler runs natively — no Wine or WSL required.
 
 ### Verifying with objdiff
 
-Download [objdiff](https://github.com/encounter/objdiff/releases) and open it in the project root. All 11,556 functions from the original DOL are browsable under `fsa_game_code/main/main`. Green functions are matching; red are not yet decompiled.
+1. Download the objdiff GUI from [github.com/encounter/objdiff/releases](https://github.com/encounter/objdiff/releases) for your platform
+2. Run it from the project root:
+   ```sh
+   # Linux / macOS
+   objdiff
+
+   # Windows
+   objdiff.exe
+   ```
+3. objdiff will pick up `objdiff.json` automatically and load the project
+
+All 11,556 functions from the original DOL are browsable under `fsa_game_code/main/main`. As you decompile functions, matching ones turn green.
 
 ## Contributing
 
