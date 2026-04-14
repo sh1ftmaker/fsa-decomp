@@ -80,11 +80,6 @@ orig/                 - Original game files (not in repo)
 build/                - Build output (not in repo)
 ```
 
-## Related Projects
-
-- [zeldaret/ww](https://github.com/zeldaret/ww) — Wind Waker decompilation (same engine)
-- [zeldaret/oot](https://github.com/zeldaret/oot) — Ocarina of Time decompilation
-
 ## License
 
 The decompiled source code in this repository is the result of reverse engineering and is provided for educational and preservation purposes only. The original game assets and code are the property of Nintendo.
