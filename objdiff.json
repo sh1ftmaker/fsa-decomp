@@ -1,0 +1,63 @@
+{
+  "min_version": "2.0.0-beta.5",
+  "custom_make": "ninja",
+  "build_target": false,
+  "watch_patterns": [
+    "*.c",
+    "*.cc",
+    "*.cp",
+    "*.cpp",
+    "*.cxx",
+    "*.c++",
+    "*.h",
+    "*.hh",
+    "*.hp",
+    "*.hpp",
+    "*.hxx",
+    "*.h++",
+    "*.pch",
+    "*.pch++",
+    "*.inc",
+    "*.py",
+    "*.yml",
+    "*.txt",
+    "*.json"
+  ],
+  "units": [
+    {
+      "name": "fsa_game_code/auto_08_804B2140_bss",
+      "target_path": "build/G4SE01/obj/auto_08_804B2140_bss.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/main/main",
+      "target_path": "build/G4SE01/obj/main/main.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off",
+        "preset_id": 72
+      },
+      "metadata": {
+        "reverse_fn_order": false,
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    }
+  ],
+  "progress_categories": [
+    {
+      "id": "game",
+      "name": "FSA Game Code"
+    },
+    {
+      "id": "sdk",
+      "name": "SDK"
+    }
+  ]
+}

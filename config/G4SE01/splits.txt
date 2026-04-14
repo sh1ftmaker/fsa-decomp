@@ -1,0 +1,28 @@
+Sections:
+	.init       type:code align:4
+	extab       type:rodata align:32
+	extabindex  type:rodata align:4
+	.text       type:code align:32
+	.ctors      type:rodata align:8
+	.dtors      type:rodata align:4
+	.rodata     type:rodata align:4
+	.data       type:data align:8
+	.bss        type:bss align:4
+	.sdata      type:data align:4
+	.sbss       type:bss align:4
+	.sdata2     type:rodata align:4
+	.sbss2      type:bss align:4
+
+main/main.cpp:
+	.init       start:0x80003100 end:0x80005544
+	extab       start:0x80005600 end:0x80011854
+	extabindex  start:0x80011860 end:0x80021814
+	.text       start:0x80021840 end:0x8045BCE4
+	.ctors      start:0x8045BD00 end:0x8045C62C
+	.dtors      start:0x8045C640 end:0x8045C64C
+	.rodata     start:0x8045C660 end:0x80491690
+	.data       start:0x804916A0 end:0x804B212C
+	.sdata      start:0x80539BC0 end:0x8053A270
+	.sbss       start:0x8053A280 end:0x8053AF90
+	.sdata2     start:0x8053AFA0 end:0x80543EF4
+	.sbss2      start:0x80543F00 end:0x80543F6C

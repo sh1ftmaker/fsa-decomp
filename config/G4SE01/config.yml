@@ -1,0 +1,12 @@
+name: fsa_game_code
+object_base: orig
+object: sys/main.dol
+hash: d86b3d9f785566e34264035e140ef3daf3cc19f0
+
+splits: config/G4SE01/splits.txt
+
+mw_comment_version: 10
+symbols_known: false
+fill_gaps: false
+
+modules: []

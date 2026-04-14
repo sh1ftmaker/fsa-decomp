@@ -1,0 +1,40 @@
+# Original game files (copyrighted, do not commit)
+orig/
+*.rvz
+*.iso
+*.gcm
+*.nkit.iso
+*.nkit.gcm
+
+# Build output
+build/
+build.ninja
+compile_commands.json
+.ninja_deps
+.ninja_log
+.objdiffconfig
+
+# Downloaded tools (auto-downloaded by ninja, not scripts)
+tools/__pycache__/
+
+# Compiled Python
+__pycache__/
+*.pyc
+
+# Editor
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+
+# Backup files from setup
+configure_tww_backup.py
+configure_tww_original.py
+setup-decomp-tools.sh
+START_HERE.md
+GUIDE.md
+DECOMPILATION.md
+objdifferror.png
+decomp-research-ai/
