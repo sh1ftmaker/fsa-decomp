@@ -64,6 +64,32 @@ On Windows, the Metrowerks compiler runs natively — no Wine or WSL required.
 
 All 11,556 functions from the original DOL are browsable under `fsa_game_code/main/main`. As you decompile functions, matching ones turn green.
 
+## Notes for Contributors
+
+### Splitting out a new source file
+
+When you carve a range out of `main/main.cpp` into a new source file, the `extabindex` section
+must be split to match. Every `extabindex` entry references the function it belongs to, so the
+entry for any function you move must live in the same object as that function. Assign the
+corresponding tail of `extabindex` to the new file in `splits.txt`. Failing to do so will cause
+`dtk dol split` to abort with:
+
+```
+Bad extabindex relocation @ <address>
+```
+
+### `config/G4SE01/symbols.txt` has Wind Waker addresses
+
+The symbols file was initially seeded from the Wind Waker decompilation. All function **names**
+and **sizes** are correct — FSA and TWW share the same codebase and the same function set —
+but the **addresses** for `.text` functions are TWW addresses, not FSA addresses.
+
+This does not affect the build. `dtk` uses `splits.txt` addresses for all splitting and linking.
+As functions are decompiled and their address ranges added to `splits.txt`, the correct FSA
+addresses replace the TWW placeholders automatically.
+
+---
+
 ## Contributing
 
 ### Decompiling a function

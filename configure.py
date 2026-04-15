@@ -195,7 +195,7 @@ config.reconfig_deps = []
 
 # Optional numeric ID for decomp.me preset
 # Can be overridden in libraries or objects
-config.scratch_preset_id = 72 # The Wind Waker (DOL)
+config.scratch_preset_id = 228 # The Legend of Zelda: Four Swords Adventures (DOL)
 
 # Globs to exclude from context files
 # *.mch excludes precompiled header output (which cannot be parsed)
@@ -328,7 +328,7 @@ def ActorRel(status, rel_name, extra_cflags=[]):
     return Rel(rel_name, [Object(
         status, f"d/actor/{rel_name}.cpp",
         extra_cflags=extra_cflags,
-        scratch_preset_id=73, # The Wind Waker (REL)
+        scratch_preset_id=228, # The Legend of Zelda: Four Swords Adventures (DOL)
     )])
 
 
@@ -366,9 +366,17 @@ config.libs = [
         "progress_category": "game",
         "host": True,
         "objects": [
-            # The entire DOL as a single non-matching unit.
-            # As functions are decompiled, split them into individual source files here.
             Object(NonMatching, "main/main.cpp"),
+        ],
+    },
+    {
+        "lib": "os",
+        "mw_version": "GC/1.3.2",
+        "cflags": cflags_dolphin,
+        "progress_category": "sdk",
+        "host": True,
+        "objects": [
+            Object(NonMatching, "dolphin/os/OS.c"),  # TODO: add splits.txt entry to verify
         ],
     },
 ]

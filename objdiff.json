@@ -39,7 +39,7 @@
         "platform": "gc_wii",
         "compiler": "mwcc_242_81",
         "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off",
-        "preset_id": 72
+        "preset_id": 228
       },
       "metadata": {
         "reverse_fn_order": false,
