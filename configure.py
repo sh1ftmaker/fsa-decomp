@@ -376,7 +376,7 @@ config.libs = [
         "progress_category": "sdk",
         "host": True,
         "objects": [
-            Object(NonMatching, "dolphin/os/OS.c"),  # TODO: add splits.txt entry to verify
+            Object(Matching, "dolphin/os/OS.c"),
         ],
     },
 ]
