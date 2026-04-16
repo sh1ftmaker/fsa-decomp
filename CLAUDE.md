@@ -68,9 +68,15 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 | File | Functions | Status |
 |------|-----------|--------|
 | `src/dolphin/os/OS.c` | OSGetArenaHi, OSGetArenaLo, OSSetArenaHi, OSSetArenaLo | **100% ✅** |
-| `src/main/main.cpp` | everything else (11,552 functions) | NonMatching stub |
+| `src/dolphin/os/OSCache.c` | DCEnable, DCInvalidateRange, DCFlushRange, DCStoreRange, DCFlushRangeNoSync, DCStoreRangeNoSync, DCZeroRange, ICInvalidateRange, ICFlashInvalidate, ICEnable, __LCEnable, LCEnable, LCDisable, LCStoreBlocks, LCStoreData, LCQueueWait, L2Disable, L2GlobalInvalidate, DMAErrorHandler, L2Init, L2Enable, __OSCacheInit | **pending verify** |
+| `src/dolphin/os/OSTime.c` | OSGetTime, OSGetTick, __OSGetSystemTime, GetDates, OSTicksToCalendarTime | **pending verify** |
+| `src/main/main.cpp` | everything else | NonMatching stub |
 
 Overall: ~0.03% matched. All infrastructure is in place to scale this up.
+
+> **Note**: OSCache.c and OSTime.c are committed but not yet ninja-verified on Linux.
+> Run `python configure.py && ninja` to confirm they match. If there are mismatches,
+> check the compiler error/diff output and compare against the DOL using objdiff.
 
 ## The TWW Strategy
 
@@ -142,10 +148,42 @@ The m2c scratches (marked above) are auto-decompiler output — they match in as
 
 ## Next Steps
 
-1. **Import Dolphin OS**: fetch remaining OS source from TWW, find FSA addresses, add to repo
-2. **Import MTX**: matrix math — simple, very likely identical
-3. **Import MSL**: standard library functions
-4. **Import JKernel**: memory management
-5. **Clean up m2c scratches**: the 6 fpc/dr_matrix_set scratches have matching assembly but
-   need M2C_ERROR macros replaced with proper C before they can be committed
-6. **Update symbols.txt**: as functions are confirmed at FSA addresses, update from TWW placeholders
+### Immediate (verify OSCache.c + OSTime.c)
+
+1. **Run `python configure.py && ninja`** — OSCache.c and OSTime.c are committed but not
+   yet build-verified. Check objdiff output and fix any mismatches.
+   - OSCache.c: `.text 0x80040F20–0x80041598`
+   - OSTime.c: `.text 0x800463E0–0x80046804`, `.data 0x80495FE8–0x80496048`
+   - If mismatch in OSCache.c gap functions (DCStoreRange, DCStoreRangeNoSync, DCZeroRange,
+     __LCEnable, LCStoreBlocks, L2Disable, L2Init) — those were in gap regions (not in the
+     dtk exception table), so they may need adjustment
+2. **Add `stddef.h` stub** — `include/dolphin/types.h` includes `stddef.h` which isn't found
+   by mwcceppc without MSL. Either add a minimal stub at `include/stddef.h` (`NULL`, `size_t`,
+   `ptrdiff_t`) or remove the include and define only what's needed.
+
+### Next Dolphin OS files (in order)
+
+3. **OSInterrupt.c** — OSDisableInterrupts, OSEnableInterrupts, OSRestoreInterrupts
+   - Verified at FSA: `0x80042638`, size `0x14` (OSDisableInterrupts confirmed by disasm)
+   - TWW source: `src/dolphin/os/OSInterrupt.c` (fetched to `/tmp/OSInterrupt.c` previously)
+   - Note: TWW's OSInterrupt.c has many more functions; only these 3 are confirmed in FSA
+     at that address. Check dtk exception table for full range.
+4. **OSSync.c** — `__OSInitSystemCall` at FSA `0x80045044`
+5. **OSContext.c** — `OSContext` save/restore functions
+6. **OSThread.c** — threading primitives
+
+### Broader roadmap
+
+7. **Import MTX**: matrix math — simple, very likely identical
+8. **Import MSL**: standard library functions
+9. **Import JKernel**: memory management
+10. **Clean up m2c scratches**: the 6 fpc/dr_matrix_set scratches have matching assembly but
+    need M2C_ERROR macros replaced with proper C before they can be committed
+11. **Update symbols.txt**: as functions are confirmed at FSA addresses, update from TWW placeholders
+
+### Useful reference
+
+- `dtk dol info orig/sys/main.dol` — lists all 5,516 functions with FSA addresses + sizes
+  (discovered via exception table). Use this instead of binary pattern search where possible.
+- mftb vs mfspr: FSA uses `mftb` (XO=371, bytes `42E6`) not `mfspr` (XO=339, bytes `42A6`)
+- SDA bases: r13 = `0x80541BC0`, r2 = `0x80542FA0`
