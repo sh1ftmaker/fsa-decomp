@@ -52,13 +52,13 @@ On Windows, the Metrowerks compiler runs natively — no Wine or WSL required.
 ### Verifying with objdiff
 
 1. Download the objdiff GUI from [github.com/encounter/objdiff/releases](https://github.com/encounter/objdiff/releases) for your platform
-2. Run it from the project root:
+2. Place the binary in the project root and run it from there:
    ```sh
    # Linux / macOS
-   objdiff
+   ./objdiff
 
    # Windows
-   objdiff.exe
+   objdiff-windows-x86_64.exe
    ```
 3. objdiff will pick up `objdiff.json` automatically and load the project
 
@@ -102,7 +102,7 @@ addresses replace the TWW placeholders automatically.
 
 ### decomp.me scratches
 
-You can work on individual functions in the browser at [decomp.me](https://decomp.me) without a local build setup. Use the **Wind Waker (DOL)** preset — it uses the same compiler (`GC/1.3.2`) as FSA.
+You can work on individual functions in the browser at [decomp.me](https://decomp.me) without a local build setup. Use the **[The Legend of Zelda: Four Swords Adventures (DOL)](https://decomp.me/preset/228)** preset (preset 228).
 
 ## Project Structure
 
