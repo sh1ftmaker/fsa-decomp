@@ -17,3 +17,10 @@ dolphin/os/OS.c:
 	.text       start:0x80040C6C end:0x80040C8C
 	.sdata      start:0x80539C08 end:0x80539C0C
 	.sbss       start:0x8053A428 end:0x8053A42C
+
+dolphin/os/OSCache.c:
+	.text       start:0x80040F20 end:0x80041598
+
+dolphin/os/OSTime.c:
+	.text       start:0x800463E0 end:0x80046804
+	.data       start:0x80495FE8 end:0x80496048

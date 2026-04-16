@@ -377,6 +377,8 @@ config.libs = [
         "host": True,
         "objects": [
             Object(Matching, "dolphin/os/OS.c"),
+            Object(Matching, "dolphin/os/OSCache.c"),
+            Object(Matching, "dolphin/os/OSTime.c"),
         ],
     },
 ]
