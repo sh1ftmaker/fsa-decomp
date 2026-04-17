@@ -186,7 +186,11 @@ def compile_file(src: Path, cflags: list, version: str = "GC/1.3.2"):
     cc = mwcc(version)
     with tempfile.NamedTemporaryFile(suffix=".o", delete=False) as tf:
         out = tf.name
-    cmd = [str(wrapper), str(cc)] + cflags + ["-c", str(src), "-o", out]
+    # Split multi-word flags (e.g. "-proc gekko" → ["-proc", "gekko"])
+    split_flags = []
+    for f in cflags:
+        split_flags.extend(f.split())
+    cmd = [str(wrapper), str(cc)] + split_flags + ["-c", str(src), "-o", out]
     r = subprocess.run(cmd, capture_output=True, text=True, cwd=REPO)
     if r.returncode != 0:
         print(f"[!] Compile failed:\n{r.stderr}", file=sys.stderr)
