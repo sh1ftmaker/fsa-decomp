@@ -16,7 +16,7 @@ import argparse
 import json
 import sys
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from tools.project import (
     Object,
@@ -298,6 +298,12 @@ cflags_rel = [
 
 config.linker_version = "GC/1.3.2"
 
+# Glob nonmatch seg files sorted by address for the nonmatch lib
+_nonmatch_segs = sorted(
+    Path("src/nonmatch").glob("seg_*.c"),
+    key=lambda p: int(p.stem.split("_")[1], 16)
+)
+
 
 # Helper function for Dolphin libraries
 def DolphinLib(lib_name: str, objects: List[Object]) -> Dict[str, Any]:
@@ -379,8 +385,34 @@ config.libs = [
 ]
 
 
+# Build nonmatch seg files via custom ninja steps (they have no DOL range, so
+# they can't go through the normal splits.txt / config.json pipeline).
+# Strip missing MSL include dirs, add src/nonmatch for nonmatch.h
+_nm_cflags = " ".join(
+    f for f in cflags_dolzel
+    if "PowerPC_EABI_Support" not in f
+) + " -i src/nonmatch"
+_nm_mw = "GC/1.3.2"
+_nonmatch_build_steps = []
+for _seg in _nonmatch_segs:
+    _src  = Path("src") / "nonmatch" / _seg.name
+    _out  = config.build_dir / config.version / "src" / "nonmatch" / _seg.with_suffix(".o").name
+    _nonmatch_build_steps.append({
+        "outputs": str(_out),
+        "rule": "mwcc",
+        "inputs": str(_src),
+        "variables": {
+            "mw_version": _nm_mw,
+            "cflags": _nm_cflags,
+            "basedir": str(_out.parent),
+            "basefile": str(_out.with_suffix("")),
+        },
+    })
+
 config.custom_build_rules = []
-config.custom_build_steps = {}
+config.custom_build_steps = {
+    "pre-compile": _nonmatch_build_steps,
+}
 
 # Grab the specific GameID so we can format our strings properly
 version = VERSIONS[version_num]

@@ -961,44 +961,6 @@
       }
     },
     {
-      "name": "fsa_game_code/dolphin/os/OSTime",
-      "target_path": "build/G4SE01/obj/dolphin/os/OSTime.o",
-      "base_path": "build/G4SE01/src/dolphin/os/OSTime.o",
-      "scratch": {
-        "platform": "gc_wii",
-        "compiler": "mwcc_233_163n",
-        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
-        "preset_id": 228,
-        "ctx_path": "build/G4SE01/src/dolphin/os/OSTime.ctx",
-        "build_ctx": true
-      },
-      "metadata": {
-        "complete": true,
-        "reverse_fn_order": false,
-        "source_path": "src/dolphin/os/OSTime.c",
-        "progress_categories": [
-          "sdk"
-        ],
-        "auto_generated": false
-      }
-    },
-    {
-      "name": "fsa_game_code/auto_07_80496048_data",
-      "target_path": "build/G4SE01/obj/auto_07_80496048_data.o",
-      "metadata": {
-        "progress_categories": [],
-        "auto_generated": true
-      }
-    },
-    {
-      "name": "fsa_game_code/auto_03_80046804_text",
-      "target_path": "build/G4SE01/obj/auto_03_80046804_text.o",
-      "metadata": {
-        "progress_categories": [],
-        "auto_generated": true
-      }
-    },
-    {
       "name": "fsa_game_code/auto_destroy_global_chain_text",
       "target_path": "build/G4SE01/obj/auto_destroy_global_chain_text.o",
       "metadata": {
