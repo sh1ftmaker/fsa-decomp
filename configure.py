@@ -281,6 +281,10 @@ cflags_framework = [
     "-fp_contract off",
 ]
 
+# JSystem flags — same as framework but WITHOUT -schedule off
+# FSA's JSystem libs were compiled without instruction scheduling
+cflags_jsystem = [f for f in cflags_framework if f != "-schedule off"]
+
 # TWW game code flags
 cflags_dolzel = [
     *cflags_framework,
@@ -343,7 +347,7 @@ def JSystemLib(lib_name, objects, progress_category="third_party"):
     return {
         "lib": lib_name,
         "mw_version": "GC/1.3.2",
-        "cflags": cflags_framework,
+        "cflags": cflags_jsystem,
         "progress_category": progress_category,
         "host": True,
         "objects": objects,
@@ -381,6 +385,9 @@ config.libs = [
         Object(Matching, "dolphin/os/OSTime.c"),
         Object(Matching, "dolphin/os/OSInterrupt.c"),
         Object(Matching, "dolphin/os/OSSync.c"),
+    ]),
+    JSystemLib("JKernel", [
+        Object(Matching, "JSystem/JKernel/JKRDisposer.cpp"),
     ]),
 ]
 

@@ -72,12 +72,17 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 | `src/dolphin/os/OSTime.c` | OSGetTime, OSGetTick, __OSGetSystemTime, GetDates, OSTicksToCalendarTime | **100% ✅** |
 | `src/dolphin/os/OSInterrupt.c` | OSDisableInterrupts, OSEnableInterrupts, OSRestoreInterrupts, __OSSetInterruptHandler, __OSGetInterruptHandler, __OSInterruptInit, SetInterruptMask, __OSMaskInterrupts, __OSUnmaskInterrupts, __OSDispatchInterrupt, ExternalInterruptHandler | **100% ✅** |
 | `src/dolphin/os/OSSync.c` | SystemCallVector (__OSSystemCallVectorStart/__OSSystemCallVectorEnd), __OSInitSystemCall | **100% ✅** |
+| `src/JSystem/JKernel/JKRDisposer.cpp` | JKRDisposer ctor + dtor (FSA 0x8007E6F4–0x8007E7E0) | **100% ✅** |
 | `src/main/main.cpp` | everything else | NonMatching stub |
 
 Overall: ~0.07% matched.
 
 > **Key fix**: Dolphin SDK files must use compiler `GC/1.2.5n` (not `GC/1.3.2`). The `DolphinLib()`
 > helper in configure.py already sets this. OS.c only has ASM so it matched either way.
+
+> **JSystem scheduling**: FSA's JSystem libs were compiled WITHOUT `-schedule off`. `cflags_jsystem`
+> in configure.py omits it (unlike `cflags_framework`/`cflags_dolzel`). The `JSystemLib()` helper
+> uses `cflags_jsystem`. Confirmed by byte-matching JKRDisposer against FSA DOL.
 
 > **Linux linker issue**: `mwldeppc.exe` via wibo fails to link when RSP file exceeds ~48KB
 > (~1150 objects). With `fill_gaps: true` generating ~6000 objects, the full link step always
@@ -150,21 +155,41 @@ The m2c scratches (marked above) are auto-decompiler output — they match in as
 | `config/G4SE01/symbols.txt` | Symbol names/sizes (TWW addresses for .text, FSA for data) |
 | `config/G4SE01/config.yml` | dtk config — `fill_gaps: true` is critical |
 | `src/dolphin/os/OS.c` | First matched file — use as template |
+| `src/JSystem/JKernel/JKRDisposer.cpp` | First JSystem matched file — uses cflags_jsystem |
 | `include/dolphin/os.h` | OS function/variable declarations |
+| `tools/compile_search.py` | **Key automation**: compile → find all fns in FSA DOL |
+| `tools/find_fn.py` | Quick DOL function lookup by name |
 
-## Next Steps
+## Utility Scripts
 
-### Immediate decompilation targets (byte-perfect matching)
+| Script | Purpose |
+|--------|---------|
+| `tools/find_fn.py <name>` | Find function address/size in FSA DOL by name substring |
+| `tools/search_dol.py <hex>` | Search DOL text section for literal byte pattern |
+| `tools/compile_search.py <src.cpp>` | Compile + auto-find each function in DOL (masked reloc search) |
+| `tools/m2c_batch.py` | Batch decompile all unmatched functions via m2c |
 
-1. **OSSram.c** — `__OSInitSram`, `__OSLockSram`, `__OSUnlockSram`, etc. (FSA `0x8004460C`–`0x80044B94`)
-2. **OSContext.c** — `OSContext` save/restore functions
+The **highest-leverage workflow** is `compile_search.py`: fetch a TWW source file, run the script, 
+and immediately get FSA addresses for every function. No manual byte hunting needed.
+
+## Next Steps (Highest Impact / Least Work)
+
+### Batch TWW library import (use `compile_search.py`)
+
+Priority order (largest function counts, likely byte-identical):
+
+1. **JKernel remaining 24 files** — fetch from TWW `src/JSystem/JKernel/`, run compile_search.py
+   - JKRHeap.cpp, JKRExpHeap.cpp, JKRSolidHeap.cpp, JKRArchive.cpp, JKRThread.cpp, etc.
+2. **MTX** — matrix math (src/dolphin/mtx/) — simple functions, very high match probability
+3. **DVD** — disc access (src/dolphin/dvd/)
+4. **MSL/Runtime** — standard library, strings, math
+5. **JGadget, JSupport** — linked lists, streams
+
+### Dolphin OS remaining files
+
+1. **OSSram.c** — `__OSInitSram`, `__OSLockSram`, `__OSUnlockSram` (FSA `0x8004460C`–`0x80044B94`)
+2. **OSContext.c** — save/restore (FSA `0x80041DC0`)
 3. **OSThread.c** — threading primitives
-4. **Import MTX**: matrix math — simple, very likely identical
-5. **Import MSL**: standard library functions
-6. **Import JKernel**: memory management
-7. **Clean up m2c scratches**: the 6 fpc/dr_matrix_set scratches have matching assembly but
-    need M2C_ERROR macros replaced with proper C before they can be committed
-8. **Update symbols.txt**: as functions are confirmed at FSA addresses, update from TWW placeholders
 
 ### Browser multiplayer port (longer-term goal)
 
