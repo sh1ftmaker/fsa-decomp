@@ -71,6 +71,7 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 | `src/dolphin/os/OSCache.c` | DCEnable, DCInvalidateRange, DCFlushRange, DCStoreRange, DCFlushRangeNoSync, DCStoreRangeNoSync, DCZeroRange, ICInvalidateRange, ICFlashInvalidate, ICEnable, __LCEnable, LCEnable, LCDisable, LCStoreBlocks, LCStoreData, LCQueueWait, L2Disable, L2GlobalInvalidate, DMAErrorHandler, L2Init, L2Enable, __OSCacheInit | **99.93% ✅** (3 fns minor rodata diffs) |
 | `src/dolphin/os/OSTime.c` | OSGetTime, OSGetTick, __OSGetSystemTime, GetDates, OSTicksToCalendarTime | **100% ✅** |
 | `src/dolphin/os/OSInterrupt.c` | OSDisableInterrupts, OSEnableInterrupts, OSRestoreInterrupts, __OSSetInterruptHandler, __OSGetInterruptHandler, __OSInterruptInit, SetInterruptMask, __OSMaskInterrupts, __OSUnmaskInterrupts, __OSDispatchInterrupt, ExternalInterruptHandler | **100% ✅** |
+| `src/dolphin/os/OSSync.c` | SystemCallVector (__OSSystemCallVectorStart/__OSSystemCallVectorEnd), __OSInitSystemCall | **100% ✅** |
 | `src/main/main.cpp` | everything else | NonMatching stub |
 
 Overall: ~0.07% matched.
@@ -153,20 +154,24 @@ The m2c scratches (marked above) are auto-decompiler output — they match in as
 
 ## Next Steps
 
-### Next Dolphin OS files (in order)
+### Immediate decompilation targets (byte-perfect matching)
 
-1. **OSSync.c** — `__OSInitSystemCall` at FSA `0x80045044`
-5. **OSContext.c** — `OSContext` save/restore functions
-6. **OSThread.c** — threading primitives
-
-### Broader roadmap
-
-7. **Import MTX**: matrix math — simple, very likely identical
-8. **Import MSL**: standard library functions
-9. **Import JKernel**: memory management
-10. **Clean up m2c scratches**: the 6 fpc/dr_matrix_set scratches have matching assembly but
+1. **OSSram.c** — `__OSInitSram`, `__OSLockSram`, `__OSUnlockSram`, etc. (FSA `0x8004460C`–`0x80044B94`)
+2. **OSContext.c** — `OSContext` save/restore functions
+3. **OSThread.c** — threading primitives
+4. **Import MTX**: matrix math — simple, very likely identical
+5. **Import MSL**: standard library functions
+6. **Import JKernel**: memory management
+7. **Clean up m2c scratches**: the 6 fpc/dr_matrix_set scratches have matching assembly but
     need M2C_ERROR macros replaced with proper C before they can be committed
-11. **Update symbols.txt**: as functions are confirmed at FSA addresses, update from TWW placeholders
+8. **Update symbols.txt**: as functions are confirmed at FSA addresses, update from TWW placeholders
+
+### Browser multiplayer port (longer-term goal)
+
+See **[BROWSER_PORT_PLAN.md](BROWSER_PORT_PLAN.md)** for the full strategic plan to get FSA
+running in a browser with online co-op (sm64coopdx-style). The plan uses m2c batch conversion
++ TWW library imports rather than byte-perfect matching, targeting a non-matching functional
+port over a traditional decompilation timeline.
 
 ### Useful reference
 

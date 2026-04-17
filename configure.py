@@ -374,6 +374,7 @@ config.libs = [
         Object(Matching, "dolphin/os/OSCache.c"),
         Object(Matching, "dolphin/os/OSTime.c"),
         Object(Matching, "dolphin/os/OSInterrupt.c"),
+        Object(Matching, "dolphin/os/OSSync.c"),
     ]),
 ]
 
