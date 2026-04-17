@@ -369,18 +369,12 @@ config.libs = [
             Object(NonMatching, "main/main.cpp"),
         ],
     },
-    {
-        "lib": "os",
-        "mw_version": "GC/1.3.2",
-        "cflags": cflags_dolphin,
-        "progress_category": "sdk",
-        "host": True,
-        "objects": [
-            Object(Matching, "dolphin/os/OS.c"),
-            Object(Matching, "dolphin/os/OSCache.c"),
-            Object(Matching, "dolphin/os/OSTime.c"),
-        ],
-    },
+    DolphinLib("os", [
+        Object(Matching, "dolphin/os/OS.c"),
+        Object(Matching, "dolphin/os/OSCache.c"),
+        Object(Matching, "dolphin/os/OSTime.c"),
+        Object(Matching, "dolphin/os/OSInterrupt.c"),
+    ]),
 ]
 
 
