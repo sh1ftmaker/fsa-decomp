@@ -1,5 +1,7 @@
 /* Shared types/macros for m2c-generated nonmatching code */
 #pragma once
+#pragma ANSI_strict off
+#pragma warn_illtype off
 
 typedef signed char        s8;
 typedef unsigned char      u8;

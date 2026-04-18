@@ -537,8 +537,8 @@ void fn_802408C8(void *arg0, void *arg2) {
     s32 var_r29;
     s32 var_r3;
     s32 var_r5;
-    void *temp_r4;
-    void *var_r3_2;
+    char *temp_r4;
+    char *var_r3_2;
 
     if ((s32) (*(u32*)((char*)(arg0)+0xD60)) < 0) {
         sp10 = (*(u32*)((char*)(arg2)+0x8));
@@ -1537,7 +1537,7 @@ u32 fn_8030AE84(s32);                                 /* extern */
 extern void *lbl_8053AB10;
 
 void fn_80241B44(void *arg0, void *arg1) {
-    void *temp_r3;
+    char *temp_r3;
 
     if ((s32) (*(u32*)((char*)(arg0)+0x3B4)) < 8) {
         temp_r3 = (*(u32*)((char*)(lbl_8053AB10)+0x24));
@@ -1872,9 +1872,9 @@ void fn_802422D0(void *arg0) {
     s32 var_ctr;
     s32 var_r5;
     u8 var_r0;
-    void *temp_r3;
-    void *temp_r3_2;
-    void *var_r6;
+    char *temp_r3;
+    char *temp_r3_2;
+    char *var_r6;
 
     if ((fn_80270A8C() != 0) && (fn_8025F448(arg0) == 0)) {
         fn_80270948(arg0, fn_8023E724(lbl_8053A190));

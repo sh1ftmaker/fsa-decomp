@@ -4,12 +4,12 @@
 
 /* --- auto_fn_80236630_text.s --- */
 s32 fn_8023FFC4(s32);                               /* extern */
-extern u32 lbl_8053AC90;
+extern char lbl_8053AC90;
 
 s32 fn_80236630(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -42,7 +42,7 @@ s32 fn_8024018C(s32);                               /* extern */
 s32 fn_802366CC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -75,7 +75,7 @@ s32 fn_80240354(s32);                               /* extern */
 s32 fn_80236768(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -108,7 +108,7 @@ u32 fn_80270F00(s32);                                 /* extern */
 void fn_80236804(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -141,7 +141,7 @@ s32 fn_80236890(void) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r3;
+    char *temp_r3;
 
     if ((u32) lbl_8053AC90 == 0U) {
         return 1;
@@ -181,7 +181,7 @@ s32 fn_8024322C(s32);                               /* extern */
 s32 fn_8023697C(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -214,7 +214,7 @@ s32 fn_8023697C(s32 arg0) {
 s32 fn_80236A18(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -247,7 +247,7 @@ s32 fn_80270A58(s32);                               /* extern */
 s32 fn_80236AB4(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -280,7 +280,7 @@ s32 fn_80270A8C(s32);                               /* extern */
 s32 fn_80236B50(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -313,7 +313,7 @@ s32 fn_80270C88(s32);                               /* extern */
 s32 fn_80236BEC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -346,7 +346,7 @@ u32 fn_8024148C(s32);                                 /* extern */
 void fn_80236C88(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -377,7 +377,7 @@ s32 fn_80241498(s32);                               /* extern */
 s32 fn_80236D14(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -410,7 +410,7 @@ u32 fn_802414D0(s32);                                 /* extern */
 void fn_80236DB0(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -441,7 +441,7 @@ s32 fn_802414DC(s32);                               /* extern */
 s32 fn_80236E3C(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -479,8 +479,8 @@ u8 fn_80236ED8(s32 arg0, s32 arg1) {
     s32 var_r29;
     u8 var_r0;
     u8 var_r0_2;
-    void *temp_r3;
-    void *temp_r3_2;
+    char *temp_r3;
+    char *temp_r3_2;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -541,7 +541,7 @@ s32 fn_80241544(s32);                               /* extern */
 s32 fn_80237060(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -578,8 +578,8 @@ s32 fn_802370FC(s32 arg0, s32 arg1) {
     s32 var_r29;
     u8 var_r0;
     u8 var_r0_2;
-    void *temp_r3;
-    void *temp_r3_2;
+    char *temp_r3;
+    char *temp_r3_2;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -637,7 +637,7 @@ s32 fn_802415CC(s32);                               /* extern */
 s32 fn_8023725C(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -672,7 +672,7 @@ s32 fn_802372F8(s32 arg0, s32 arg1, s32 arg2) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r3;
+    char *temp_r3;
 
     if ((u32) lbl_8053AC90 == 0U) {
         return 0;
@@ -712,7 +712,7 @@ s32 fn_802416C4(s32);                               /* extern */
 s32 fn_802373EC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -745,7 +745,7 @@ s32 fn_80247594(s32);                               /* extern */
 s32 fn_80237488(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -778,7 +778,7 @@ u32 fn_802416FC(s32);                                 /* extern */
 void fn_80237524(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -809,7 +809,7 @@ s32 fn_80241794(s32);                               /* extern */
 s32 fn_802375B0(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -842,7 +842,7 @@ u32 fn_80241804(s32);                                 /* extern */
 void fn_8023764C(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -873,7 +873,7 @@ s32 fn_80241864(s32);                               /* extern */
 s32 fn_802376D8(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -906,7 +906,7 @@ s32 fn_8024189C(s32);                               /* extern */
 s32 fn_80237774(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -939,7 +939,7 @@ s32 fn_802417CC(s32);                               /* extern */
 s32 fn_80237810(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -972,7 +972,7 @@ s32 fn_80271038(s32);                               /* extern */
 s32 fn_802378AC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1005,7 +1005,7 @@ s32 fn_80271068(s32);                               /* extern */
 s32 fn_80237948(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1038,7 +1038,7 @@ s32 fn_80271098(s32);                               /* extern */
 s32 fn_802379E4(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r5;
+    char *temp_r5;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1075,7 +1075,7 @@ u32 fn_80248B9C(s32);                                 /* extern */
 u8 fn_80249068(s32);                                /* extern */
 u8 fn_80251BFC(s32, u32);                             /* extern */
 u8 fn_8025F448(s32);                                /* extern */
-extern u32 lbl_80529DEC;
+extern char lbl_80529DEC;
 extern void *lbl_8053AAF8;
 
 
@@ -1120,18 +1120,18 @@ s32 fn_80237A80(s32 arg0) {
     u8 var_r3_7;
     u8 var_r3_8;
     u8 var_r3_9;
-    void *temp_r3;
-    void *temp_r3_2;
-    void *temp_r3_3;
-    void *temp_r4;
-    void *temp_r4_2;
-    void *temp_r4_3;
-    void *temp_r4_4;
-    void *temp_r4_5;
-    void *temp_r4_6;
-    void *temp_r4_7;
-    void *temp_r4_8;
-    void *temp_r4_9;
+    char *temp_r3;
+    char *temp_r3_2;
+    char *temp_r3_3;
+    char *temp_r4;
+    char *temp_r4_2;
+    char *temp_r4_3;
+    char *temp_r4_4;
+    char *temp_r4_5;
+    char *temp_r4_6;
+    char *temp_r4_7;
+    char *temp_r4_8;
+    char *temp_r4_9;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1487,7 +1487,7 @@ u32 fn_80248DB8(s32);                                 /* extern */
 void fn_802381B8(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -1518,7 +1518,7 @@ u32 fn_80248DCC(s32);                                 /* extern */
 void fn_80238244(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -1554,8 +1554,8 @@ void fn_802382D0(s32 arg0, s32 arg1) {
     s32 var_r29;
     u8 var_r0;
     u8 var_r0_2;
-    void *temp_r3;
-    void *temp_r3_2;
+    char *temp_r3;
+    char *temp_r3_2;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -1602,13 +1602,13 @@ void fn_802382D0(s32 arg0, s32 arg1) {
 }
 
 /* --- auto_03_80238430_text.s --- */
-extern u32 lbl_804CF460;
+extern char lbl_804CF460;
 
 
 char *fn_80238430(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1641,7 +1641,7 @@ u32 fn_8024051C(s32);                                 /* extern */
 void fn_802384BC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq == 0) {
@@ -1703,10 +1703,10 @@ u8 fn_80238548(s32 arg0, s32 arg1, void *arg2, s32 arg3) {
     u8 var_r0_4;
     u8 var_r29;
     u8 var_r3_2;
-    void *temp_r3;
-    void *temp_r4;
-    void *temp_r4_2;
-    void *temp_r4_3;
+    char *temp_r3;
+    char *temp_r4;
+    char *temp_r4_2;
+    char *temp_r4_3;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -1861,9 +1861,9 @@ s32 fn_8023885C(s32 arg0) {
     u8 var_r0;
     u8 var_r0_2;
     u8 var_r0_3;
-    void *temp_r4;
-    void *temp_r4_2;
-    void *temp_r4_3;
+    char *temp_r4;
+    char *temp_r4_2;
+    char *temp_r4_3;
 
     var_r28_2 = 0;
     var_r27 = -1;
@@ -1972,8 +1972,8 @@ s32 fn_80238A68(s32 arg0) {
     s32 var_r3;
     u8 var_r0;
     u8 var_r0_2;
-    void *temp_r4;
-    void *temp_r4_2;
+    char *temp_r4;
+    char *temp_r4_2;
 
     var_r30 = -1;
     var_r29 = 0;
@@ -2047,7 +2047,7 @@ s32 fn_80238BC4(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     if (fn_80239108() <= 0) {
         return -1;
@@ -2087,7 +2087,7 @@ s32 fn_8024FF84(s32);                               /* extern */
 s32 fn_80238CB4(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -2121,7 +2121,7 @@ void fn_80238D50(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     var_r31 = 0;
     var_r30 = 0;
@@ -2157,7 +2157,7 @@ void fn_80238E08(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     var_r31 = 0;
     var_r30 = 0;
@@ -2191,7 +2191,7 @@ s32 fn_8024FF54(s32);                               /* extern */
 s32 fn_80238EDC(s32 arg0) {
     s32 temp_cr0_eq;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
     if (temp_cr0_eq != 0) {
@@ -2225,7 +2225,7 @@ s32 fn_80238F78(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     var_r31 = 0;
     var_r30 = 0;
@@ -2263,7 +2263,7 @@ s32 fn_80239040(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     var_r31 = 0;
     var_r30 = 0;
@@ -2323,12 +2323,12 @@ s32 fn_80239108(s32 arg0) {
     u8 var_r3_2;
     u8 var_r3_3;
     u8 var_r3_4;
-    void *temp_r3;
-    void *temp_r4;
-    void *temp_r4_2;
-    void *temp_r4_3;
-    void *temp_r4_4;
-    void *temp_r4_5;
+    char *temp_r3;
+    char *temp_r4;
+    char *temp_r4_2;
+    char *temp_r4_3;
+    char *temp_r4_4;
+    char *temp_r4_5;
 
     var_r30 = -1;
     var_r29 = 0;
@@ -2511,7 +2511,7 @@ s32 fn_80239470(s32 arg0, s32 arg1, s32 arg2) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     if ((u32) lbl_8053AC90 == 0U) {
         return 0;
@@ -2551,7 +2551,7 @@ s32 fn_80239558(s32 arg0, s32 arg1, s32 arg2) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     if ((u32) lbl_8053AC90 == 0U) {
         return 0;
@@ -2592,7 +2592,7 @@ s32 fn_80239638(s32 arg0) {
     s32 var_r30;
     s32 var_r31;
     u8 var_r0;
-    void *temp_r4;
+    char *temp_r4;
 
     if ((u32) lbl_8053AC90 == 0U) {
         return 0;

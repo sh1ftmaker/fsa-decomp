@@ -447,6 +447,7 @@ def link_order_callback(module_id: int, objects: List[str]) -> List[str]:
 config.progress_categories = [
     ProgressCategory("game", "FSA Game Code"),
     ProgressCategory("sdk", "SDK"),
+    ProgressCategory("third_party", "Third Party"),
 ]
 config.progress_each_module = args.verbose
 # Optional extra arguments to `objdiff-cli report generate`
