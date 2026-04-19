@@ -68,6 +68,14 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 Headline: **430 / 5,981 DOL functions byte-matched via TWW import (7.2%)** after
 the 2026-04-18 Gate 4 sweep. Earlier hand-matched work still present.
 
+> ⚠️ **Outstanding: `config/G4SE01/splits.txt` backfill.** The Gate 4 mass
+> import committed 83 TWW source files (commit `75de799`) but the run was
+> interrupted before `append_splits()` flushed stanzas, so those files are
+> not yet wired into the build. Backfill options: (a) rerun `--phase import`
+> with a skip-log so only the stanza write executes, or (b) derive stanzas
+> from `state.db` (MATCHED_TWW rows grouped by `tww_source`, min/max addr →
+> `splits_entry_for()`). See `fsa-port-agent/fsa_port_agent/importers/tww_import.py:111`.
+
 ### Gate 4 breakdown (by subdir of TWW donor)
 
 | Subdir | Hits | Notes |
