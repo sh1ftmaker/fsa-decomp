@@ -377,18 +377,116 @@ config.libs = [
         "host": True,
         "objects": [
             Object(NonMatching, "main/main.cpp"),
+            # Main-game matches from 2026-04-19 Gate 4 sweep (see
+            # port-agent/configure_additions.txt for the full list).
+            Object(Matching, "d/d_camera.cpp"),
+            Object(Matching, "d/d_cc_mass_s.cpp"),
+            Object(Matching, "d/d_door.cpp"),
+            Object(Matching, "d/d_s_menu.cpp"),
+            Object(Matching, "d/d_s_name.cpp"),
+            Object(Matching, "d/d_save.cpp"),
+            Object(Matching, "d/d_stage.cpp"),
+            Object(Matching, "f_op/f_op_msg_mng.cpp"),
+            Object(Matching, "m_Do/m_Do_dvd_thread.cpp"),
         ],
     },
+    DolphinLib("dvd", [
+        Object(Matching, "dolphin/dvd/dvd.c"),
+        Object(Matching, "dolphin/dvd/dvdfs.c"),
+    ]),
+    DolphinLib("gx", [
+        Object(Matching, "dolphin/gx/GXAttr.c"),
+        Object(Matching, "dolphin/gx/GXFifo.c"),
+        Object(Matching, "dolphin/gx/GXLight.c"),
+        Object(Matching, "dolphin/gx/GXTransform.c"),
+    ]),
+    DolphinLib("mtx", [
+        Object(Matching, "dolphin/mtx/mtx.c"),
+        Object(Matching, "dolphin/mtx/mtxvec.c"),
+        Object(Matching, "dolphin/mtx/vec.c"),
+    ]),
     DolphinLib("os", [
         Object(Matching, "dolphin/os/OS.c"),
         Object(Matching, "dolphin/os/OSCache.c"),
         Object(Matching, "dolphin/os/OSTime.c"),
         Object(Matching, "dolphin/os/OSInterrupt.c"),
         Object(Matching, "dolphin/os/OSSync.c"),
+        Object(Matching, "dolphin/os/OSAlloc.c"),
+        Object(Matching, "dolphin/os/OSContext.c"),
+        Object(Matching, "dolphin/os/OSLink.c"),
+        Object(Matching, "dolphin/os/OSMemory.c"),
+        Object(Matching, "dolphin/os/OSReboot.c"),
+        Object(Matching, "dolphin/os/OSReset.c"),
+        Object(Matching, "dolphin/os/OSThread.c"),
+    ]),
+    JSystemLib("J2DGraph", [
+        Object(Matching, "JSystem/J2DGraph/J2DGrafContext.cpp"),
+        Object(Matching, "JSystem/J2DGraph/J2DPrint.cpp"),
+    ]),
+    JSystemLib("J3DGraphAnimator", [
+        Object(Matching, "JSystem/J3DGraphAnimator/J3DModel.cpp"),
+    ]),
+    JSystemLib("J3DGraphBase", [
+        Object(Matching, "JSystem/J3DGraphBase/J3DMatBlock.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DMaterial.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DPacket.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DShapeMtx.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DSys.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DTevs.cpp"),
+        Object(Matching, "JSystem/J3DGraphBase/J3DVertex.cpp"),
+    ]),
+    JSystemLib("J3DGraphLoader", [
+        Object(Matching, "JSystem/J3DGraphLoader/J3DMaterialFactory.cpp"),
+        Object(Matching, "JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.cpp"),
+        Object(Matching, "JSystem/J3DGraphLoader/J3DShapeFactory.cpp"),
+    ]),
+    JSystemLib("JAudio", [
+        Object(Matching, "JSystem/JAudio/JASBNKParser.cpp"),
+        Object(Matching, "JSystem/JAudio/JASBasicInst.cpp"),
+        Object(Matching, "JSystem/JAudio/JASBasicWaveBank.cpp"),
+        Object(Matching, "JSystem/JAudio/JASCmdStack.cpp"),
+        Object(Matching, "JSystem/JAudio/JASDSPChannel.cpp"),
+        Object(Matching, "JSystem/JAudio/JASDSPInterface.cpp"),
+        Object(Matching, "JSystem/JAudio/JASDrumSet.cpp"),
+    ]),
+    JSystemLib("JGadget", [
+        Object(Matching, "JSystem/JGadget/linklist.cpp"),
+        Object(Matching, "JSystem/JGadget/std-vector.cpp"),
     ]),
     JSystemLib("JKernel", [
         Object(Matching, "JSystem/JKernel/JKRDisposer.cpp"),
+        Object(Matching, "JSystem/JKernel/JKRArchivePri.cpp"),
+        Object(Matching, "JSystem/JKernel/JKRExpHeap.cpp"),
+        Object(Matching, "JSystem/JKernel/JKRFileLoader.cpp"),
+        Object(Matching, "JSystem/JKernel/JKRSolidHeap.cpp"),
     ]),
+    JSystemLib("JMessage", [
+        Object(Matching, "JSystem/JMessage/processor.cpp"),
+    ]),
+    JSystemLib("JParticle", [
+        Object(Matching, "JSystem/JParticle/JPABaseShape.cpp"),
+    ]),
+    JSystemLib("JSupport", [
+        Object(Matching, "JSystem/JSupport/JSUInputStream.cpp"),
+        Object(Matching, "JSystem/JSupport/JSUList.cpp"),
+        Object(Matching, "JSystem/JSupport/JSUMemoryStream.cpp"),
+    ]),
+    JSystemLib("JUtility", [
+        Object(Matching, "JSystem/JUtility/JUTConsole.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTDbPrint.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTDirectFile.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTException.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTFader.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTGamePad.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTNameTab.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTProcBar.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTResFont.cpp"),
+        Object(Matching, "JSystem/JUtility/JUTXfb.cpp"),
+    ]),
+    # TODO: 14 PowerPC_EABI_Support units (MSL_C + Runtime) need new helper
+    #       functions mirroring DolphinLib — see port-agent/configure_additions.txt.
+    # TODO: 6 d/actor REL units need ActorRel(Matching, ...) entries at the
+    #       appropriate REL section of this file — list in configure_additions.txt.
 ]
 
 

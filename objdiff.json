@@ -385,6 +385,36 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JAudio/JASCmdStack",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASCmdStack.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASCmdStack.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASCmdStack.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASCmdStack.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8002898C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8002898C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_80028CA4_text",
       "target_path": "build/G4SE01/obj/auto_fn_80028CA4_text.o",
       "metadata": {
@@ -433,6 +463,36 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JAudio/JASDSPChannel",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASDSPChannel.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASDSPChannel.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASDSPChannel.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASDSPChannel.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8002C1AC_text",
+      "target_path": "build/G4SE01/obj/auto_03_8002C1AC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_8002C2B0_text",
       "target_path": "build/G4SE01/obj/auto_fn_8002C2B0_text.o",
       "metadata": {
@@ -459,6 +519,36 @@
     {
       "name": "fsa_game_code/auto_03_8002C54C_text",
       "target_path": "build/G4SE01/obj/auto_03_8002C54C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JAudio/JASDSPInterface",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASDSPInterface.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASDSPInterface.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASDSPInterface.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASDSPInterface.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8002D374_text",
+      "target_path": "build/G4SE01/obj/auto_03_8002D374_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -497,6 +587,36 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JAudio/JASBasicInst",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASBasicInst.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASBasicInst.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASBasicInst.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASBasicInst.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8002E8A8_text",
+      "target_path": "build/G4SE01/obj/auto_03_8002E8A8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_8002E8B4_text",
       "target_path": "build/G4SE01/obj/auto_fn_8002E8B4_text.o",
       "metadata": {
@@ -507,6 +627,66 @@
     {
       "name": "fsa_game_code/auto_03_8002E90C_text",
       "target_path": "build/G4SE01/obj/auto_03_8002E90C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JAudio/JASBasicWaveBank",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASBasicWaveBank.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASBasicWaveBank.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASBasicWaveBank.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASBasicWaveBank.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8002EBDC_text",
+      "target_path": "build/G4SE01/obj/auto_03_8002EBDC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JAudio/JASBNKParser",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASBNKParser.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASBNKParser.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASBNKParser.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASBNKParser.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80030394_text",
+      "target_path": "build/G4SE01/obj/auto_03_80030394_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -526,6 +706,28 @@
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JAudio/JASDrumSet",
+      "target_path": "build/G4SE01/obj/JSystem/JAudio/JASDrumSet.o",
+      "base_path": "build/G4SE01/src/JSystem/JAudio/JASDrumSet.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JAudio/JASDrumSet.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JAudio/JASDrumSet.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
       }
     },
     {
@@ -817,6 +1019,36 @@
       }
     },
     {
+      "name": "fsa_game_code/dolphin/os/OSAlloc",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSAlloc.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSAlloc.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSAlloc.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSAlloc.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80040B04_text",
+      "target_path": "build/G4SE01/obj/auto_03_80040B04_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/dolphin/os/OS",
       "target_path": "build/G4SE01/obj/dolphin/os/OS.o",
       "base_path": "build/G4SE01/src/dolphin/os/OS.o",
@@ -885,6 +1117,36 @@
       }
     },
     {
+      "name": "fsa_game_code/dolphin/os/OSContext",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSContext.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSContext.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSContext.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSContext.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800418D4_text",
+      "target_path": "build/G4SE01/obj/auto_03_800418D4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/dolphin/os/OSInterrupt",
       "target_path": "build/G4SE01/obj/dolphin/os/OSInterrupt.o",
       "base_path": "build/G4SE01/src/dolphin/os/OSInterrupt.o",
@@ -923,8 +1185,120 @@
       }
     },
     {
-      "name": "fsa_game_code/auto_03_80042EA4_text",
-      "target_path": "build/G4SE01/obj/auto_03_80042EA4_text.o",
+      "name": "fsa_game_code/dolphin/os/OSLink",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSLink.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSLink.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSLink.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSLink.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80042EBC_text",
+      "target_path": "build/G4SE01/obj/auto_03_80042EBC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/os/OSMemory",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSMemory.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSMemory.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSMemory.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSMemory.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80043418_text",
+      "target_path": "build/G4SE01/obj/auto_03_80043418_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/os/OSReboot",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSReboot.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSReboot.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSReboot.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSReboot.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8004395C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8004395C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/os/OSReset",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSReset.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSReset.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSReset.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSReset.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80043DA8_text",
+      "target_path": "build/G4SE01/obj/auto_03_80043DA8_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -955,6 +1329,36 @@
     {
       "name": "fsa_game_code/auto_03_800450A8_text",
       "target_path": "build/G4SE01/obj/auto_03_800450A8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/os/OSThread",
+      "target_path": "build/G4SE01/obj/dolphin/os/OSThread.o",
+      "base_path": "build/G4SE01/src/dolphin/os/OSThread.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/os/OSThread.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/os/OSThread.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80045220_text",
+      "target_path": "build/G4SE01/obj/auto_03_80045220_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -996,6 +1400,284 @@
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/mtx/mtx",
+      "target_path": "build/G4SE01/obj/dolphin/mtx/mtx.o",
+      "base_path": "build/G4SE01/src/dolphin/mtx/mtx.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/mtx/mtx.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/mtx/mtx.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800468F8_text",
+      "target_path": "build/G4SE01/obj/auto_03_800468F8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/mtx/mtxvec",
+      "target_path": "build/G4SE01/obj/dolphin/mtx/mtxvec.o",
+      "base_path": "build/G4SE01/src/dolphin/mtx/mtxvec.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/mtx/mtxvec.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/mtx/mtxvec.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80046FB4_text",
+      "target_path": "build/G4SE01/obj/auto_03_80046FB4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/mtx/vec",
+      "target_path": "build/G4SE01/obj/dolphin/mtx/vec.o",
+      "base_path": "build/G4SE01/src/dolphin/mtx/vec.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/mtx/vec.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/mtx/vec.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80047130_text",
+      "target_path": "build/G4SE01/obj/auto_03_80047130_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/dvd/dvdfs",
+      "target_path": "build/G4SE01/obj/dolphin/dvd/dvdfs.o",
+      "base_path": "build/G4SE01/src/dolphin/dvd/dvdfs.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/dvd/dvdfs.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/dvd/dvdfs.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80048874_text",
+      "target_path": "build/G4SE01/obj/auto_03_80048874_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/dvd/dvd",
+      "target_path": "build/G4SE01/obj/dolphin/dvd/dvd.o",
+      "base_path": "build/G4SE01/src/dolphin/dvd/dvd.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/dvd/dvd.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/dvd/dvd.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8004AE98_text",
+      "target_path": "build/G4SE01/obj/auto_03_8004AE98_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/gx/GXFifo",
+      "target_path": "build/G4SE01/obj/dolphin/gx/GXFifo.o",
+      "base_path": "build/G4SE01/src/dolphin/gx/GXFifo.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/gx/GXFifo.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/gx/GXFifo.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80059DA8_text",
+      "target_path": "build/G4SE01/obj/auto_03_80059DA8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/gx/GXAttr",
+      "target_path": "build/G4SE01/obj/dolphin/gx/GXAttr.o",
+      "base_path": "build/G4SE01/src/dolphin/gx/GXAttr.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/gx/GXAttr.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/gx/GXAttr.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8005B6BC_text",
+      "target_path": "build/G4SE01/obj/auto_03_8005B6BC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/gx/GXLight",
+      "target_path": "build/G4SE01/obj/dolphin/gx/GXLight.o",
+      "base_path": "build/G4SE01/src/dolphin/gx/GXLight.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/gx/GXLight.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/gx/GXLight.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8005D16C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8005D16C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/dolphin/gx/GXTransform",
+      "target_path": "build/G4SE01/obj/dolphin/gx/GXTransform.o",
+      "base_path": "build/G4SE01/src/dolphin/gx/GXTransform.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_233_163n",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -fp_contract off -lang=c",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/dolphin/gx/GXTransform.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/dolphin/gx/GXTransform.c",
+        "progress_categories": [
+          "sdk"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8005FE94_text",
+      "target_path": "build/G4SE01/obj/auto_03_8005FE94_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/Runtime/Src/__va_arg",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/Runtime/Src/__va_arg.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
       }
     },
     {
@@ -1055,11 +1737,35 @@
       }
     },
     {
-      "name": "fsa_game_code/auto_03_800672B4_text",
-      "target_path": "build/G4SE01/obj/auto_03_800672B4_text.o",
+      "name": "fsa_game_code/PowerPC_EABI_Support/Runtime/Src/ptmf",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/Runtime/Src/ptmf.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006730C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006730C_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/Runtime/Src/runtime",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/Runtime/Src/runtime.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
       }
     },
     {
@@ -1073,6 +1779,188 @@
     {
       "name": "fsa_game_code/auto_03_80067A8C_text",
       "target_path": "build/G4SE01/obj/auto_03_80067A8C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/arith",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/arith.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/buffer_io",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/buffer_io.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006A360_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006A360_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006AF88_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006AF88_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem_funcs",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem_funcs.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006B1C0_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006B1C0_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/printf",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/printf.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006C754_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006C754_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/scanf",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/scanf.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006D6F8_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006D6F8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/string",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/string.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006DA94_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006DA94_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/wchar_io",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/wchar_io.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006E030_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006E030_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_copysign",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_copysign.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8006FCD4_text",
+      "target_path": "build/G4SE01/obj/auto_03_8006FCD4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_modf",
+      "target_path": "build/G4SE01/obj/PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_modf.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8007023C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8007023C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTResFont",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTResFont.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTResFont.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTResFont.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTResFont.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80077324_text",
+      "target_path": "build/G4SE01/obj/auto_03_80077324_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1121,6 +2009,112 @@
     {
       "name": "fsa_game_code/auto_03_8007B694_text",
       "target_path": "build/G4SE01/obj/auto_03_8007B694_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JSupport/JSUMemoryStream",
+      "target_path": "build/G4SE01/obj/JSystem/JSupport/JSUMemoryStream.o",
+      "base_path": "build/G4SE01/src/JSystem/JSupport/JSUMemoryStream.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JSupport/JSUMemoryStream.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JSupport/JSUMemoryStream.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8007BA74_text",
+      "target_path": "build/G4SE01/obj/auto_03_8007BA74_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_save",
+      "target_path": "build/G4SE01/obj/d/d_save.o",
+      "base_path": "build/G4SE01/src/d/d_save.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_save.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_save.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8007C140_text",
+      "target_path": "build/G4SE01/obj/auto_03_8007C140_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JKernel/JKRArchivePri",
+      "target_path": "build/G4SE01/obj/JSystem/JKernel/JKRArchivePri.o",
+      "base_path": "build/G4SE01/src/JSystem/JKernel/JKRArchivePri.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JKernel/JKRArchivePri.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JKernel/JKRArchivePri.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8007C6F4_text",
+      "target_path": "build/G4SE01/obj/auto_03_8007C6F4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/actor/d_a_lod_bg",
+      "target_path": "build/G4SE01/obj/d/actor/d_a_lod_bg.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8007D2B8_text",
+      "target_path": "build/G4SE01/obj/auto_03_8007D2B8_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1205,6 +2199,66 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JKernel/JKRExpHeap",
+      "target_path": "build/G4SE01/obj/JSystem/JKernel/JKRExpHeap.o",
+      "base_path": "build/G4SE01/src/JSystem/JKernel/JKRExpHeap.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JKernel/JKRExpHeap.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JKernel/JKRExpHeap.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80082D90_text",
+      "target_path": "build/G4SE01/obj/auto_03_80082D90_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JKernel/JKRFileLoader",
+      "target_path": "build/G4SE01/obj/JSystem/JKernel/JKRFileLoader.o",
+      "base_path": "build/G4SE01/src/JSystem/JKernel/JKRFileLoader.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JKernel/JKRFileLoader.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JKernel/JKRFileLoader.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80083254_text",
+      "target_path": "build/G4SE01/obj/auto_03_80083254_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_800834A4_text",
       "target_path": "build/G4SE01/obj/auto_fn_800834A4_text.o",
       "metadata": {
@@ -1215,6 +2269,96 @@
     {
       "name": "fsa_game_code/auto_03_800834E8_text",
       "target_path": "build/G4SE01/obj/auto_03_800834E8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_door",
+      "target_path": "build/G4SE01/obj/d/d_door.o",
+      "base_path": "build/G4SE01/src/d/d_door.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_door.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_door.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80083868_text",
+      "target_path": "build/G4SE01/obj/auto_03_80083868_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JMessage/processor",
+      "target_path": "build/G4SE01/obj/JSystem/JMessage/processor.o",
+      "base_path": "build/G4SE01/src/JSystem/JMessage/processor.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JMessage/processor.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JMessage/processor.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80083A68_text",
+      "target_path": "build/G4SE01/obj/auto_03_80083A68_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JKernel/JKRSolidHeap",
+      "target_path": "build/G4SE01/obj/JSystem/JKernel/JKRSolidHeap.o",
+      "base_path": "build/G4SE01/src/JSystem/JKernel/JKRSolidHeap.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JKernel/JKRSolidHeap.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JKernel/JKRSolidHeap.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80085444_text",
+      "target_path": "build/G4SE01/obj/auto_03_80085444_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1237,6 +2381,246 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JSupport/JSUInputStream",
+      "target_path": "build/G4SE01/obj/JSystem/JSupport/JSUInputStream.o",
+      "base_path": "build/G4SE01/src/JSystem/JSupport/JSUInputStream.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JSupport/JSUInputStream.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JSupport/JSUInputStream.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80086CC0_text",
+      "target_path": "build/G4SE01/obj/auto_03_80086CC0_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JSupport/JSUList",
+      "target_path": "build/G4SE01/obj/JSystem/JSupport/JSUList.o",
+      "base_path": "build/G4SE01/src/JSystem/JSupport/JSUList.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JSupport/JSUList.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JSupport/JSUList.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80086E44_text",
+      "target_path": "build/G4SE01/obj/auto_03_80086E44_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JGadget/linklist",
+      "target_path": "build/G4SE01/obj/JSystem/JGadget/linklist.o",
+      "base_path": "build/G4SE01/src/JSystem/JGadget/linklist.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JGadget/linklist.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JGadget/linklist.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800879A0_text",
+      "target_path": "build/G4SE01/obj/auto_03_800879A0_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JGadget/std-vector",
+      "target_path": "build/G4SE01/obj/JSystem/JGadget/std-vector.o",
+      "base_path": "build/G4SE01/src/JSystem/JGadget/std-vector.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JGadget/std-vector.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JGadget/std-vector.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80087ABC_text",
+      "target_path": "build/G4SE01/obj/auto_03_80087ABC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTConsole",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTConsole.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTConsole.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTConsole.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTConsole.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80088B7C_text",
+      "target_path": "build/G4SE01/obj/auto_03_80088B7C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTDbPrint",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTDbPrint.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTDbPrint.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTDbPrint.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTDbPrint.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008927C_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008927C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTDirectFile",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTDirectFile.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTDirectFile.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTDirectFile.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTDirectFile.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80089534_text",
+      "target_path": "build/G4SE01/obj/auto_03_80089534_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTException",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTException.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTException.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTException.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTException.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008CA44_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008CA44_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_8008CAA4_text",
       "target_path": "build/G4SE01/obj/auto_fn_8008CAA4_text.o",
       "metadata": {
@@ -1247,6 +2631,66 @@
     {
       "name": "fsa_game_code/auto_03_8008CAEC_text",
       "target_path": "build/G4SE01/obj/auto_03_8008CAEC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTFader",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTFader.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTFader.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTFader.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTFader.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008CC40_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008CC40_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTGamePad",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTGamePad.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTGamePad.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTGamePad.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTGamePad.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008E4A4_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008E4A4_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1269,6 +2713,126 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/JUtility/JUTNameTab",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTNameTab.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTNameTab.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTNameTab.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTNameTab.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008E9F4_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008E9F4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTProcBar",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTProcBar.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTProcBar.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTProcBar.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTProcBar.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8008EC64_text",
+      "target_path": "build/G4SE01/obj/auto_03_8008EC64_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_s_menu",
+      "target_path": "build/G4SE01/obj/d/d_s_menu.o",
+      "base_path": "build/G4SE01/src/d/d_s_menu.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_s_menu.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_s_menu.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80091A88_text",
+      "target_path": "build/G4SE01/obj/auto_03_80091A88_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/JUtility/JUTXfb",
+      "target_path": "build/G4SE01/obj/JSystem/JUtility/JUTXfb.o",
+      "base_path": "build/G4SE01/src/JSystem/JUtility/JUTXfb.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/JUtility/JUTXfb.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/JUtility/JUTXfb.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80093060_text",
+      "target_path": "build/G4SE01/obj/auto_03_80093060_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_80093598_text",
       "target_path": "build/G4SE01/obj/auto_fn_80093598_text.o",
       "metadata": {
@@ -1285,6 +2849,36 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/J2DGraph/J2DGrafContext",
+      "target_path": "build/G4SE01/obj/JSystem/J2DGraph/J2DGrafContext.o",
+      "base_path": "build/G4SE01/src/JSystem/J2DGraph/J2DGrafContext.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J2DGraph/J2DGrafContext.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J2DGraph/J2DGrafContext.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80093E64_text",
+      "target_path": "build/G4SE01/obj/auto_03_80093E64_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_80097048_text",
       "target_path": "build/G4SE01/obj/auto_fn_80097048_text.o",
       "metadata": {
@@ -1295,6 +2889,96 @@
     {
       "name": "fsa_game_code/auto_03_80097064_text",
       "target_path": "build/G4SE01/obj/auto_03_80097064_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_s_name",
+      "target_path": "build/G4SE01/obj/d/d_s_name.o",
+      "base_path": "build/G4SE01/src/d/d_s_name.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_s_name.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_s_name.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80097128_text",
+      "target_path": "build/G4SE01/obj/auto_03_80097128_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/f_op/f_op_msg_mng",
+      "target_path": "build/G4SE01/obj/f_op/f_op_msg_mng.o",
+      "base_path": "build/G4SE01/src/f_op/f_op_msg_mng.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/f_op/f_op_msg_mng.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/f_op/f_op_msg_mng.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8009A6D8_text",
+      "target_path": "build/G4SE01/obj/auto_03_8009A6D8_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J2DGraph/J2DPrint",
+      "target_path": "build/G4SE01/obj/JSystem/J2DGraph/J2DPrint.o",
+      "base_path": "build/G4SE01/src/JSystem/J2DGraph/J2DPrint.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J2DGraph/J2DPrint.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J2DGraph/J2DPrint.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8009C2A4_text",
+      "target_path": "build/G4SE01/obj/auto_03_8009C2A4_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1333,6 +3017,126 @@
       }
     },
     {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DVertex",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DVertex.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DVertex.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DVertex.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DVertex.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800BB738_text",
+      "target_path": "build/G4SE01/obj/auto_03_800BB738_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DPacket",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DPacket.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DPacket.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DPacket.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DPacket.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800BC2DC_text",
+      "target_path": "build/G4SE01/obj/auto_03_800BC2DC_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DMaterial",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DMaterial.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DMaterial.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DMaterial.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DMaterial.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800BEB44_text",
+      "target_path": "build/G4SE01/obj/auto_03_800BEB44_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DTevs",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DTevs.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DTevs.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DTevs.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DTevs.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800C179C_text",
+      "target_path": "build/G4SE01/obj/auto_03_800C179C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_800C262C_text",
       "target_path": "build/G4SE01/obj/auto_fn_800C262C_text.o",
       "metadata": {
@@ -1343,6 +3147,262 @@
     {
       "name": "fsa_game_code/auto_03_800C2710_text",
       "target_path": "build/G4SE01/obj/auto_03_800C2710_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphAnimator/J3DModel",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphAnimator/J3DModel.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphAnimator/J3DModel.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphAnimator/J3DModel.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphAnimator/J3DModel.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800C2E7C_text",
+      "target_path": "build/G4SE01/obj/auto_03_800C2E7C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/actor/d_a_obj_barrel",
+      "target_path": "build/G4SE01/obj/d/actor/d_a_obj_barrel.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800C6B70_text",
+      "target_path": "build/G4SE01/obj/auto_03_800C6B70_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphLoader/J3DMaterialFactory",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphLoader/J3DMaterialFactory.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DMaterialFactory.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DMaterialFactory.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphLoader/J3DMaterialFactory.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800C926C_text",
+      "target_path": "build/G4SE01/obj/auto_03_800C926C_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DShapeMtx",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DShapeMtx.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DShapeMtx.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DShapeMtx.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DShapeMtx.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800CC094_text",
+      "target_path": "build/G4SE01/obj/auto_03_800CC094_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphLoader/J3DShapeFactory",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphLoader/J3DShapeFactory.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DShapeFactory.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DShapeFactory.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphLoader/J3DShapeFactory.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800CEBC4_text",
+      "target_path": "build/G4SE01/obj/auto_03_800CEBC4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DSys",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DSys.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DSys.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DSys.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DSys.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800D32C0_text",
+      "target_path": "build/G4SE01/obj/auto_03_800D32C0_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_camera",
+      "target_path": "build/G4SE01/obj/d/d_camera.o",
+      "base_path": "build/G4SE01/src/d/d_camera.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_camera.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_camera.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800D3DC0_text",
+      "target_path": "build/G4SE01/obj/auto_03_800D3DC0_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/JSystem/J3DGraphBase/J3DMatBlock",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphBase/J3DMatBlock.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DMatBlock.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphBase/J3DMatBlock.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphBase/J3DMatBlock.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800D3E70_text",
+      "target_path": "build/G4SE01/obj/auto_03_800D3E70_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/d_stage",
+      "target_path": "build/G4SE01/obj/d/d_stage.o",
+      "base_path": "build/G4SE01/src/d/d_stage.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -schedule off -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/d/d_stage.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/d/d_stage.cpp",
+        "progress_categories": [
+          "game"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800DF1AC_text",
+      "target_path": "build/G4SE01/obj/auto_03_800DF1AC_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -1373,8 +3433,30 @@
       }
     },
     {
-      "name": "fsa_game_code/auto_03_800E2B40_text",
-      "target_path": "build/G4SE01/obj/auto_03_800E2B40_text.o",
+      "name": "fsa_game_code/JSystem/J3DGraphLoader/J3DModelLoaderCalcSize",
+      "target_path": "build/G4SE01/obj/JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.o",
+      "base_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.o",
+      "scratch": {
+        "platform": "gc_wii",
+        "compiler": "mwcc_242_81",
+        "c_flags": "-nodefaults -proc gekko -align powerpc -enum int -fp hardware -Cpp_exceptions off -O4,p -inline auto -pragma \"cats off\" -pragma \"warn_notinlined off\" -maxerrors 1 -nosyspath -RTTI off -fp_contract on -str reuse -multibyte -DVERSION=0 -DNDEBUG=1 -use_lmw_stmw off -str reuse,pool,readonly -inline noauto -O3,s -sym on -fp_contract off -lang=c++",
+        "preset_id": 228,
+        "ctx_path": "build/G4SE01/src/JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.ctx",
+        "build_ctx": true
+      },
+      "metadata": {
+        "complete": true,
+        "reverse_fn_order": false,
+        "source_path": "src/JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.cpp",
+        "progress_categories": [
+          "third_party"
+        ],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_800E2B80_text",
+      "target_path": "build/G4SE01/obj/auto_03_800E2B80_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true
@@ -8501,6 +10583,22 @@
       }
     },
     {
+      "name": "fsa_game_code/d/actor/d_a_ship",
+      "target_path": "build/G4SE01/obj/d/actor/d_a_ship.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_80178EE4_text",
+      "target_path": "build/G4SE01/obj/auto_03_80178EE4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
       "name": "fsa_game_code/auto_fn_80178F2C_text",
       "target_path": "build/G4SE01/obj/auto_fn_80178F2C_text.o",
       "metadata": {
@@ -9287,6 +11385,30 @@
     {
       "name": "fsa_game_code/auto_03_8019CDC4_text",
       "target_path": "build/G4SE01/obj/auto_03_8019CDC4_text.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": true
+      }
+    },
+    {
+      "name": "fsa_game_code/d/actor/d_a_himo2",
+      "target_path": "build/G4SE01/obj/d/actor/d_a_himo2.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/d/actor/d_a_movie_player",
+      "target_path": "build/G4SE01/obj/d/actor/d_a_movie_player.o",
+      "metadata": {
+        "progress_categories": [],
+        "auto_generated": false
+      }
+    },
+    {
+      "name": "fsa_game_code/auto_03_8019CEBC_text",
+      "target_path": "build/G4SE01/obj/auto_03_8019CEBC_text.o",
       "metadata": {
         "progress_categories": [],
         "auto_generated": true

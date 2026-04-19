@@ -13,6 +13,30 @@ Sections:
 	.sdata2     type:rodata align:4
 	.sbss2      type:bss align:4
 
+JSystem/JAudio/JASCmdStack.cpp:
+	.text       start:0x80028974 end:0x8002898C
+
+JSystem/JAudio/JASDSPChannel.cpp:
+	.text       start:0x8002C19C end:0x8002C1AC
+
+JSystem/JAudio/JASDSPInterface.cpp:
+	.text       start:0x8002D330 end:0x8002D374
+
+JSystem/JAudio/JASBasicInst.cpp:
+	.text       start:0x8002E890 end:0x8002E8A8
+
+JSystem/JAudio/JASBasicWaveBank.cpp:
+	.text       start:0x8002EBAC end:0x8002EBDC
+
+JSystem/JAudio/JASBNKParser.cpp:
+	.text       start:0x80030380 end:0x80030394
+
+JSystem/JAudio/JASDrumSet.cpp:
+	.text       start:0x800307C4 end:0x800307D0
+
+dolphin/os/OSAlloc.c:
+	.text       start:0x80040A58 end:0x80040B04
+
 dolphin/os/OS.c:
 	.text       start:0x80040C6C end:0x80040C8C
 	.sdata      start:0x80539C08 end:0x80539C0C
@@ -21,17 +45,239 @@ dolphin/os/OS.c:
 dolphin/os/OSCache.c:
 	.text       start:0x80040F20 end:0x80041598
 
+dolphin/os/OSContext.c:
+	.text       start:0x800417EC end:0x800418D4
+
 dolphin/os/OSInterrupt.c:
 	.text       start:0x80042638 end:0x80042EA4
 	.data       start:0x80495FA8 end:0x80495FD8
 	.sbss       start:0x8053A430 end:0x8053A448
 
+dolphin/os/OSLink.c:
+	.text       start:0x80042EA4 end:0x80042EBC
+
+dolphin/os/OSMemory.c:
+	.text       start:0x80043300 end:0x80043418
+
+dolphin/os/OSReboot.c:
+	.text       start:0x8004394C end:0x8004395C
+
+dolphin/os/OSReset.c:
+	.text       start:0x80043D38 end:0x80043DA8
+
 dolphin/os/OSSync.c:
 	.text       start:0x80045024 end:0x800450A8
+
+dolphin/os/OSThread.c:
+	.text       start:0x80045204 end:0x80045220
 
 dolphin/os/OSTime.c:
 	.text       start:0x800463E0 end:0x80046804
 	.data       start:0x80495FE8 end:0x80496048
 
+dolphin/mtx/mtx.c:
+	.text       start:0x800468C4 end:0x800468F8
+
+dolphin/mtx/mtxvec.c:
+	.text       start:0x80046E84 end:0x80046FB4
+
+dolphin/mtx/vec.c:
+	.text       start:0x800470D4 end:0x80047130
+
+dolphin/dvd/dvdfs.c:
+	.text       start:0x80048844 end:0x80048874
+
+dolphin/dvd/dvd.c:
+	.text       start:0x8004AE90 end:0x8004AE98
+
+dolphin/gx/GXFifo.c:
+	.text       start:0x80059D9C end:0x80059DA8
+
+dolphin/gx/GXAttr.c:
+	.text       start:0x8005B6AC end:0x8005B6BC
+
+dolphin/gx/GXLight.c:
+	.text       start:0x8005D134 end:0x8005D16C
+
+dolphin/gx/GXTransform.c:
+	.text       start:0x8005FDF4 end:0x8005FE94
+
+PowerPC_EABI_Support/Runtime/Src/__va_arg.c:
+	.text       start:0x80066DE0 end:0x80066EA8
+
+PowerPC_EABI_Support/Runtime/Src/ptmf.c:
+	.text       start:0x800672B4 end:0x8006730C
+
+PowerPC_EABI_Support/Runtime/Src/runtime.c:
+	.text       start:0x800674C0 end:0x80067A10
+
+PowerPC_EABI_Support/Runtime/Src/__init_cpp_exceptions.cpp:
+	.text       start:0x80067A10 end:0x80067A18
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/arith.c:
+	.text       start:0x8006A258 end:0x8006A268
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/buffer_io.c:
+	.text       start:0x8006A268 end:0x8006A360
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem.c:
+	.text       start:0x8006AEE4 end:0x8006AF88
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/mem_funcs.c:
+	.text       start:0x8006B054 end:0x8006B1C0
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/printf.c:
+	.text       start:0x8006C628 end:0x8006C754
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/scanf.c:
+	.text       start:0x8006D668 end:0x8006D6F8
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/string.c:
+	.text       start:0x8006D7B8 end:0x8006DA94
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common/Src/wchar_io.c:
+	.text       start:0x8006DFA8 end:0x8006E030
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_copysign.c:
+	.text       start:0x8006FCAC end:0x8006FCD4
+
+PowerPC_EABI_Support/MSL/MSL_C/MSL_Common_Embedded/Math/Double_precision/s_modf.c:
+	.text       start:0x80070140 end:0x8007023C
+
+JSystem/JUtility/JUTResFont.cpp:
+	.text       start:0x800772F4 end:0x80077324
+
+JSystem/JSupport/JSUMemoryStream.cpp:
+	.text       start:0x8007BA18 end:0x8007BA74
+
+d/d_save.cpp:
+	.text       start:0x8007C138 end:0x8007C140
+
+JSystem/JKernel/JKRArchivePri.cpp:
+	.text       start:0x8007C640 end:0x8007C6F4
+
+d/actor/d_a_lod_bg.cpp:
+	.text       start:0x8007D28C end:0x8007D2B8
+
 JSystem/JKernel/JKRDisposer.cpp:
 	.text       start:0x8007E6F4 end:0x8007E7E0
+
+JSystem/JKernel/JKRExpHeap.cpp:
+	.text       start:0x80082CD4 end:0x80082D90
+
+JSystem/JKernel/JKRFileLoader.cpp:
+	.text       start:0x80083204 end:0x80083254
+
+d/d_door.cpp:
+	.text       start:0x8008383C end:0x80083868
+
+JSystem/JMessage/processor.cpp:
+	.text       start:0x800839E4 end:0x80083A68
+
+JSystem/JKernel/JKRSolidHeap.cpp:
+	.text       start:0x80085438 end:0x80085444
+
+JSystem/JSupport/JSUInputStream.cpp:
+	.text       start:0x80086BD8 end:0x80086CC0
+
+JSystem/JSupport/JSUList.cpp:
+	.text       start:0x80086E2C end:0x80086E44
+
+JSystem/JGadget/linklist.cpp:
+	.text       start:0x80087950 end:0x800879A0
+
+JSystem/JGadget/std-vector.cpp:
+	.text       start:0x80087AB4 end:0x80087ABC
+
+JSystem/JUtility/JUTConsole.cpp:
+	.text       start:0x80088A58 end:0x80088B7C
+
+JSystem/JUtility/JUTDbPrint.cpp:
+	.text       start:0x80089264 end:0x8008927C
+
+JSystem/JUtility/JUTDirectFile.cpp:
+	.text       start:0x80089510 end:0x80089534
+
+JSystem/JUtility/JUTException.cpp:
+	.text       start:0x8008CA24 end:0x8008CA44
+
+JSystem/JUtility/JUTFader.cpp:
+	.text       start:0x8008CB40 end:0x8008CC40
+
+JSystem/JUtility/JUTGamePad.cpp:
+	.text       start:0x8008E488 end:0x8008E4A4
+
+JSystem/JUtility/JUTNameTab.cpp:
+	.text       start:0x8008E9B8 end:0x8008E9F4
+
+JSystem/JUtility/JUTProcBar.cpp:
+	.text       start:0x8008EC50 end:0x8008EC64
+
+d/d_s_menu.cpp:
+	.text       start:0x80091A7C end:0x80091A88
+
+JSystem/JUtility/JUTXfb.cpp:
+	.text       start:0x8009304C end:0x80093060
+
+JSystem/J2DGraph/J2DGrafContext.cpp:
+	.text       start:0x80093E1C end:0x80093E64
+
+d/d_s_name.cpp:
+	.text       start:0x8009711C end:0x80097128
+
+f_op/f_op_msg_mng.cpp:
+	.text       start:0x8009A6D0 end:0x8009A6D8
+
+JSystem/J2DGraph/J2DPrint.cpp:
+	.text       start:0x8009C230 end:0x8009C2A4
+
+JSystem/J3DGraphBase/J3DVertex.cpp:
+	.text       start:0x800BB6E0 end:0x800BB738
+
+JSystem/J3DGraphBase/J3DPacket.cpp:
+	.text       start:0x800BC2BC end:0x800BC2DC
+
+JSystem/J3DGraphBase/J3DMaterial.cpp:
+	.text       start:0x800BEAE8 end:0x800BEB44
+
+JSystem/J3DGraphBase/J3DTevs.cpp:
+	.text       start:0x800C176C end:0x800C179C
+
+JSystem/J3DGraphAnimator/J3DModel.cpp:
+	.text       start:0x800C2E30 end:0x800C2E7C
+
+d/actor/d_a_obj_barrel.cpp:
+	.text       start:0x800C6B68 end:0x800C6B70
+
+JSystem/J3DGraphLoader/J3DMaterialFactory.cpp:
+	.text       start:0x800C9224 end:0x800C926C
+
+JSystem/J3DGraphBase/J3DShapeMtx.cpp:
+	.text       start:0x800CC088 end:0x800CC094
+
+JSystem/J3DGraphLoader/J3DShapeFactory.cpp:
+	.text       start:0x800CEBB4 end:0x800CEBC4
+
+JSystem/J3DGraphBase/J3DSys.cpp:
+	.text       start:0x800D3168 end:0x800D32C0
+
+d/d_camera.cpp:
+	.text       start:0x800D3DB4 end:0x800D3DC0
+
+JSystem/J3DGraphBase/J3DMatBlock.cpp:
+	.text       start:0x800D3E20 end:0x800D3E70
+
+d/d_stage.cpp:
+	.text       start:0x800DF19C end:0x800DF1AC
+
+JSystem/J3DGraphLoader/J3DModelLoaderCalcSize.cpp:
+	.text       start:0x800E2B40 end:0x800E2B80
+
+d/actor/d_a_ship.cpp:
+	.text       start:0x80178ED4 end:0x80178EE4
+
+d/actor/d_a_himo2.cpp:
+	.text       start:0x8019CEAC end:0x8019CEB4
+
+d/actor/d_a_movie_player.cpp:
+	.text       start:0x8019CEB4 end:0x8019CEBC
