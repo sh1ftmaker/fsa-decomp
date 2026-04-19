@@ -22,6 +22,10 @@ def main() -> int:
                         help="Phase 3/5: splice back responses written by Claude Code")
     parser.add_argument("--check", action="store_true",
                         help="Phase 5: run syntax check and dump errors")
+    parser.add_argument("--splits-only", action="store_true",
+                        help="Phase 2: skip compile/match, only backfill "
+                             "splits.txt + configure.py from state.db "
+                             "(MATCHED_TWW rows).")
     parser.add_argument("--host", default="127.0.0.1",
                         help="dashboard bind host (default 127.0.0.1 — keep local)")
     parser.add_argument("--port", type=int, default=8765,

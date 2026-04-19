@@ -190,7 +190,142 @@ def _load_skip_set(log_path: Path, tww_root: Path) -> set[Path]:
     return skip
 
 
+def _backfill_from_db(cfg: Config, args) -> int:
+    """Derive splits.txt stanzas (and note configure.py work) from state.db
+    MATCHED_TWW rows.
+
+    Used when a Gate-4 mass import was interrupted before `append_splits()`
+    flushed its accumulator — state.db already has the match rows, so we can
+    reconstruct the per-file address ranges without recompiling.
+
+    Grouping key: `unit` column (set to the FSA-relative src path when the
+    import inserts the row). All MATCHED_TWW rows with the same `unit` form
+    one stanza; `.text start/end` spans min(addr) .. max(addr+size).
+    """
+    if not cfg.state_db_path.exists():
+        print(f"[import] --splits-only: state.db not found at {cfg.state_db_path}")
+        print(f"[import] Run a full `--phase import` first, or copy state.db in.")
+        return 2
+
+    db = StateDB(cfg.state_db_path)
+    try:
+        cur = db.conn.execute(
+            "SELECT unit, addr, size, tww_source "
+            "FROM functions "
+            "WHERE state='MATCHED_TWW' AND unit IS NOT NULL "
+            "ORDER BY unit, addr"
+        )
+        by_unit: dict[str, list[tuple[int, int, str | None]]] = {}
+        for row in cur:
+            by_unit.setdefault(row["unit"], []).append(
+                (row["addr"], row["size"] or 0, row["tww_source"])
+            )
+    finally:
+        db.close()
+
+    if not by_unit:
+        print("[import] --splits-only: no MATCHED_TWW rows in state.db")
+        return 1
+
+    existing_splits = cfg.splits_path.read_text()
+    stanzas: list[str] = []
+    already_wired: list[str] = []
+    for unit, entries in sorted(by_unit.items()):
+        if unit + ":" in existing_splits:
+            already_wired.append(unit)
+            continue
+        start = min(e[0] for e in entries)
+        end   = max(e[0] + e[1] for e in entries)
+        stanzas.append(
+            f"{unit}:\n\t.text       start:0x{start:08X} end:0x{end:08X}\n"
+        )
+
+    print(f"[import] --splits-only: {len(by_unit)} units in state.db "
+          f"({len(already_wired)} already wired, {len(stanzas)} to add)")
+    for u in already_wired[:5]:
+        print(f"[import]   already wired: {u}")
+    if len(already_wired) > 5:
+        print(f"[import]   … +{len(already_wired) - 5} more already wired")
+
+    if args.dry_run:
+        for s in stanzas[:5]:
+            print("[import] would add:\n" + s)
+        if len(stanzas) > 5:
+            print(f"[import] … +{len(stanzas) - 5} more stanzas")
+        return 0
+
+    if stanzas:
+        append_splits(cfg, stanzas, dry_run=False)
+
+    # Also emit a configure.py hint file so the operator can splice
+    # Object(Matching, …) entries by hand. We group by lib helper so the
+    # paste-target is obvious. (Task 3 of the post-Gate-4 backfill.)
+    hints_path = _write_configure_hints(cfg, list(by_unit.keys()), already_wired)
+    if stanzas:
+        print(f"[import] NOTE: configure.py Object(Matching, ...) entries "
+              f"still need to be wired for {len(stanzas)} units.")
+        print(f"[import] Grouped suggestions written to: {hints_path}")
+
+    return 0
+
+
+def _write_configure_hints(cfg: Config, units: list[str], already_wired: list[str]) -> Path:
+    """Emit configure.py Object(Matching, …) suggestions, grouped by the lib
+    helper the operator will paste into (DolphinLib, JSystemLib, raw dicts).
+
+    We don't auto-patch configure.py: the file has significant structure
+    (helpers, existing lib blocks, actor RELs) that's easier to merge by
+    hand than by regex. This hint file is the paste source.
+    """
+    already = set(already_wired)
+    groups: dict[str, list[str]] = {}
+    for u in units:
+        if u in already:
+            continue
+        # Group key = (helper, lib_name) or ("raw", prefix)
+        parts = u.split("/")
+        if parts[0] == "dolphin" and len(parts) >= 3:
+            key = f'DolphinLib("{parts[1]}", [...])'
+        elif parts[0] == "JSystem" and len(parts) >= 3:
+            key = f'JSystemLib("{parts[1]}", [...])'
+        elif parts[0] == "PowerPC_EABI_Support":
+            # MSL_C / Runtime — no helper yet; recommend one
+            if "Runtime" in parts:
+                key = 'PowerPC_EABI_Support / Runtime (needs new helper)'
+            elif "MSL_C" in parts:
+                key = 'PowerPC_EABI_Support / MSL_C (needs new helper)'
+            else:
+                key = 'PowerPC_EABI_Support / other (needs new helper)'
+        elif parts[0] == "d" and len(parts) >= 2 and parts[1] == "actor":
+            key = 'd/actor/*.cpp — each is its own ActorRel(Matching, "d_a_<name>")'
+        elif parts[0] == "f_op":
+            key = 'f_op (lives in main-game lib — add Object() there)'
+        else:
+            key = f'{parts[0]} — (manual grouping needed)'
+        groups.setdefault(key, []).append(u)
+
+    lines: list[str] = [
+        "# configure.py additions — generated by `--phase import --splits-only`.",
+        "# Paste each block under its named helper call in configure.py.",
+        "# Anything tagged `(needs new helper)` requires you to first define the",
+        "# helper (mirroring DolphinLib/JSystemLib) — see configure.py:313–354.",
+        "",
+    ]
+    for helper, ulist in sorted(groups.items()):
+        lines.append(f"## {helper}")
+        for u in sorted(ulist):
+            lines.append(f'    Object(Matching, "{u}"),')
+        lines.append("")
+
+    hints_path = cfg.agent_root / "configure_additions.txt"
+    hints_path.write_text("\n".join(lines) + "\n")
+    return hints_path
+
+
 def run(cfg: Config, args) -> int:
+    if getattr(args, "splits_only", False):
+        return _backfill_from_db(cfg, args)
+
     if not cfg.tww_root.exists():
         print(f"[import] TWW_ROOT={cfg.tww_root} not found.")
         print(f"[import] Clone first: git clone https://github.com/zeldaret/tww {cfg.tww_root}")
