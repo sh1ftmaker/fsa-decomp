@@ -230,22 +230,39 @@ def _backfill_from_db(cfg: Config, args) -> int:
     existing_splits = cfg.splits_path.read_text()
     stanzas: list[str] = []
     already_wired: list[str] = []
+    skipped_spread: list[tuple[str, int, int]] = []
+    # A single `.text start..end` stanza claims the WHOLE range for that file.
+    # If hits are spread far apart with other files' code in between, claiming
+    # min..max would trample those files' splits. Skip such cases and surface
+    # them for manual review.
+    MAX_DENSITY_RATIO = 32
     for unit, entries in sorted(by_unit.items()):
         if unit + ":" in existing_splits:
             already_wired.append(unit)
             continue
         start = min(e[0] for e in entries)
         end   = max(e[0] + e[1] for e in entries)
+        matched_bytes = sum(e[1] for e in entries)
+        span = end - start
+        if matched_bytes > 0 and span > matched_bytes * MAX_DENSITY_RATIO:
+            skipped_spread.append((unit, span, matched_bytes))
+            continue
         stanzas.append(
             f"{unit}:\n\t.text       start:0x{start:08X} end:0x{end:08X}\n"
         )
 
     print(f"[import] --splits-only: {len(by_unit)} units in state.db "
-          f"({len(already_wired)} already wired, {len(stanzas)} to add)")
+          f"({len(already_wired)} already wired, {len(stanzas)} to add, "
+          f"{len(skipped_spread)} skipped for low hit density)")
     for u in already_wired[:5]:
         print(f"[import]   already wired: {u}")
     if len(already_wired) > 5:
         print(f"[import]   … +{len(already_wired) - 5} more already wired")
+    for unit, span, mb in skipped_spread:
+        print(f"[import]   SKIP (spread): {unit}  "
+              f"range={span:#x} matched={mb}B ratio={span // max(1, mb)}×")
+        print(f"[import]     → hits likely include a false positive. "
+              f"Inspect MATCHED_TWW rows for this unit manually.")
 
     if args.dry_run:
         for s in stanzas[:5]:

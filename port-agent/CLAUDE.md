@@ -137,6 +137,173 @@ parallel subagents are a reasonable unit.
 
 ---
 
+## Swarm orchestration (Phase 3)
+
+The `--prepare` step now emits a single **batch manifest** alongside the
+per-task triplets:
+
+    work/cleanup/batch_<iso>.manifest.json
+
+That file is the fan-out spec. When picking up work:
+
+1. Read the newest `work/cleanup/batch_*.manifest.json`.
+2. Group `tasks` by `tier`:
+   - `cheap`    → Haiku subagents (`claude-haiku-4-5`)
+   - `expensive` → Sonnet subagents (`claude-sonnet-4-6`)
+   - `opus`     → Opus subagents (`claude-opus-4-7`, retry-only tier)
+3. Spawn ~10 parallel Agent-tool subagents per tier. Each subagent's prompt
+   should be, literally:
+
+   > Read `{prompt_path}`. Follow the CLEANUP prompt rules. Write your C
+   > function body to `{expected_response_path}`. Do not write any other
+   > file. Do not write any prose. Stop after one file write.
+
+4. After all spawned agents return, run once:
+
+       python -m fsa_port_agent --phase decompile --apply
+
+   The Python side runs a lex precheck + `cc -fsyntax-only` compile gate
+   per fn. Passing fns become CLEANED and get archived into
+   `work/cleanup/done/`. Failing fns get `state=FAILED`, `attempts++`,
+   and `last_error` recorded.
+5. Re-enqueue FAILED rows at the escalated tier:
+
+       python -m fsa_port_agent --phase decompile --prepare --limit 50
+
+   `_tier_for()` bumps cheap→expensive on attempt 2, and all tiers→opus
+   on attempt 3. Past `cfg.max_attempts_per_func` (default 3) the row
+   becomes `PERMANENT_FAIL` and is dropped from the queue.
+6. Loop until the manifest's `tasks` array is empty or all remaining rows
+   are PERMANENT_FAIL / CLEANED.
+
+The **falsifiable acceptance metric** is: across three consecutive batches
+of 50, `CLEANED functions with a syntax error inside their fn_line_range
+== 0`. Phase 5's `--phase build --check` is the check — if it emits a
+within-range error for a CLEANED row, the gate has a hole.
+
+---
+
+## Pre-cleanup pipeline hardening (2026-04-19)
+
+Three mechanics now guard the cleanup loop. Each one trades a tiny up-front
+cost for saved LLM retries or better visibility.
+
+**1. Arity short-circuit in `prepare()`** (`agent/cleanup.py:_arity_mismatch_reason`).
+Before enqueueing a fn, compare its body def arity to the first extern in
+its own seg file. If they disagree (and neither is K&R `()`), the row is
+set to `PERMANENT_FAIL` with a descriptive `last_error` — no LLM attempt
+is spent. Rationale: cc locks the first extern, the body def must match
+it, and if the body needs more/fewer positional slots than the extern
+advertises, no retry can converge. `0x803832BC` is the paradigm case
+(5-param body vs 4-arg seg-local extern + in-seg 4-arg callsites —
+neither side is rewriteable). As of this change, 1 fn is caught in the
+first 20-fn prepare; `0x802F58A8` is another real case (3 vs 2).
+K&R `()` is treated as "unknown arity — skip check" (compatible with
+anything per C99).
+
+**2. Tier-aware strict cc gate** (`agent/build.py:_check_one(strict=)`,
+`agent/cleanup.py:apply`). The compile gate now runs cc with extra
+`-Werror=` flags (`incompatible-pointer-types`, `int-conversion`,
+`implicit-function-declaration`, `implicit-int`, `return-type`) when
+`tier in (expensive, opus)` OR `attempt >= 2`. This is the advisor-scoped
+substitute for an mwcc gate: catches ~70% of what mwcc would catch (the
+semantic-safety class) with zero new parser code. On gcc most of these
+are default-errors already; the flags are a safety net for clang users
+where `-Wno-everything` would otherwise silence them. Failed rows are
+tagged `gate[cc-strict]` vs `gate[cc]` in `cleanup_attempts.last_error`
+so triage can tell which gate rejected them.
+
+**3. Synthesize scan pass** (`agent/synthesize.py:scan`, `--phase synthesize --scan`).
+Read-only: walks every CLEANED fn body, regex-scans for `p->unk_0xNN`
+AND m2c's dominant raw-offset cast form `*((char *)p + 0xNN)`, buckets
+by declared arg type (from the body signature). Output:
+`work/synthesize/scan_<iso>.json` with per-bucket `total_refs`,
+`distinct_offsets`, `fn_count`, `example_addrs`, plus named/raw form
+breakdown. Zero source mutations. Feeds the later full synthesis pass
+(struct typedef emission). First run showed `arg0:void *` with 136
+distinct offsets across 50 fns — the "void \* sea" waiting for named
+struct layouts.
+
+### The per-fn `attempts` / `last_error` columns
+
+`state_db.FunctionRow.attempts` and `.last_error` are surfaced to Python
+via `_row_to_fn`. `prepare()` reads `row.attempts` to decide tier; retry
+ladder: cheap→expensive on attempt 2, all→opus on attempt 3, past
+`cfg.max_attempts_per_func` (default 4) → `PERMANENT_FAIL`.
+
+### signature propagation
+
+After a fn cleans successfully, `SegIndex.propagate_signature(addr)`
+rewrites every OTHER seg's first-seen extern for that addr to match the
+body's now-trusted signature. Without this, downstream callers compile
+against m2c's original callsite guess and the gate rejects an otherwise-
+correct body with "conflicting types". Runs automatically in `apply()`
+after CLEANED is committed, logs `propagated sig → N seg(s)`.
+
+---
+
+## Phase 3 progress (2026-04-19)
+
+Decompile state (of 5,977 DOL functions):
+
+| State | Count | Source |
+| --- | --- | --- |
+| `MATCHED_TWW` | 340 | Phase 2 byte-import (7.2% — capped) |
+| `CLEANED` | 406 | Phase 3 AI cleanup — 314 at attempt 1 (Haiku), 65 at 2 (Sonnet), 23 at 3 (Opus), 4 at 4 |
+| `FAILED` | 67 | retryable, waiting for next escalation round |
+| `PERMANENT_FAIL` | 33 | exhausted attempts; not re-queueable |
+| `TRIAGED` | 5,471 | remaining Phase 3 queue |
+
+**Escalation ladder proven (2026-04-19 session).** Dispatched a haiku-first
+sweep (~360 attempt-1 Haiku calls via `claude -p` CLI fan-out) then ran the
+ladder through Sonnet attempt-2 and Opus attempt-3. Observed rescue rates:
+
+- Sonnet attempt-2 rescues ~60% of Haiku-1 failures
+- Opus attempt-3 rescues ~5/6 of Sonnet-2 failures (small N)
+
+First-pass Haiku success is ~76%; after the full ladder ~86% of attempted
+functions end up CLEANED. Residual failures cluster in int↔ptr conversion
+(~27%), unusual operators (ptr-minus-float, unary-deref-u32), and
+implicit-declaration leaks of PPC intrinsics (`__frsqrte`, etc.).
+
+**Prompt patch (2026-04-19).** `prompts/cleanup.md` now carries a loud
+anti-m2c-arity block **above** the `{m2c_source}` field rather than in a
+trailing checklist: m2c drops callee args it cannot prove, so the
+"Already-resolved callee signatures" block is explicitly authoritative
+over m2c's callsite shape. This was the specific fix for the ~34% arity
+bucket that dominated pre-patch failures. After the patch, Sonnet
+attempt-2 failures shifted to a semantic mix — arity dropped to ~17%
+within the pilot's own FAILs.
+
+### Subagent dispatch note
+
+Agent-tool subagents (`Agent(subagent_type=...)`) **cannot** recursively
+spawn more Agent calls — the tool is not in their toolset. They can,
+however, shell out to the `claude` CLI directly:
+
+```
+~/.local/bin/claude -p \
+  --model claude-haiku-4-5 \
+  --no-session-persistence \
+  --allowedTools "Read,Write" \
+  -- "Read {prompt_path}. Follow the CLEANUP prompt rules. Write your single cleaned C function body to {response_path}. Do not write any other file. Do not emit any prose. Do not wrap the response in markdown fences. Stop after one file write."
+```
+
+This is how 2026-04-19's shard agents fanned out 55 TIDs each in
+parallel. OAuth credentials from `~/.claude/.credentials.json` are
+picked up automatically — no API key. Dispatch throttle at 15
+concurrent; collect logs at `/tmp/<tag>_<TID>.log` for postmortem.
+
+### state.db is tracked
+
+`port-agent/state.db` is **committed to git** (as of 2026-04-19) so
+Phase-3 progress persists across sessions and contributors. Rebuilding
+from scratch would re-queue already-CLEANED rows and waste LLM calls.
+Only `state.db-journal/-wal/-shm` (ephemeral SQLite bookkeeping) are
+gitignored.
+
+---
+
 ## Prompt templates
 
 In `fsa_port_agent/prompts/`:

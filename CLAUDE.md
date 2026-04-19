@@ -68,13 +68,41 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 Headline: **430 / 5,981 DOL functions byte-matched via TWW import (7.2%)** after
 the 2026-04-18 Gate 4 sweep. Earlier hand-matched work still present.
 
-> ⚠️ **Outstanding: `config/G4SE01/splits.txt` backfill.** The Gate 4 mass
-> import committed 83 TWW source files (commit `75de799`) but the run was
-> interrupted before `append_splits()` flushed stanzas, so those files are
-> not yet wired into the build. Backfill options: (a) rerun `--phase import`
-> with a skip-log so only the stanza write executes, or (b) derive stanzas
-> from `state.db` (MATCHED_TWW rows grouped by `tww_source`, min/max addr →
-> `splits_entry_for()`). See `fsa-port-agent/fsa_port_agent/importers/tww_import.py:111`.
+**Phase 3 (non-matching cleanup) — 2026-04-19.** The port-agent has taken a
+further **406 functions from m2c output to compilable C** (on top of the
+340 `MATCHED_TWW` rows in `port-agent/state.db`). Escalation ladder is
+proven: Haiku attempt-1 first-passes ~76%, Sonnet attempt-2 rescues ~60%
+of Haiku failures, Opus attempt-3 rescues most Sonnet failures. 67
+functions are retryable-FAILED, 33 exhausted attempts (PERMANENT_FAIL).
+5,471 remain TRIAGED in the queue. See `port-agent/CLAUDE.md` for the
+live numbers and the `state.db` schema; the DB is tracked in git so
+progress survives session boundaries.
+
+> ⚠️ **Gate 4 false-positive audit (2026-04-19).** The splits.txt backfill
+> pass attempted to wire the 3 remaining unwired units. dtk rejected the
+> first one because the match address (`0x800249F0` for
+> `GetResultCam__12dCcMassS_MngCFv`, 8 bytes) lives INSIDE a larger
+> dtk-discovered function, not at a function start. Cross-check on all
+> 340 `MATCHED_TWW` rows vs. `build/G4SE01/asm/auto_fn_<addr>_text.s`:
+> **none** of the 340 addresses have a standalone `auto_fn_` asm file,
+> meaning the trivial getters (`lwz r3,0xNN(r3); blr` at 8 bytes) matched
+> byte patterns that happen to occur inside real, larger functions.
+>
+> Reverted the 3 new splits.txt stanzas and 6 `d/actor/*.cpp` configure.py
+> entries I added this session. The pre-existing 9 main-lib entries
+> (`d_camera`, `d_cc_mass_s`, `d_door`, `d_s_menu`, `d_s_name`, `d_save`,
+> `d_stage`, `f_op_msg_mng`, `m_Do_dvd_thread`) stay — dtk accepted that
+> config.json generation, so their claims don't trample symbols.
+>
+> **Before the next import run**, tww_import.py needs a guardrail that
+> checks each matched addr against dtk's `auto_fn_<addr>_text.s` presence
+> (or equivalently, that addr is a real DOL fn start). Small getters
+> without this check produce ~100% false positives. Until then, don't
+> re-run `--phase import` in stanza-write mode.
+>
+> The 340 MATCHED_TWW rows in state.db don't block Phase 3 — the swarm
+> processes TRIAGED rows only, and the bogus addresses stay out of the
+> work queue.
 
 ### Gate 4 breakdown (by subdir of TWW donor)
 

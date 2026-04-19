@@ -485,8 +485,6 @@ config.libs = [
     ]),
     # TODO: 14 PowerPC_EABI_Support units (MSL_C + Runtime) need new helper
     #       functions mirroring DolphinLib — see port-agent/configure_additions.txt.
-    # TODO: 6 d/actor REL units need ActorRel(Matching, ...) entries at the
-    #       appropriate REL section of this file — list in configure_additions.txt.
 ]
 
 

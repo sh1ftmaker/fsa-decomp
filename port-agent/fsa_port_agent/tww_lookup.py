@@ -195,6 +195,15 @@ class TWWLookup:
         tww_file, body = hit
         return f"// from tww/{tww_file}\n// matching mangled name: {mangled}\n{body}"
 
+    def name_for(self, fn_addr: int) -> Optional[str]:
+        """Return the mangled CodeWarrior symbol for this DOL addr, if any.
+
+        Useful as prompt context: tells Claude the class/method this fn is
+        believed to be (per FSA's symbols.txt), even when no TWW body exists.
+        """
+        self._load_symbols()
+        return self._addr_to_sym.get(fn_addr) if self._addr_to_sym else None
+
     def stats(self) -> dict:
         """Introspection: how many FSA mangled names have a matching TWW body?"""
         self._load_symbols()

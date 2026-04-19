@@ -1,6 +1,5 @@
 __pycache__/
 *.py[cod]
-*.db
 *.db-journal
 .venv/
 .env
@@ -9,7 +8,6 @@ __pycache__/
 dist/
 build/
 *.egg-info/
-state.db
 
 # Runtime work queue (ephemeral per-session prompts and responses)
 work/*/*.prompt.md

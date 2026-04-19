@@ -6,7 +6,7 @@ import sys
 from .config import Config
 from .supervisor import run_phase
 
-PHASES = ["triage", "import", "decompile", "hal", "build", "dashboard", "verify", "all"]
+PHASES = ["triage", "import", "decompile", "synthesize", "hal", "build", "dashboard", "verify", "all"]
 
 
 def main() -> int:
@@ -22,6 +22,9 @@ def main() -> int:
                         help="Phase 3/5: splice back responses written by Claude Code")
     parser.add_argument("--check", action="store_true",
                         help="Phase 5: run syntax check and dump errors")
+    parser.add_argument("--scan", action="store_true",
+                        help="synthesize: read-only scan of CLEANED fns for "
+                             "unk_0xNN field refs bucketed by struct-ptr arg type")
     parser.add_argument("--splits-only", action="store_true",
                         help="Phase 2: skip compile/match, only backfill "
                              "splits.txt + configure.py from state.db "

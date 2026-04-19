@@ -17,6 +17,16 @@ it compiles. Do not regress semantics.
   ```c
   {types}
   ```
+- Original m2c input for this function (if this file is a Phase 3 cleanup
+  output — empty if not applicable):
+  ```c
+  {m2c_original}
+  ```
+- Prior cleanup response for this function (what Phase 3 last wrote, empty
+  if not applicable):
+  ```c
+  {prior_cleanup}
+  ```
 
 ## Rules
 

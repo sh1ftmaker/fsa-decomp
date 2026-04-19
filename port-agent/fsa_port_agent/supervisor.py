@@ -22,6 +22,9 @@ def run_phase(cfg: Config, args) -> int:
     if phase == "decompile":
         from .agent import cleanup
         return cleanup.run(cfg, args)
+    if phase == "synthesize":
+        from .agent import synthesize
+        return synthesize.run(cfg, args)
     if phase == "hal":
         from .hal import scaffold
         return scaffold.run(cfg, args)

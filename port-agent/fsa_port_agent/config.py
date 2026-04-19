@@ -42,7 +42,7 @@ class Config:
     max_chunk_functions: int = 12
 
     # Budgets
-    max_attempts_per_func: int = 3
+    max_attempts_per_func: int = 8
     token_budget_per_func: int = 30000
 
     def __post_init__(self):

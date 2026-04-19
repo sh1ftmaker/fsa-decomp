@@ -29,9 +29,11 @@ __pycache__/
 # OS
 .DS_Store
 
-# Port agent runtime state (ephemeral per-session)
-port-agent/state.db
+# Port agent runtime state — state.db IS tracked (shared progress DB).
+# Only the SQLite journal/WAL is ephemeral.
 port-agent/state.db-journal
+port-agent/state.db-wal
+port-agent/state.db-shm
 port-agent/work/*/*.prompt.md
 port-agent/work/*/*.response.*
 port-agent/work/*/*.meta.json

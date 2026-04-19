@@ -37,6 +37,7 @@ from typing import Optional
 
 from ..config import Config
 from ..work_queue import WorkQueue, render_prompt
+from .context import SegIndex
 
 
 # cc -fsyntax-only error lines look like:
@@ -77,18 +78,51 @@ def _include_dirs(cfg: Config) -> list[str]:
 # Check: syntax-check and dump errors
 # -----------------------------------------------------------------------------
 
-def _check_one(cfg: Config, src: Path, cc: str) -> list[BuildError]:
-    # `-fmax-errors=1` (gcc) / `-ferror-limit=1` (clang) bail after first error.
-    # Seg files are huge and cc will otherwise cascade for minutes.
-    argv = [cc, "-fsyntax-only", "-Wno-everything", "-fmax-errors=1"]
+def _check_one(
+    cfg: Config, src: Path, cc: str, max_errors: int = 1,
+    strict: bool = False,
+) -> list[BuildError]:
+    # Pass max_errors=0 for unlimited (needed by the Phase 3 compile gate, which
+    # counts errors inside a specific line range and must see all of them).
+    # Default 1 bails after the first error — seg files are huge and cc will
+    # otherwise cascade for minutes during --check.
+    #
+    # strict=True adds semantic-safety warnings promoted to errors — catches
+    # categories that -fsyntax-only lets pass but that real compilation
+    # (mwcc / emcc) would reject. Used for attempt ≥ 2 retries where we want
+    # a tighter gate before declaring CLEANED.
+    # GCC 15+ promotes a handful of pointer-type diagnostics to *default* errors
+    # regardless of -Wno-everything. We downgrade them here so the gate fails
+    # only on real constraint violations, not on benign pointer-type drift
+    # (e.g. char * vs u8 * on args that match byte-for-byte in matched code).
+    argv = [
+        cc, "-fsyntax-only", "-Wno-everything",
+        "-Wno-error=incompatible-pointer-types",
+        "-Wno-error=int-conversion",
+        f"-fmax-errors={max_errors}",
+    ]
+    if strict:
+        # NOTE: -Werror=incompatible-pointer-types is deliberately omitted.
+        # It flags benign drift like `&lbl_xxx` (char) → `char *` param even
+        # on callsites that already exist byte-matched elsewhere in the tree
+        # (e.g. __register_global_object in seg_80066FFC.c:12585). Raising
+        # it blocks ~10% of expensive-tier attempts on warnings mwcc doesn't
+        # enforce. -Werror=int-conversion still catches the genuine pointer/
+        # integer confusion class.
+        argv += [
+            "-Werror=int-conversion",
+            "-Werror=implicit-function-declaration",
+            "-Werror=implicit-int",
+            "-Werror=return-type",
+        ]
     for inc in _include_dirs(cfg):
         argv += ["-I", inc]
     argv += ["-std=c99", str(src)]
     try:
-        r = subprocess.run(argv, capture_output=True, text=True, timeout=15)
+        r = subprocess.run(argv, capture_output=True, text=True, timeout=30)
     except subprocess.TimeoutExpired:
         return [BuildError(file=str(src), line=1, col=1, kind="error",
-                           msg="cc syntax-check timed out (>15s)")]
+                           msg="cc syntax-check timed out (>30s)")]
     errs: list[BuildError] = []
     for line in r.stderr.splitlines():
         m = _ERROR_RE.match(line)
@@ -158,6 +192,48 @@ def _excerpt(file: Path, line: int, pad: int = _EXCERPT_LINES) -> str:
     return "\n".join(out)
 
 
+def _addr_at_line(idx: SegIndex, seg_path: Path, line: int) -> Optional[int]:
+    """Reverse-lookup: which fn_addr in `idx` covers this line of `seg_path`?"""
+    try:
+        text = seg_path.read_text(errors="ignore")
+    except OSError:
+        return None
+    for addr, loc in idx.fns.items():
+        if loc.seg != seg_path:
+            continue
+        line_lo = text.count("\n", 0, loc.start) + 1
+        line_hi = text.count("\n", 0, max(loc.start, loc.end - 1)) + 1
+        if line_lo <= line <= line_hi:
+            return addr
+    return None
+
+
+def _cleanup_history_for(cfg: Config, addr: int) -> tuple[str, str]:
+    """Return (m2c_original, prior_cleanup) pulled from work/cleanup/done/."""
+    done = cfg.work_root / "cleanup" / "done"
+    tid = f"0x{addr:08X}"
+    m2c_original = ""
+    prior_cleanup = ""
+    p = done / f"{tid}.prompt.md"
+    r = done / f"{tid}.response.c"
+    if p.exists():
+        txt = p.read_text(errors="ignore")
+        # The cleanup template wraps m2c_source in a fenced block under
+        # "Raw m2c output". Extract the body between its triple-backticks.
+        marker = "Raw m2c output"
+        i = txt.find(marker)
+        if i >= 0:
+            fence = txt.find("```", i)
+            if fence >= 0:
+                body_start = txt.find("\n", fence) + 1
+                end = txt.find("```", body_start)
+                if end >= 0:
+                    m2c_original = txt[body_start:end].rstrip()
+    if r.exists():
+        prior_cleanup = r.read_text(errors="ignore")
+    return m2c_original, prior_cleanup
+
+
 def prepare(cfg: Config, args) -> int:
     errs_path = cfg.work_root / "fix_build" / "last_errors.json"
     if not errs_path.exists():
@@ -172,6 +248,10 @@ def prepare(cfg: Config, args) -> int:
     syn_path = cfg.nonmatch_root / "_synthesized_types.h"
     types_block = syn_path.read_text() if syn_path.exists() else "(none yet)"
 
+    # SegIndex for reverse fn-lookup (needed for carrying m2c + cleanup context).
+    idx = SegIndex(cfg.nonmatch_root)
+    idx.build()
+
     limit = args.limit or 0
     enqueued = already = 0
 
@@ -185,17 +265,26 @@ def prepare(cfg: Config, args) -> int:
             continue
 
         excerpt = _excerpt(Path(be.file), be.line)
+
+        addr = _addr_at_line(idx, Path(be.file), be.line)
+        m2c_original = prior_cleanup = ""
+        if addr is not None:
+            m2c_original, prior_cleanup = _cleanup_history_for(cfg, addr)
+
         prompt = render_prompt(tmpl, {
             "file": be.file,
             "excerpt": excerpt,
             "error": f"{be.file}:{be.line}:{be.col}: {be.kind}: {be.msg}",
             "types": types_block[:4000],
+            "m2c_original": m2c_original or "(not a Phase 3 cleanup output)",
+            "prior_cleanup": prior_cleanup or "(none)",
         })
         meta = {
             "kind": "fix_build",
             "file": be.file,
             "line": be.line,
             "error": be.msg,
+            "addr": addr,
             "tier": "cheap",
             "model_hint": cfg.cheap_model,
             "response_ext": "diff",

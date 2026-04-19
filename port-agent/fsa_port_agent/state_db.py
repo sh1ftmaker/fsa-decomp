@@ -44,6 +44,20 @@ CREATE TABLE IF NOT EXISTS string_refs (
 
 CREATE INDEX IF NOT EXISTS idx_state ON functions(state);
 CREATE INDEX IF NOT EXISTS idx_tag ON functions(tag);
+
+CREATE TABLE IF NOT EXISTS cleanup_attempts (
+    addr       INTEGER NOT NULL,
+    attempt    INTEGER NOT NULL,
+    tier       TEXT    NOT NULL,          -- cheap | expensive | opus
+    outcome    TEXT    NOT NULL,          -- CLEANED | FAILED_LEX | FAILED_COMPILE | PERMANENT_FAIL
+    last_error TEXT,
+    elapsed_s  REAL,
+    batch_id   TEXT,
+    ts         REAL    NOT NULL,
+    PRIMARY KEY (addr, attempt)
+);
+CREATE INDEX IF NOT EXISTS idx_cleanup_attempts_outcome ON cleanup_attempts(outcome);
+CREATE INDEX IF NOT EXISTS idx_cleanup_attempts_batch ON cleanup_attempts(batch_id);
 """
 
 
@@ -57,6 +71,9 @@ class FunctionRow:
     confidence: float
     unit: Optional[str]
     sig: Optional[str]
+    attempts: int = 0
+    last_error: Optional[str] = None
+    tww_source: Optional[str] = None
 
 
 class StateDB:
@@ -100,6 +117,9 @@ class StateDB:
             addr=row["addr"], name=row["name"], size=row["size"],
             tag=row["tag"], state=row["state"], confidence=row["confidence"],
             unit=row["unit"], sig=row["sig"],
+            attempts=row["attempts"] if "attempts" in row.keys() else 0,
+            last_error=row["last_error"] if "last_error" in row.keys() else None,
+            tww_source=row["tww_source"] if "tww_source" in row.keys() else None,
         )
 
     def get_fn_by_addr(self, addr: int) -> Optional[FunctionRow]:
@@ -155,3 +175,41 @@ class StateDB:
             "SELECT state, COUNT(*) FROM functions GROUP BY state"
         )
         return dict(cur.fetchall())
+
+    # --- cleanup attempt tracking -------------------------------------------
+
+    def record_cleanup_attempt(
+        self,
+        addr: int,
+        attempt: int,
+        tier: str,
+        outcome: str,
+        last_error: Optional[str],
+        elapsed_s: Optional[float],
+        batch_id: Optional[str],
+        ts: float,
+    ) -> None:
+        self.conn.execute(
+            """INSERT OR REPLACE INTO cleanup_attempts
+               (addr, attempt, tier, outcome, last_error, elapsed_s, batch_id, ts)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?)""",
+            (addr, attempt, tier, outcome, last_error, elapsed_s, batch_id, ts),
+        )
+
+    def get_cleanup_attempts(
+        self, batch_ids: Optional[list[str]] = None
+    ) -> list[dict]:
+        """Return rows grouped for dashboard consumption."""
+        if batch_ids:
+            placeholders = ",".join("?" * len(batch_ids))
+            q = (
+                f"SELECT addr, attempt, tier, outcome, last_error, elapsed_s, batch_id, ts "
+                f"FROM cleanup_attempts WHERE batch_id IN ({placeholders}) ORDER BY ts DESC"
+            )
+            cur = self.conn.execute(q, tuple(batch_ids))
+        else:
+            cur = self.conn.execute(
+                "SELECT addr, attempt, tier, outcome, last_error, elapsed_s, batch_id, ts "
+                "FROM cleanup_attempts ORDER BY ts DESC LIMIT 2000"
+            )
+        return [dict(r) for r in cur]

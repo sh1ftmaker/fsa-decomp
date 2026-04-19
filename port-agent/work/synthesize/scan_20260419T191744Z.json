@@ -1,0 +1,9 @@
+{
+  "scanned_at_unix": 1776626264,
+  "cleaned_fn_count": 109,
+  "fns_scanned": 109,
+  "fns_missing_in_seg_index": 0,
+  "fns_with_unk_refs": 0,
+  "total_unk_refs": 0,
+  "by_context": {}
+}
