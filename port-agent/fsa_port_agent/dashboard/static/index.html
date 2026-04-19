@@ -13,15 +13,191 @@
       <h1>FSA Port Agent</h1>
       <span class="subtitle">Browser Port Command Center</span>
     </div>
-    <div class="status-chip" id="db-status">state.db&nbsp;···</div>
+    <div class="header-actions">
+      <button id="toggle-explainers" class="chip-btn" title="Show/hide the green explainer boxes">
+        <span class="ex-on">Hide explainers</span>
+        <span class="ex-off">Show explainers</span>
+      </button>
+      <div class="status-chip" id="db-status">state.db&nbsp;···</div>
+    </div>
   </header>
 
   <main>
-    <!-- Gate 4 banner -->
-    <section class="gate4 card">
+
+    <!-- ============================================================ -->
+    <!-- Tutorial intro                                                -->
+    <!-- ============================================================ -->
+    <section class="card explainer intro-card">
+      <h2>What is this page?</h2>
+      <p>
+        This dashboard tracks an automated effort to rebuild
+        <em>The Legend of Zelda: Four Swords Adventures</em> (FSA, GameCube 2004)
+        from its compiled game disc back into readable C/C++ source code,
+        then re-compile that source for the web browser. The rebuild happens
+        one function at a time, across <strong>5,981 individual functions</strong>
+        in the game's executable.
+      </p>
+      <p>
+        If you have never heard of "decompilation" before, the
+        <a href="#decomp-explainer">What is decompilation?</a> section below
+        has a from-scratch primer. If you already know, skip to
+        <a href="#gate4">Gate 4</a> for the current status.
+      </p>
+      <div class="tutorial-toc">
+        <a href="#decomp-explainer">① What is decompilation?</a>
+        <a href="#pipeline-explainer">② The five-phase pipeline</a>
+        <a href="#gate4">③ Gate 4 progress</a>
+        <a href="#charts">④ Live numbers</a>
+        <a href="#strip-section">⑤ DOL address map</a>
+        <a href="#queue-section">⑥ Work queue</a>
+        <a href="#actions-section">⑦ Action buttons</a>
+        <a href="#fn-table">⑧ Function browser</a>
+        <a href="#job-section">⑨ Job output</a>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Decompilation primer                                          -->
+    <!-- ============================================================ -->
+    <section class="card explainer" id="decomp-explainer">
+      <h2>① What is decompilation?</h2>
+      <p>
+        When Nintendo shipped FSA in 2004, they started with a <em>source
+        tree</em> of C++ files — human-readable code like
+        <code>if (player.hearts &lt; 0) die();</code> — and ran it through
+        a compiler (Metrowerks CodeWarrior) to produce a <em>binary</em>:
+        a 4.8&nbsp;MB file of PowerPC machine instructions (<code>main.dol</code>)
+        that the GameCube CPU knows how to execute directly.
+      </p>
+      <p>
+        The source was never published. The binary is all we have. <strong>Decompilation</strong>
+        is the process of reversing the compilation step — turning the binary
+        back into something that looks like, and ideally compiles back to,
+        the original source.
+      </p>
+      <p>
+        There are two flavors, and this project uses both:
+      </p>
+      <div class="explain-grid">
+        <div class="explain-cell">
+          <h4>Matching decomp</h4>
+          <p>
+            Write C/C++ that compiles to <em>byte-identical</em> output to
+            the original binary. This is the gold standard — it proves the
+            source is semantically and textually a faithful reproduction.
+            It's also extremely fiddly: you have to guess the original
+            compiler version, optimization flags, and sometimes even the
+            order the developer declared local variables.
+          </p>
+          <p>Status in FSA: <strong>~7.2% of functions byte-match</strong>.</p>
+        </div>
+        <div class="explain-cell">
+          <h4>Semantic decomp (browser port)</h4>
+          <p>
+            Write C/C++ that <em>behaves</em> the same but doesn't need to
+            compile to identical bytes. This is what we need to run the
+            game in a browser via WebAssembly — we don't care about PowerPC
+            register allocation, we just need the logic to be correct.
+          </p>
+          <p>The five-phase pipeline is doing this for all 5,981 functions.</p>
+        </div>
+      </div>
+      <p>
+        <strong>Why The Wind Waker helps.</strong> FSA was developed shortly
+        after, and shares ~80% of its codebase with,
+        <em>The Legend of Zelda: The Wind Waker</em> (TWW, 2002). TWW has
+        already been fully decompiled by the
+        <a href="https://github.com/zeldaret/tww" target="_blank">zeldaret team</a>.
+        When a function in FSA and a function in TWW share the same
+        <em>mangled name</em> (the CodeWarrior compiler's encoded form of
+        <code>ClassName::methodName(args)</code>), we can often copy TWW's
+        source over and use it as a nearly-correct starting point.
+      </p>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Pipeline primer                                               -->
+    <!-- ============================================================ -->
+    <section class="card explainer" id="pipeline-explainer">
+      <h2>② The five-phase pipeline</h2>
+      <p>
+        Rebuilding every function by hand would take years. Instead, the
+        port agent runs a staged pipeline, most of it automated, with a
+        large language model (Claude Code) doing the human-like cleanup
+        steps. Here's each phase in plain terms:
+      </p>
+      <ol class="phase-list">
+        <li>
+          <strong>Triage</strong> — read the binary's 5,981 functions,
+          record each one in a database, and map out which function calls
+          which. Output is a call graph and some tags
+          (<code>LEAF</code> for functions that don't call anything,
+          <code>VTABLE_THUNK</code> for C++ virtual dispatch, etc.).
+          <span class="muted">Fast — seconds.</span>
+        </li>
+        <li>
+          <strong>TWW mass import</strong> — for every source file in TWW,
+          compile it with FSA's compiler flags and search the FSA binary
+          for matching byte patterns. Every hit means we got a "free"
+          function — the code is already written, just needs an address
+          recorded. <span class="muted">Slow — hours.</span>
+        </li>
+        <li>
+          <strong>Bottom-up cleanup</strong> — for each remaining function,
+          give Claude Code the raw decompiler output (from a tool called
+          <code>m2c</code>), the function's callees and callers, any
+          matching TWW source, and ask it to produce compilable C.
+          Processed leaf-first so by the time we get to
+          <code>main</code>, every callee is already done.
+          <span class="muted">The biggest AI workload.</span>
+        </li>
+        <li>
+          <strong>HAL scaffold</strong> — the GameCube hardware doesn't
+          exist in a browser. Stub out the hardware-abstraction layer
+          (GPU, audio, disc, pad, threading) with Emscripten-compatible
+          shims. <span class="muted">Scripted, ~seconds.</span>
+        </li>
+        <li>
+          <strong>Build loop</strong> — try to compile the whole thing.
+          For each error, hand Claude Code the error + surrounding code,
+          get a patch, apply it, try again. Iterate until the binary
+          builds. <span class="muted">AI loop — many rounds.</span>
+        </li>
+      </ol>
+      <p>
+        Each function in the database moves through states as phases run:
+      </p>
+      <div class="state-legend">
+        <div class="sl-item"><span class="sw s-UNKNOWN"></span>
+          <strong>UNKNOWN</strong> — not yet seen</div>
+        <div class="sl-item"><span class="sw s-TRIAGED"></span>
+          <strong>TRIAGED</strong> — in database, call graph known</div>
+        <div class="sl-item"><span class="sw s-MATCHED_TWW"></span>
+          <strong>MATCHED_TWW</strong> — byte-identical copy from TWW</div>
+        <div class="sl-item"><span class="sw s-SIG_MATCHED"></span>
+          <strong>SIG_MATCHED</strong> — signature matched via heuristics</div>
+        <div class="sl-item"><span class="sw s-CLEANED"></span>
+          <strong>CLEANED</strong> — m2c output rewritten to compilable C</div>
+        <div class="sl-item"><span class="sw s-BUILDS"></span>
+          <strong>BUILDS</strong> — compiles successfully under Emscripten</div>
+        <div class="sl-item"><span class="sw s-FAILED"></span>
+          <strong>FAILED</strong> — tried, didn't work (retryable)</div>
+      </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Gate 4 banner                                                 -->
+    <!-- ============================================================ -->
+    <section class="gate4 card" id="gate4">
       <div class="gate4-top">
-        <h2>Gate 4 — TWW mass-import coverage</h2>
+        <h2>③ Gate 4 — TWW mass-import coverage</h2>
         <span id="gate4-verdict" class="verdict">···</span>
+      </div>
+      <div class="explainer-inline">
+        Gate 4 is the project's go/no-go: before investing in phases 3–5,
+        we need at least <strong>20% of the DOL's functions</strong> to
+        have been copied in from TWW automatically. The bar below shows
+        how close we are. The orange tick mark is the 20% threshold.
       </div>
       <div class="progress">
         <div id="gate4-bar" class="bar"></div>
@@ -33,28 +209,67 @@
         (<span id="gate4-pct">0</span>%) —
         need <span id="gate4-threshold-val">1197</span> to pass
       </div>
+      <p class="muted caption">
+        The ceiling turns out to be around 7% — the remaining 73% of FSA
+        code is game-specific content (new enemies, new dungeon scripts)
+        that can't byte-match against TWW. Those functions go through
+        phase&nbsp;3 cleanup instead, where TWW source still helps as a
+        naming/types reference even when bytes don't line up.
+      </p>
     </section>
 
-    <!-- Chart row -->
-    <section class="chart-row">
-      <div class="card">
-        <h3>States</h3>
-        <div id="chart-states" class="chart"></div>
-        <div id="legend-states" class="legend"></div>
-      </div>
-      <div class="card">
-        <h3>Tags</h3>
-        <div id="chart-tags" class="chart"></div>
-      </div>
-      <div class="card">
-        <h3>Totals</h3>
-        <div id="big-numbers" class="big-numbers"></div>
+    <!-- ============================================================ -->
+    <!-- Charts row                                                    -->
+    <!-- ============================================================ -->
+    <section id="charts">
+      <h2 class="section-title">④ Live numbers</h2>
+      <p class="section-caption">
+        Numbers come straight from <code>port-agent/state.db</code>. The pie
+        shows <strong>states</strong> (what stage of the pipeline each
+        function is at). The bars show <strong>tags</strong> (structural
+        classification assigned by triage). "Totals" pulls out the numbers
+        you'll want to watch.
+      </p>
+      <div class="chart-row">
+        <div class="card">
+          <h3>States</h3>
+          <div id="chart-states" class="chart"></div>
+          <div id="legend-states" class="legend"></div>
+        </div>
+        <div class="card">
+          <h3>Tags</h3>
+          <div id="chart-tags" class="chart"></div>
+          <div class="caption muted">
+            LEAF = no callees · CONSTRUCTOR = C++ ctor · VTABLE_THUNK = vtable
+            dispatch jump · INTERNAL = helper · MSL = C stdlib
+          </div>
+        </div>
+        <div class="card">
+          <h3>Totals</h3>
+          <div id="big-numbers" class="big-numbers"></div>
+          <div class="caption muted">
+            "Progressing" sums CLEANED + MATCHED_TWW + SIG_MATCHED + BUILDS
+            — everything that's past the raw-triage stage.
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- DOL address strip -->
-    <section class="card">
-      <h3>DOL address map</h3>
+    <!-- ============================================================ -->
+    <!-- Address strip                                                 -->
+    <!-- ============================================================ -->
+    <section class="card" id="strip-section">
+      <h2 class="section-title">⑤ DOL address map</h2>
+      <p class="explainer-inline">
+        The game's code lives at PowerPC memory addresses roughly from
+        <code>0x80003100</code> to <code>0x804fffff</code>. This strip
+        represents that range left-to-right, divided into 1,024 bins.
+        Each bin is colored by the <em>most-advanced state</em> of the
+        functions falling inside it. Dense colored patches are
+        well-explored regions; gray patches are still <code>UNKNOWN</code>
+        or haven't been touched. Hover a cell to see how many functions
+        it contains.
+      </p>
       <div class="strip-wrap">
         <div id="address-strip" class="strip"></div>
         <div class="strip-axis">
@@ -73,34 +288,62 @@
       </div>
     </section>
 
-    <!-- Queue + actions -->
-    <section class="two-col">
+    <!-- ============================================================ -->
+    <!-- Queue + Actions                                               -->
+    <!-- ============================================================ -->
+    <section class="two-col" id="queue-section">
       <div class="card">
-        <h3>Work queue</h3>
+        <h2 class="section-title inline">⑥ Work queue</h2>
+        <p class="explainer-inline">
+          When Claude Code needs to rewrite a function (phase&nbsp;3) or
+          fix a build error (phase&nbsp;5), the agent writes a Markdown
+          prompt file to <code>port-agent/work/&lt;kind&gt;/</code> and
+          waits for a sibling response file to appear. "Pending" is
+          prompts waiting for AI; "responses" is prompts that got an AI
+          answer and are waiting for <code>--apply</code> to splice them
+          back into the source tree. "Archived" is completed triplets
+          (prompt+response+meta) moved to <code>done/</code>.
+        </p>
         <div id="queue-grid" class="queue-grid"></div>
       </div>
-      <div class="card">
-        <h3>Actions</h3>
+      <div class="card" id="actions-section">
+        <h2 class="section-title inline">⑦ Actions</h2>
+        <p class="explainer-inline">
+          Each button spawns a local subprocess (a specific
+          <code>python -m fsa_port_agent --phase …</code> invocation). Output
+          streams live into the
+          <a href="#job-section">Job output</a> panel below. Buttons are
+          disabled while a job is running — only one at a time.
+          <br>
+          <strong>Color key:</strong>
+          <span class="chip-legend primary">blue</span> = common operation,
+          <span class="chip-legend warn">yellow</span> = slow / writes to
+          disk (hours for TWW Import real),
+          <span class="chip-legend ghost">dim</span> = status readout, no
+          side effects.
+        </p>
         <div class="actions">
-          <button data-action="triage" class="btn primary">Run Triage</button>
-          <button data-action="import_dry" class="btn">TWW Import (dry-run)</button>
-          <button data-action="import_real" class="btn warn">TWW Import (real)</button>
-          <button data-action="cleanup_prepare_10" class="btn">Prepare 10 cleanup</button>
-          <button data-action="cleanup_prepare_50" class="btn">Prepare 50 cleanup</button>
-          <button data-action="cleanup_apply" class="btn primary">Apply cleanup responses</button>
-          <button data-action="cleanup_status" class="btn ghost">Queue status</button>
-          <button data-action="hal" class="btn">HAL scaffold</button>
-          <button data-action="build_check_limit_50" class="btn">Build-check 50 segs</button>
-          <button data-action="build_prepare_10" class="btn">Prepare 10 fix_build</button>
-          <button data-action="build_apply" class="btn primary">Apply fix_build diffs</button>
+          <button data-action="triage" class="btn primary" title="Scan the DOL's asm splits, populate state.db with one row per DOL function, build the call graph, extract string references. Run this first, and rerun after any config/splits.txt change.">Run Triage</button>
+          <button data-action="import_dry" class="btn" title="Count how many TWW functions would match in a full import, without modifying any files. Gate 4 readout.">TWW Import (dry-run)</button>
+          <button data-action="import_real" class="btn warn" title="The big one. Compile every TWW source file with FSA's cflags, byte-match against the FSA DOL, copy hits into src/, write splits.txt stanzas, populate MATCHED_TWW rows. Hours of wall time.">TWW Import (real)</button>
+          <button data-action="cleanup_prepare_10" class="btn" title="Enqueue 10 cleanup prompts. Pick the next 10 TRIAGED functions (bottom-up topo order), bundle each with its m2c decompilation + callee sigs + TWW reference + strings, write to work/cleanup/.">Prepare 10 cleanup</button>
+          <button data-action="cleanup_prepare_50" class="btn" title="Enqueue 50 cleanup prompts. Same as above but for larger AI batches.">Prepare 50 cleanup</button>
+          <button data-action="cleanup_apply" class="btn primary" title="For each .response.c that Claude Code has written, splice it into its seg_*.c file and mark the function CLEANED. Malformed responses get flagged FAILED.">Apply cleanup responses</button>
+          <button data-action="cleanup_status" class="btn ghost" title="Print queue counts — no side effects.">Queue status</button>
+          <button data-action="hal" class="btn" title="Write empty-body stubs for GX, AX, PAD, DVD, OSThread APIs so Emscripten builds can link. The browser port will replace these stubs with WebGL/WebAudio/keyboard equivalents later.">HAL scaffold</button>
+          <button data-action="build_check_limit_50" class="btn" title="Run `cc -fsyntax-only` across the first 50 seg_*.c files. Errors fan out into a FIX_BUILD prompt queue.">Build-check 50 segs</button>
+          <button data-action="build_prepare_10" class="btn" title="Enqueue 10 fix_build prompts. Each bundles one compile error + the failing source snippet + callees for Claude Code to produce a unified-diff patch.">Prepare 10 fix_build</button>
+          <button data-action="build_apply" class="btn primary" title="Splice each fix_build unified-diff response back into the source tree, then re-check.">Apply fix_build diffs</button>
         </div>
       </div>
     </section>
 
-    <!-- Functions table -->
-    <section class="card">
+    <!-- ============================================================ -->
+    <!-- Functions table                                               -->
+    <!-- ============================================================ -->
+    <section class="card" id="fn-table">
       <div class="table-head">
-        <h3>Functions</h3>
+        <h2 class="section-title inline">⑧ Functions</h2>
         <div class="filters">
           <label>state
             <select id="filter-state">
@@ -115,24 +358,63 @@
           <button id="refresh-fns" class="btn ghost">refresh</button>
         </div>
       </div>
-      <table id="fn-table">
-        <thead>
-          <tr>
-            <th>addr</th><th>name</th><th>size</th>
-            <th>tag</th><th>state</th><th>unit</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+      <p class="explainer-inline">
+        One row per DOL function. <strong>addr</strong> is the PowerPC
+        virtual address where the function lives.
+        <strong>name</strong> is either the CodeWarrior-mangled C++
+        symbol (when FSA's splits already know it) or a placeholder like
+        <code>fn_80021840</code> if still unknown.
+        <strong>unit</strong> is the source file it belongs to once
+        assigned. Use the filters to narrow by pipeline state (e.g. show
+        only MATCHED_TWW functions) or structural tag (e.g. LEAF only).
+      </p>
+      <div class="table-scroll">
+        <table id="fn-table-el">
+          <thead>
+            <tr>
+              <th>addr</th><th>name</th><th>size</th>
+              <th>tag</th><th>state</th><th>unit</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- Job log -->
-    <section class="card job-card">
+    <!-- ============================================================ -->
+    <!-- Job log                                                       -->
+    <!-- ============================================================ -->
+    <section class="card job-card" id="job-section">
       <div class="table-head">
-        <h3>Job output</h3>
-        <span id="job-status" class="verdict">idle</span>
+        <h2 class="section-title inline">⑨ Job output</h2>
+        <span id="job-status" class="verdict idle">idle</span>
       </div>
+      <p class="explainer-inline">
+        Live stdout/stderr from the currently-running subprocess.
+        A job's exit code shows in the right-hand chip
+        (<code>rc=0</code> = success). Output is capped at the last 5,000
+        lines in memory; check <code>port-agent/</code> logs for the full
+        record of a slow import.
+      </p>
       <pre id="job-log">(no job yet — click an action button)</pre>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- Footer info                                                    -->
+    <!-- ============================================================ -->
+    <section class="card explainer footer-info">
+      <h3>Where does the data come from?</h3>
+      <ul class="small">
+        <li><code>port-agent/state.db</code> — SQLite. One row per DOL function, one row per call-graph edge, one row per string reference. All the charts above query this.</li>
+        <li><code>config/G4SE01/splits.txt</code> — dtk's ground-truth mapping of DOL address ranges to source files.</li>
+        <li><code>config/G4SE01/symbols.txt</code> — symbol names &amp; sizes. FSA's copy uses TWW's name for any function that shares a mangled symbol.</li>
+        <li><code>orig/sys/main.dol</code> — the GameCube executable, extracted from your RVZ disc image via <code>dtk disc extract</code>. Not committed (copyrighted).</li>
+        <li><code>~/Desktop/tww/</code> — sibling clone of <a href="https://github.com/zeldaret/tww" target="_blank">zeldaret/tww</a>. Donor source tree for the Gate 4 import and for cleanup references.</li>
+      </ul>
+      <h3>What should I click first?</h3>
+      <p class="small">
+        On a fresh checkout: <strong>Run Triage</strong> → <strong>TWW Import (dry-run)</strong> to see the gate reading → <strong>TWW Import (real)</strong> if you have hours to spare. After that, batches of <strong>Prepare&nbsp;10 cleanup</strong> drive the AI cleanup loop.
+      </p>
     </section>
   </main>
 

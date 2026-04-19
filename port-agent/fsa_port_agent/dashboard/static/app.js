@@ -203,7 +203,7 @@ function renderQueue(q) {
 }
 
 function renderFunctions(rows) {
-  const tbody = document.querySelector("#fn-table tbody");
+  const tbody = document.querySelector("#fn-table-el tbody");
   tbody.innerHTML = "";
   if (!rows.length) {
     tbody.innerHTML = `<tr><td colspan="6" style="color:var(--fg-dim);padding:20px;text-align:center;">no functions match</td></tr>`;
@@ -345,8 +345,29 @@ async function refreshFns() {
   renderFunctions(fns);
 }
 
+// ---------- Explainer toggle ----------
+const EXPLAINERS_KEY = "fsa_pa_explainers";
+
+function applyExplainerState(on) {
+  document.body.dataset.explainers = on ? "on" : "off";
+}
+
+function initExplainerToggle() {
+  const saved = localStorage.getItem(EXPLAINERS_KEY);
+  applyExplainerState(saved !== "off");
+  const btn = document.getElementById("toggle-explainers");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const nowOn = document.body.dataset.explainers !== "on";
+    applyExplainerState(nowOn);
+    localStorage.setItem(EXPLAINERS_KEY, nowOn ? "on" : "off");
+  });
+}
+
 // ---------- Boot ----------
 document.addEventListener("DOMContentLoaded", () => {
+  initExplainerToggle();
+
   document.querySelectorAll(".actions button").forEach(btn => {
     btn.addEventListener("click", () => runAction(btn.dataset.action));
   });
