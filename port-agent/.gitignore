@@ -17,3 +17,9 @@ work/*/*.response.*
 work/*/*.meta.json
 work/*/last_errors.json
 work/*/done/
+
+# Cached TWW source index (14 MB, rebuilt on demand by tww_lookup.py)
+tww_lookup_index.json
+
+# Generator output for configure.py hints (regenerated per import run)
+configure_additions.txt

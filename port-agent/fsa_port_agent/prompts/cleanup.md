@@ -27,6 +27,14 @@ Register allocation is irrelevant.
   ```c
   {nearby}
   ```
+- **TWW reference** — the matching method in the TWW source tree, if FSA's
+  mangled symbol appears in TWW. Use this as the *types and naming* template:
+  variable names, struct field access patterns, helper calls. FSA's version
+  may have different register allocation or minor body differences, but the
+  surrounding class layout and call shape will be nearly identical.
+  ```cpp
+  {tww_reference}
+  ```
 
 ## Rules
 

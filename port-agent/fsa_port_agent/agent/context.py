@@ -27,6 +27,7 @@ from pathlib import Path
 
 from ..config import Config
 from ..state_db import StateDB
+from ..tww_lookup import TWWLookup
 
 
 # Banner above each fn body in a seg file, e.g.
@@ -76,6 +77,7 @@ class Context:
     caller_sigs: list[str]
     string_refs: list[str]
     nearby_matched: list[str]
+    tww_reference: str | None = None
     raw_asm: str | None = None
 
     def as_prompt_vars(self) -> dict:
@@ -86,6 +88,7 @@ class Context:
             "caller_sigs": "\n".join(self.caller_sigs) or "(none)",
             "strings": "\n".join(self.string_refs) or "(none)",
             "nearby": "\n\n".join(self.nearby_matched) or "(none)",
+            "tww_reference": self.tww_reference or "(no matching TWW method found)",
             "raw_asm": self.raw_asm or "(omitted — cleanup only)",
         }
 
@@ -171,6 +174,7 @@ class ContextBuilder:
         self.db = db
         self.index = SegIndex(cfg.nonmatch_root)
         self.index.build()
+        self.tww = TWWLookup(cfg)
 
     def build(self, fn_addr: int, *, n_nearby: int = 2) -> Context:
         body = self.index.body(fn_addr) or f"/* body for 0x{fn_addr:08X} not found in seg files */"
@@ -193,6 +197,7 @@ class ContextBuilder:
         ]
 
         nearby = self._nearby_matched(fn_addr, n_nearby)
+        tww_ref = self.tww.body_for(fn_addr)
 
         return Context(
             fn_addr=fn_addr,
@@ -201,6 +206,7 @@ class ContextBuilder:
             caller_sigs=caller_sigs,
             string_refs=strings,
             nearby_matched=nearby,
+            tww_reference=tww_ref,
         )
 
     def _nearby_matched(self, fn_addr: int, n: int) -> list[str]:
