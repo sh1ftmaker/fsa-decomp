@@ -65,17 +65,34 @@ Get byte patterns by compiling the TWW source with FSA's flags, then disassembli
 
 ## Current Match Status
 
-| File | Functions | Status |
-|------|-----------|--------|
-| `src/dolphin/os/OS.c` | OSGetArenaHi, OSGetArenaLo, OSSetArenaHi, OSSetArenaLo | **100% ✅** |
-| `src/dolphin/os/OSCache.c` | DCEnable, DCInvalidateRange, DCFlushRange, DCStoreRange, DCFlushRangeNoSync, DCStoreRangeNoSync, DCZeroRange, ICInvalidateRange, ICFlashInvalidate, ICEnable, __LCEnable, LCEnable, LCDisable, LCStoreBlocks, LCStoreData, LCQueueWait, L2Disable, L2GlobalInvalidate, DMAErrorHandler, L2Init, L2Enable, __OSCacheInit | **99.93% ✅** (3 fns minor rodata diffs) |
-| `src/dolphin/os/OSTime.c` | OSGetTime, OSGetTick, __OSGetSystemTime, GetDates, OSTicksToCalendarTime | **100% ✅** |
-| `src/dolphin/os/OSInterrupt.c` | OSDisableInterrupts, OSEnableInterrupts, OSRestoreInterrupts, __OSSetInterruptHandler, __OSGetInterruptHandler, __OSInterruptInit, SetInterruptMask, __OSMaskInterrupts, __OSUnmaskInterrupts, __OSDispatchInterrupt, ExternalInterruptHandler | **100% ✅** |
-| `src/dolphin/os/OSSync.c` | SystemCallVector (__OSSystemCallVectorStart/__OSSystemCallVectorEnd), __OSInitSystemCall | **100% ✅** |
-| `src/JSystem/JKernel/JKRDisposer.cpp` | JKRDisposer ctor + dtor (FSA 0x8007E6F4–0x8007E7E0) | **100% ✅** |
-| `src/main/main.cpp` | everything else | NonMatching stub |
+Headline: **430 / 5,981 DOL functions byte-matched via TWW import (7.2%)** after
+the 2026-04-18 Gate 4 sweep. Earlier hand-matched work still present.
 
-Overall: ~0.07% matched.
+### Gate 4 breakdown (by subdir of TWW donor)
+
+| Subdir | Hits | Notes |
+|--------|------|-------|
+| `src/JSystem` | 251 | JKernel, JSupport, JGadget, J3DGraph — mostly byte-identical middleware |
+| `src/d` | 70 | d_base, d_com_inf_game, d_kankyo, d_save, d_stage (40 hits alone) |
+| `src/dolphin` | 66 | OS, DVD, GX, MTX, GBA — SDK |
+| `src/PowerPC_EABI_Support` | 39 | MSL C / Runtime |
+| `src/f_op`, `src/m_Do` | 4 | Thin framework layer |
+
+Hits by winning compiler: GC/1.3.2=387, GC/1.2.5n=33, GC/2.0=6, GC/2.5=4.
+The 2-version sweep `(1.3.2, 1.2.5n)` captures 97% of hits; others only
+useful for a handful of MSL/J2D files found via the exhaustive Part 1 probe.
+
+### Selected hand-matched files (pre-Gate-4)
+
+| File | Status |
+|------|--------|
+| `src/dolphin/os/OS.c` | **100% ✅** (arena) |
+| `src/dolphin/os/OSCache.c` | **99.93% ✅** (3 fns minor rodata diffs) |
+| `src/dolphin/os/OSTime.c` | **100% ✅** |
+| `src/dolphin/os/OSInterrupt.c` | **100% ✅** |
+| `src/dolphin/os/OSSync.c` | **100% ✅** |
+| `src/JSystem/JKernel/JKRDisposer.cpp` | **100% ✅** |
+| `src/main/main.cpp` | NonMatching stub (everything else) |
 
 > **Key fix**: Dolphin SDK files must use compiler `GC/1.2.5n` (not `GC/1.3.2`). The `DolphinLib()`
 > helper in configure.py already sets this. OS.c only has ASM so it matched either way.
@@ -172,31 +189,76 @@ The m2c scratches (marked above) are auto-decompiler output — they match in as
 The **highest-leverage workflow** is `compile_search.py`: fetch a TWW source file, run the script, 
 and immediately get FSA addresses for every function. No manual byte hunting needed.
 
+## The port-agent (`port-agent/`)
+
+The five-phase orchestration pipeline for a non-matching browser port lives
+in `port-agent/` (merged in 2026-04-18). It wraps this repo's tools but adds:
+
+- **State DB** (`port-agent/state.db`, gitignored) — one row per DOL function,
+  linear state machine: UNKNOWN → TRIAGED → MATCHED_TWW / CLEANED / BUILDS / FAILED.
+- **Filesystem work queue** (`port-agent/work/*/`, gitignored) — prompts out,
+  responses in. No Anthropic API key; Claude Code itself writes responses.
+- **`fsa_port_agent.mwcc`** — compile + masked-search library shared by Gate 4
+  import and the per-function compiler-version probe.
+- **`shim_include/`** — empty-stub headers (JSystem.h, d/dolzel*.h, assets/*.h)
+  that bypass TWW's `.mch`/`.pch` precompiled-header chains so each TU compiles
+  standalone against TWW's tree.
+
+Entry point: `python -m fsa_port_agent --phase {triage|import|decompile|hal|build|dashboard}`.
+See `port-agent/CLAUDE.md` for phase-by-phase instructions.
+
 ## Next Steps (Highest Impact / Least Work)
 
-### Batch TWW library import (use `compile_search.py`)
+### 1. Gate 4 is effectively done — pivot to semantic context
 
-Priority order (largest function counts, likely byte-identical):
+Byte-matching tops out at **~430 / 5,981 hits (7.2%)**. Engine/SDK/middleware
+is captured; game-specific code (`src/d/actor/*`, most of `src/m_Do/*`) compiles
+cleanly against TWW but emits zero byte matches because FSA's actors are
+different game content. **This is a ceiling, not a bug.**
 
-1. **JKernel remaining 24 files** — fetch from TWW `src/JSystem/JKernel/`, run compile_search.py
-   - JKRHeap.cpp, JKRExpHeap.cpp, JKRSolidHeap.cpp, JKRArchive.cpp, JKRThread.cpp, etc.
-2. **MTX** — matrix math (src/dolphin/mtx/) — simple functions, very high match probability
-3. **DVD** — disc access (src/dolphin/dvd/)
-4. **MSL/Runtime** — standard library, strings, math
-5. **JGadget, JSupport** — linked lists, streams
+The surprise finding: **3,896 / 17,876 FSA symbols (22%) use TWW-style names**
+and 23 FSA actor classes (`daArrow_c`, `daBoko_c`, `daItem_c`, …) have direct
+TWW `d_a_*.cpp` file analogs with matching method names. FSA's code is
+structurally TWW — just recompiled with different register allocation and
+minor game-specific method bodies.
 
-### Dolphin OS remaining files
+**Action**: wire TWW source lookup into `port-agent/fsa_port_agent/prompts/cleanup.md`.
+For each FSA function whose mangled name decodes to a TWW class, include the
+matching TWW C++ method as a second context block alongside m2c output. Expected
+win: m2c output becomes a skeleton, TWW source becomes the types-and-naming
+template, Claude pattern-matches rather than inventing.
+
+Concrete steps:
+- Parse FSA's `config/G4SE01/symbols.txt`, index by fn_addr → mangled name.
+- Decode `method__NdaFooBar_cFv` → class `daFooBar_c` → file `src/d/actor/d_a_foo_bar.cpp`.
+- Extract matching `daFooBar_c::method(...)` body via brace-matching.
+- Inject into the `cleanup.md` rendered prompt as a `{tww_reference}` field.
+
+### 2. Commit the full match set
+
+The Gate 4 non-dry run copies matched TWW sources into `src/<lib>/` and writes
+`splits.txt` stanzas. Run from `port-agent/`:
+
+```bash
+IMPORT_VERSIONS=GC/1.3.2,GC/1.2.5n IMPORT_WORKERS=7 \
+  python -m fsa_port_agent --phase import
+```
+
+…then commit the new `src/**` files + `splits.txt` deltas. `configure.py`
+`Object(Matching, …)` entries are still hand-wired (noted in the run's final
+message).
+
+### 3. Decomp OS/filesystem remainders
 
 1. **OSSram.c** — `__OSInitSram`, `__OSLockSram`, `__OSUnlockSram` (FSA `0x8004460C`–`0x80044B94`)
 2. **OSContext.c** — save/restore (FSA `0x80041DC0`)
-3. **OSThread.c** — threading primitives
+3. **OSThread.c** — threading primitives (expect lower hit rate; TWW rewrote some)
 
-### Browser multiplayer port (longer-term goal)
+### 4. Browser multiplayer port (longer-term goal)
 
-See **[BROWSER_PORT_PLAN.md](BROWSER_PORT_PLAN.md)** for the full strategic plan to get FSA
-running in a browser with online co-op (sm64coopdx-style). The plan uses m2c batch conversion
-+ TWW library imports rather than byte-perfect matching, targeting a non-matching functional
-port over a traditional decompilation timeline.
+See **[BROWSER_PORT_PLAN_V2.md](BROWSER_PORT_PLAN_V2.md)** — supersedes V1.
+Uses m2c batch conversion + TWW library imports rather than byte-perfect
+matching, targeting a non-matching functional port.
 
 ### Useful reference
 
