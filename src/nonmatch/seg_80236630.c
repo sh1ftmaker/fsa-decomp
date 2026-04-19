@@ -2115,38 +2115,24 @@ s32 fn_80238CB4(s32 arg0) {
 
 /* --- auto_fn_80238D50_text.s --- */
 u32 fn_8024FF9C(s32, s32);                            /* extern */
-
-
 void fn_80238D50(s32 arg0) {
-    s32 var_r30;
-    s32 var_r31;
-    u8 var_r0;
-    char *temp_r4;
+    s32 i;
+    char *entry;
+    u8 enabled;
 
-    var_r31 = 0;
-    var_r30 = 0;
-    do {
-        if ((u32) lbl_8053AC90 == 0U) {
-            var_r0 = 0;
-        } else if (var_r30 < 0) {
-            var_r0 = 0;
-        } else if (var_r30 >= 4) {
-            var_r0 = 0;
+    for (i = 0; i < 4; i++) {
+        if ((u32)lbl_8053AC90 == 0U) {
+            enabled = 0;
         } else {
-            temp_r4 = *(lbl_8053AC90 + (var_r31 + 4));
-            if (temp_r4 == NULL) {
-                var_r0 = 0;
-            } else {
-                var_r0 = (*(u32*)((char*)(temp_r4)+0xCAC));
-            }
+            entry = *(char **)((char *)(lbl_8053AC90 + i * 4) + 0x4);
+            enabled = (entry == NULL) ? 0 : *(u8 *)(entry + 0xCAC);
         }
-        if (var_r0 != 0) {
-            fn_8024FF9C(*(lbl_8053AC90 + (var_r31 + 4)), arg0);
+        if (enabled != 0) {
+            fn_8024FF9C(*(u32 *)((char *)(lbl_8053AC90 + i * 4) + 0x4), arg0);
         }
-        var_r30 += 1;
-        var_r31 += 4;
-    } while (var_r30 < 4);
+    }
 }
+
 
 /* --- auto_fn_80238E08_text.s --- */
 u32 fn_8024FFB4(s32, s32);                            /* extern */

@@ -2557,72 +2557,52 @@ void fn_8022BD70(void) {
 
 /* --- auto_fn_8022BE24_text.s --- */
 u32 fn_8023FF90(s32, char *, char *, u32);                    /* extern */
-
-
 void fn_8022BE24(s32 arg0, void *arg1) {
-    s32 unksp33;
-    f32 sp10;
+    char *entry;
+    u8 enabled;
     u32 sp8;
-    s32 temp_cr0_eq;
-    u8 var_r0;
-    char *temp_r5;
 
-    temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
-    if (temp_cr0_eq == 0) {
-        if (temp_cr0_eq != 0) {
-            var_r0 = 0;
-        } else if (arg0 < 0) {
-            var_r0 = 0;
-        } else if (arg0 >= 4) {
-            var_r0 = 0;
-        } else {
-            temp_r5 = (*(u32*)((char*)((lbl_8053AC90 + (arg0 * 4)))+0x4));
-            if (temp_r5 == NULL) {
-                var_r0 = 0;
-            } else {
-                var_r0 = (*(u32*)((char*)(temp_r5)+0xCAC));
-            }
-        }
-        if (var_r0 != 0) {
-            sp10 = (*(u32*)((char*)(arg1)+0x8));
-            fn_8023FF90((*(u32*)((char*)((lbl_8053AC90 + (arg0 * 4)))+0x4)), &sp8, &sp8, M2C_ERROR(/* psq_l unimplemented */));
-        }
+    if ((u32)lbl_8053AC90 == 0U) {
+        return;
+    }
+    if (arg0 < 0 || arg0 >= 4) {
+        enabled = 0;
+    } else {
+        entry = *(char **)((char *)(lbl_8053AC90 + arg0 * 4) + 0x4);
+        enabled = (entry == NULL) ? 0 : *(u8 *)(entry + 0xCAC);
+    }
+    if (enabled != 0) {
+        /* TODO: original PPC psq_l loaded a paired-single; substituting scalar f32 from arg1+0x8 */
+        fn_8023FF90(
+            *(u32 *)((char *)(lbl_8053AC90 + arg0 * 4) + 0x4),
+            &sp8, &sp8,
+            *(f32 *)((char *)arg1 + 0x8)
+        );
     }
 }
+
 
 /* --- auto_fn_8022BECC_text.s --- */
 s32 fn_8023FFAC(s32);                               /* extern */
-
-
 s32 fn_8022BECC(s32 arg0) {
-    s32 unksp33;
-    s32 temp_cr0_eq;
-    u8 var_r0;
-    char *temp_r4;
+    char *entry;
+    u8 enabled;
 
-    temp_cr0_eq = (u32) lbl_8053AC90 == 0U;
-    if (temp_cr0_eq != 0) {
+    if ((u32)lbl_8053AC90 == 0U) {
         return 0;
     }
-    if (temp_cr0_eq != 0) {
-        var_r0 = 0;
-    } else if (arg0 < 0) {
-        var_r0 = 0;
-    } else if (arg0 >= 4) {
-        var_r0 = 0;
+    if (arg0 < 0 || arg0 >= 4) {
+        enabled = 0;
     } else {
-        temp_r4 = (*(u32*)((char*)((lbl_8053AC90 + (arg0 * 4)))+0x4));
-        if (temp_r4 == NULL) {
-            var_r0 = 0;
-        } else {
-            var_r0 = (*(u32*)((char*)(temp_r4)+0xCAC));
-        }
+        entry = *(char **)((char *)(lbl_8053AC90 + arg0 * 4) + 0x4);
+        enabled = (entry == NULL) ? 0 : *(u8 *)(entry + 0xCAC);
     }
-    if (var_r0 != 0) {
-        return fn_8023FFAC((*(u32*)((char*)((lbl_8053AC90 + (arg0 * 4)))+0x4)));
+    if (enabled != 0) {
+        return fn_8023FFAC(*(u32 *)((char *)(lbl_8053AC90 + arg0 * 4) + 0x4));
     }
     return 0;
 }
+
 
 /* --- auto_fn_8022BF68_text.s --- */
 s32 fn_802454C0(s32);                               /* extern */
