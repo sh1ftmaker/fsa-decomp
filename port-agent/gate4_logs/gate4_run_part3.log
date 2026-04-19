@@ -1,0 +1,689 @@
+[import] Loaded 290 already-processed files from /tmp/gate4_skip_combined.log
+[import] Sweeping 683 files across 7 workers
+[import] [1/683] src/JSystem/JStudio/JStudio_JStage/control.cpp   preset=jsystem  ver=1.3.2   0/9      ·
+[import] [2/683] src/JSystem/JStudio/JStudio_JStage/object-actor.cpp preset=jsystem  ver=1.3.2   0/25     ·
+[import] [3/683] src/JSystem/JStudio/JStudio_JStage/object-ambientlight.cpp preset=jsystem  ver=1.3.2   0/8      ·
+[import] [4/683] src/JSystem/JStudio/JStudio_JParticle/object-particle.cpp preset=jsystem  ver=1.3.2   0/22     ·
+[import] [5/683] src/JSystem/JStudio/JStudio_JStage/object-camera.cpp preset=jsystem  ver=1.3.2   0/14     ·
+[import] [6/683] src/JSystem/JStudio/JStudio_JStage/object-fog.cpp preset=jsystem  ver=1.3.2   0/11     ·
+[import] [7/683] src/JSystem/JStudio/JStudio_JStage/object.cpp    preset=jsystem  ver=1.3.2   0/2      ·
+[import] [8/683] src/JSystem/JSupport/JSUFileStream.cpp           preset=jsystem  ver=1.3.2   1/9      ✓
+[import] [9/683] src/JSystem/JStudio/JStudio_JStage/object-light.cpp preset=jsystem  ver=1.3.2   0/13     ·
+[import] [10/683] src/JSystem/JSupport/JSUList.cpp                 preset=jsystem  ver=1.3.2   2/10     ✓
+[import] [11/683] src/JSystem/JSupport/JSUInputStream.cpp          preset=jsystem  ver=1.3.2   5/10     ✓
+[import] [12/683] src/JSystem/JSupport/JSUMemoryStream.cpp         preset=jsystem  ver=1.3.2   3/7      ✓
+[import] [13/683] src/JSystem/JStudio/JStudio/functionvalue.cpp    preset=jsystem  ver=1.3.2   0/83     ·
+[import] [14/683] src/JSystem/JStage/JSGCamera.cpp                 preset=jsystem  ver=1.3.2   0/24     ·
+[import] [15/683] src/JSystem/JUtility/JUTAssert.cpp               preset=jsystem  ver=1.3.2   0/13     ·
+[import] [16/683] src/JSystem/JUtility/JUTDirectFile.cpp           preset=jsystem  ver=1.3.2   1/6      ✓
+[import] [17/683] src/JSystem/JUtility/JUTDbPrint.cpp              preset=jsystem  ver=1.3.2   1/9      ✓
+[import] [18/683] src/JSystem/JUtility/JUTCacheFont.cpp            preset=jsystem  ver=1.3.2   6/24     ✓
+[import] [19/683] src/JSystem/JUtility/JUTDirectPrint.cpp          preset=jsystem  ver=1.3.2   0/8      ·
+[import] [20/683] src/JSystem/JUtility/JUTFader.cpp                preset=jsystem  ver=1.3.2   1/7      ✓
+[import] [21/683] src/JSystem/JUtility/JUTFontData_Ascfont_fix12.cpp preset=jsystem  ver=1.3.2   0/0      ·
+[import] [22/683] src/JSystem/JUtility/JUTFont.cpp                 preset=jsystem  ver=1.3.2   0/5      ·
+[import] [23/683] src/JSystem/JUtility/JUTConsole.cpp              preset=jsystem  ver=1.3.2   4/37     ✓
+[import] [24/683] src/JSystem/JUtility/JUTException.cpp            preset=jsystem  ver=1.3.2   1/32     ✓
+[import] [25/683] src/JSystem/JUtility/JUTGraphFifo.cpp            preset=jsystem  ver=1.3.2   0/2      ·
+[import] [26/683] src/JSystem/JUtility/JUTPalette.cpp              preset=jsystem  ver=1.3.2   0/3      ·
+[import] [27/683] src/JSystem/JStudio/JStudio/jstudio-object.cpp   preset=jsystem  ver=1.3.2   0/76     ·
+[import] [28/683] src/JSystem/JUtility/JUTNameTab.cpp              preset=jsystem  ver=1.3.2   2/7      ✓
+[import] [29/683] src/JSystem/JUtility/JUTResource.cpp             preset=jsystem  ver=1.3.2   0/2      ·
+[import] [30/683] src/JSystem/JUtility/JUTGba.cpp                  preset=jsystem  ver=1.3.2   0/29     ·
+[import] [31/683] src/JSystem/JUtility/JUTTexture.cpp              preset=jsystem  ver=1.3.2   0/6      ·
+[import] [32/683] src/JSystem/JUtility/JUTProcBar.cpp              preset=jsystem  ver=1.3.2   1/14     ✓
+[import] [33/683] src/JSystem/JUtility/JUTXfb.cpp                  preset=jsystem  ver=1.3.2   1/9      ✓
+[import] [34/683] src/JSystem/JUtility/JUTGamePad.cpp              preset=jsystem  ver=1.3.2   1/37     ✓
+[import] [35/683] src/f_pc/f_pc_base.cpp                           preset=dolzel   ver=1.3.2   0/9      ·
+[import] [36/683] src/f_pc/f_pc_create_iter.cpp                    preset=dolzel   ver=1.3.2   0/4      ·
+[import] [37/683] src/f_pc/f_pc_create_tag.cpp                     preset=dolzel   ver=1.3.2   0/3      ·
+[import] [38/683] src/JSystem/JUtility/JUTVideo.cpp                preset=jsystem  ver=1.3.2   0/11     ·
+[import] [39/683] src/f_pc/f_pc_creator.cpp                        preset=dolzel   ver=1.3.2   0/4      ·
+[import] [40/683] src/f_pc/f_pc_delete_tag.cpp                     preset=dolzel   ver=1.3.2   0/5      ·
+[import] [41/683] src/f_pc/f_pc_draw.cpp                           preset=dolzel   ver=1.3.2   0/2      ·
+[import] [42/683] src/f_pc/f_pc_create_req.cpp                     preset=dolzel   ver=1.3.2   0/10     ·
+[import] [43/683] src/JSystem/JUtility/JUTResFont.cpp              preset=jsystem  ver=1.3.2   9/31     ✓
+[import] [44/683] src/f_pc/f_pc_draw_priority.cpp                  preset=dolzel   ver=1.3.2   0/3      ·
+[import] [45/683] src/f_pc/f_pc_deletor.cpp                        preset=dolzel   ver=1.3.2   0/6      ·
+[import] [46/683] src/f_pc/f_pc_fstcreate_req.cpp                  preset=dolzel   ver=1.3.2   0/3      ·
+[import] [47/683] src/f_pc/f_pc_layer_iter.cpp                     preset=dolzel   ver=1.3.2   0/4      ·
+[import] [48/683] src/f_pc/f_pc_line.cpp                           preset=dolzel   ver=1.3.2   0/1      ·
+[import] [49/683] src/f_pc/f_pc_executor.cpp                       preset=dolzel   ver=1.3.2   0/8      ·
+[import] [50/683] src/f_pc/f_pc_layer_tag.cpp                      preset=dolzel   ver=1.3.2   0/4      ·
+[import] [51/683] src/f_pc/f_pc_line_iter.cpp                      preset=dolzel   ver=1.3.2   0/2      ·
+[import] [52/683] src/f_pc/f_pc_line_tag.cpp                       preset=dolzel   ver=1.3.2   0/4      ·
+[import] [53/683] src/f_pc/f_pc_load.cpp                           preset=dolzel   ver=1.3.2   0/4      ·
+[import] [54/683] src/f_pc/f_pc_leaf.cpp                           preset=dolzel   ver=1.3.2   0/7      ·
+[import] [55/683] src/f_pc/f_pc_method_iter.cpp                    preset=dolzel   ver=1.3.2   0/1      ·
+[import] [56/683] src/f_pc/f_pc_manager.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [57/683] src/f_pc/f_pc_method_tag.cpp                     preset=dolzel   ver=1.3.2   0/4      ·
+[import] [58/683] src/f_pc/f_pc_method.cpp                         preset=dolzel   ver=1.3.2   0/5      ·
+[import] [59/683] src/f_pc/f_pc_pause.cpp                          preset=dolzel   ver=1.3.2   0/4      ·
+[import] [60/683] src/f_pc/f_pc_profile.cpp                        preset=dolzel   ver=1.3.2   0/1      ·
+[import] [61/683] src/f_pc/f_pc_node.cpp                           preset=dolzel   ver=1.3.2   0/8      ·
+[import] [62/683] src/f_pc/f_pc_profile_lst.cpp                    preset=dolzel   ver=1.3.2   0/2      ·
+[import] [63/683] src/f_pc/f_pc_layer.cpp                          preset=dolzel   ver=1.3.2   0/21     ·
+[import] [64/683] src/f_pc/f_pc_searcher.cpp                       preset=dolzel   ver=1.3.2   0/2      ·
+[import] [65/683] src/f_pc/f_pc_priority.cpp                       preset=dolzel   ver=1.3.2   0/9      ·
+[import] [66/683] src/f_op/f_op_actor_iter.cpp                     preset=dolzel   ver=1.3.2   0/2      ·
+[import] [67/683] src/f_pc/f_pc_stdcreate_req.cpp                  preset=dolzel   ver=1.3.2   0/10     ·
+[import] [68/683] src/f_op/f_op_actor_tag.cpp                      preset=dolzel   ver=1.3.2   0/3      ·
+[import] [69/683] src/f_op/f_op_camera.cpp                         preset=dolzel   ver=1.3.2   0/5      ·
+[import] [70/683] src/f_pc/f_pc_node_req.cpp                       preset=dolzel   ver=1.3.2   0/21     ·
+[import] [71/683] src/f_op/f_op_draw_iter.cpp                      preset=dolzel   ver=1.3.2   0/3      ·
+[import] [72/683] src/f_op/f_op_draw_tag.cpp                       preset=dolzel   ver=1.3.2   0/4      ·
+[import] [73/683] src/f_op/f_op_kankyo.cpp                         preset=dolzel   ver=1.3.2   0/5      ·
+[import] [74/683] src/f_op/f_op_actor.cpp                          preset=dolzel   ver=1.3.2   0/21     ·
+[import] [75/683] src/f_op/f_op_msg.cpp                            preset=dolzel   ver=1.3.2   0/5      ·
+[import] [76/683] src/f_op/f_op_camera_mng.cpp                     preset=dolzel   ver=1.3.2   1/4      ✓
+[import] [77/683] src/f_op/f_op_kankyo_mng.cpp                     preset=dolzel   ver=1.3.2   0/10     ·
+[import] [78/683] src/f_op/f_op_overlap.cpp                        preset=dolzel   ver=1.3.2   0/5      ·
+[import] [79/683] src/f_op/f_op_scene.cpp                          preset=dolzel   ver=1.3.2   0/5      ·
+[import] [80/683] src/f_op/f_op_overlap_req.cpp                    preset=dolzel   ver=1.3.2   0/13     ·
+[import] [81/683] src/f_op/f_op_scene_iter.cpp                     preset=dolzel   ver=1.3.2   0/1      ·
+[import] [82/683] src/f_op/f_op_scene_pause.cpp                    preset=dolzel   ver=1.3.2   0/2      ·
+[import] [83/683] src/f_op/f_op_overlap_mng.cpp                    preset=dolzel   ver=1.3.2   0/13     ·
+[import] [84/683] src/f_op/f_op_scene_req.cpp                      preset=dolzel   ver=1.3.2   0/12     ·
+[import] [85/683] src/f_op/f_op_scene_mng.cpp                      preset=dolzel   ver=1.3.2   0/7      ·
+[import] [86/683] src/d/actor/d_a_acorn_leaf.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [87/683] src/f_op/f_op_scene_tag.cpp                      preset=dolzel   ver=1.3.2   0/3      ·
+[import] [88/683] src/d/actor/d_a_agbsw0.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [89/683] src/d/actor/d_a_alldie.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [90/683] src/d/actor/d_a_am.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [91/683] src/d/actor/d_a_am2.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [92/683] src/d/actor/d_a_amiprop.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [93/683] src/d/actor/d_a_andsw0.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [94/683] src/d/actor/d_a_andsw2.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [95/683] src/f_op/f_op_view.cpp                           preset=dolzel   ver=1.3.2   0/5      ·
+[import] [96/683] src/d/actor/d_a_arrow_iceeff.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [97/683] src/d/actor/d_a_arrow_lighteff.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [98/683] src/d/actor/d_a_atdoor.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [99/683] src/d/actor/d_a_att.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [100/683] src/d/actor/d_a_auction.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [101/683] src/d/actor/d_a_bb.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [102/683] src/d/actor/d_a_bdk.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [103/683] src/d/actor/d_a_bdkobj.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [104/683] src/d/actor/d_a_beam.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [105/683] src/d/actor/d_a_bflower.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [106/683] src/d/actor/d_a_bg.cpp                           preset=dolzel   ver=1.3.2   0/21     ·
+[import] [107/683] src/d/actor/d_a_bgn.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [108/683] src/d/actor/d_a_bgn2.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [109/683] src/d/actor/d_a_bgn3.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [110/683] src/d/actor/d_a_bigelf.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [111/683] src/d/actor/d_a_bita.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [112/683] src/d/actor/d_a_bk.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [113/683] src/d/actor/d_a_bl.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [114/683] src/d/actor/d_a_bmd.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [115/683] src/d/actor/d_a_bmdfoot.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [116/683] src/d/actor/d_a_bmdhand.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [117/683] src/d/actor/d_a_bo.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [118/683] src/d/actor/d_a_boko.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [119/683] src/f_op/f_op_actor_mng.cpp                      preset=dolzel   ver=1.3.2   0/129    ·
+[import] [120/683] src/d/actor/d_a_agb.cpp                          preset=dolzel   ver=1.3.2   1/100    ✓
+[import] [121/683] src/d/actor/d_a_boomerang.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [122/683] src/d/actor/d_a_boss_item.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [123/683] src/d/actor/d_a_bpw.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [124/683] src/d/actor/d_a_branch.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [125/683] src/d/actor/d_a_bridge.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [126/683] src/d/actor/d_a_bst.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [127/683] src/d/actor/d_a_btd.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [128/683] src/d/actor/d_a_bwd.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [129/683] src/d/actor/d_a_bwdg.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [130/683] src/d/actor/d_a_bwds.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [131/683] src/d/actor/d_a_canon.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [132/683] src/d/actor/d_a_cc.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [133/683] src/d/actor/d_a_coming2.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [134/683] src/d/actor/d_a_coming3.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [135/683] src/d/actor/d_a_dai.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [136/683] src/f_op/f_op_msg_mng.cpp                        preset=dolzel   ver=1.3.2   2/202    ✓
+[import] [137/683] src/d/actor/d_a_daiocta.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [138/683] src/d/actor/d_a_daiocta_eye.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [139/683] src/d/actor/d_a_deku_item.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [140/683] src/d/actor/d_a_arrow.cpp                        preset=dolzel   ver=1.3.2   0/117    ·
+[import] [141/683] src/d/actor/d_a_demo_dk.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [142/683] src/d/actor/d_a_demo_item.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [143/683] src/d/actor/d_a_demo_kmm.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [144/683] src/d/actor/d_a_disappear.cpp                    preset=dolzel   ver=1.3.2   0/7      ·
+[import] [145/683] src/d/actor/d_a_dk.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [146/683] src/d/actor/d_a_door10.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [147/683] src/d/actor/d_a_door12.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [148/683] src/d/actor/d_a_dr.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [149/683] src/d/actor/d_a_dr2.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [150/683] src/d/actor/d_a_dummy.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [151/683] src/d/actor/d_a_ep.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [152/683] src/d/actor/d_a_demo00.cpp                       preset=dolzel   ver=1.3.2   0/19     ·
+[import] [153/683] src/d/actor/d_a_fallrock.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [154/683] src/d/actor/d_a_fallrock_tag.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [155/683] src/d/actor/d_a_fan.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [156/683] src/d/actor/d_a_ff.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [157/683] src/d/actor/d_a_fganon.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [158/683] src/d/actor/d_a_fgmahou.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [159/683] src/d/actor/d_a_fire.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [160/683] src/d/actor/d_a_floor.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [161/683] src/d/actor/d_a_fm.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [162/683] src/d/actor/d_a_ghostship.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [163/683] src/d/actor/d_a_gm.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [164/683] src/d/actor/d_a_gnd.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [165/683] src/d/actor/d_a_goal_flag.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [166/683] src/d/actor/d_a_grass.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [167/683] src/d/actor/d_a_bomb.cpp                         preset=dolzel   ver=1.3.2   0/139    ·
+[import] [168/683] src/d/actor/d_a_gy.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [169/683] src/d/actor/d_a_gy_ctrl.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [170/683] src/d/actor/d_a_dai_item.cpp                     preset=dolzel   ver=1.3.2   0/83     ·
+[import] [171/683] src/d/actor/d_a_himo3.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [172/683] src/d/actor/d_a_hitobj.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [173/683] src/d/actor/d_a_hmlif.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [174/683] src/d/actor/d_a_esa.cpp                          preset=dolzel   ver=1.3.2   0/37     ·
+[import] [175/683] src/d/actor/d_a_hot_floor.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [176/683] src/d/actor/d_a_hys.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [177/683] src/d/actor/d_a_hookshot.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [178/683] src/d/actor/d_a_icelift.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [179/683] src/d/actor/d_a_ikari.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [180/683] src/d/actor/d_a_item.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [181/683] src/d/actor/d_a_itembase.cpp                     preset=dolzel   ver=1.3.2   0/15     ·
+[import] [182/683] src/d/actor/d_a_jbo.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [183/683] src/d/actor/d_a_kaji.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [184/683] src/d/actor/d_a_kamome.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [185/683] src/d/actor/d_a_kamome2.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [186/683] src/d/actor/d_a_kanban.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [187/683] src/d/actor/d_a_kantera.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [188/683] src/d/actor/d_a_kb.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [189/683] src/d/actor/d_a_kddoor.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [190/683] src/d/actor/d_a_ki.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [191/683] src/d/actor/d_a_kita.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [192/683] src/d/actor/d_a_klft.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [193/683] src/d/actor/d_a_kmon.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [194/683] src/d/actor/d_a_kn.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [195/683] src/d/actor/d_a_knob00.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [196/683] src/d/actor/d_a_kokiie.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [197/683] src/d/actor/d_a_komore.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [198/683] src/d/actor/d_a_ks.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [199/683] src/d/actor/d_a_kt.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [200/683] src/d/actor/d_a_kui.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [201/683] src/d/actor/d_a_kytag00.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [202/683] src/d/actor/d_a_kytag01.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [203/683] src/d/actor/d_a_kytag02.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [204/683] src/d/actor/d_a_kytag03.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [205/683] src/d/actor/d_a_kytag04.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [206/683] src/d/actor/d_a_kytag05.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [207/683] src/d/actor/d_a_kytag06.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [208/683] src/d/actor/d_a_kytag07.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [209/683] src/d/actor/d_a_lamp.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [210/683] src/d/actor/d_a_lbridge.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [211/683] src/d/actor/d_a_leaflift.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [212/683] src/d/actor/d_a_lod_bg.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [213/683] src/d/actor/d_a_lstair.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [214/683] src/d/actor/d_a_lwood.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [215/683] src/d/actor/d_a_machine.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [216/683] src/d/actor/d_a_magma.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [217/683] src/d/actor/d_a_majuu_flag.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [218/683] src/d/actor/d_a_mant.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [219/683] src/d/actor/d_a_mbdoor.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [220/683] src/d/actor/d_a_mdoor.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [221/683] src/d/actor/d_a_mflft.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [222/683] src/d/actor/d_a_mgameboard.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [223/683] src/d/actor/d_a_mmusic.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [224/683] src/d/actor/d_a_mo2.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [225/683] src/d/actor/d_a_movie_player.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [226/683] src/d/actor/d_a_mozo.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [227/683] src/d/actor/d_a_msw.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [228/683] src/d/actor/d_a_mt.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [229/683] src/d/actor/d_a_mtoge.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [230/683] src/d/actor/d_a_grid.cpp                         preset=dolzel   ver=1.3.2   0/17     ·
+[import] [231/683] src/d/actor/d_a_npc_ac1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [232/683] src/d/actor/d_a_npc_ah.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [233/683] src/d/actor/d_a_npc_aj1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [234/683] src/d/actor/d_a_npc_auction.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [235/683] src/d/actor/d_a_npc_ba1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [236/683] src/d/actor/d_a_npc_bj1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [237/683] src/d/actor/d_a_npc_bm1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [238/683] src/d/actor/d_a_npc_bmcon1.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [239/683] src/d/actor/d_a_npc_bms1.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [240/683] src/d/actor/d_a_npc_bmsw.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [241/683] src/d/actor/d_a_npc_bs1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [242/683] src/d/actor/d_a_npc_btsw.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [243/683] src/d/actor/d_a_npc_btsw2.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [244/683] src/d/actor/d_a_npc_cb1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [245/683] src/d/actor/d_a_npc_co1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [246/683] src/d/actor/d_a_npc_de1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [247/683] src/d/actor/d_a_npc_ds1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [248/683] src/d/actor/d_a_bomb2.cpp                        preset=dolzel   ver=1.3.2   0/172    ·
+[import] [249/683] src/d/actor/d_a_npc_gk1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [250/683] src/d/actor/d_a_npc_gp1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [251/683] src/d/actor/d_a_npc_hi1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [252/683] src/d/actor/d_a_npc_ho.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [253/683] src/d/actor/d_a_npc_hr.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [254/683] src/d/actor/d_a_npc_jb1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [255/683] src/d/actor/d_a_npc_ji1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [256/683] src/d/actor/d_a_npc_kamome.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [257/683] src/d/actor/d_a_npc_kf1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [258/683] src/d/actor/d_a_npc_kg1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [259/683] src/d/actor/d_a_npc_kg2.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [260/683] src/d/actor/d_a_npc_kk1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [261/683] src/d/actor/d_a_npc_km1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [262/683] src/d/actor/d_a_npc_ko1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [263/683] src/d/actor/d_a_npc_kp1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [264/683] src/d/actor/d_a_npc_ls1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [265/683] src/d/actor/d_a_npc_md.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [266/683] src/d/actor/d_a_npc_mk.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [267/683] src/d/actor/d_a_npc_mn.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [268/683] src/d/actor/d_a_npc_mt.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [269/683] src/d/actor/d_a_npc_nz.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [270/683] src/d/actor/d_a_npc_ob1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [271/683] src/d/actor/d_a_npc_os.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [272/683] src/d/actor/d_a_npc_p1.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [273/683] src/d/actor/d_a_npc_p2.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [274/683] src/d/actor/d_a_npc_people.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [275/683] src/d/actor/d_a_npc_pf1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [276/683] src/d/actor/d_a_npc_photo.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [277/683] src/d/actor/d_a_npc_pm1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [278/683] src/d/actor/d_a_npc_roten.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [279/683] src/d/actor/d_a_npc_rsh1.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [280/683] src/d/actor/d_a_npc_sarace.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [281/683] src/d/actor/d_a_npc_so.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [282/683] src/d/actor/d_a_npc_sv.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [283/683] src/d/actor/d_a_npc_tc.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [284/683] src/d/actor/d_a_npc_tt.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [285/683] src/d/actor/d_a_npc_uk.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [286/683] src/d/actor/d_a_npc_ym1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [287/683] src/d/actor/d_a_npc_yw1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [288/683] src/d/actor/d_a_npc_zk1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [289/683] src/d/actor/d_a_npc_zl1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [290/683] src/d/actor/d_a_nz.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [291/683] src/d/actor/d_a_nzg.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [292/683] src/d/actor/d_a_obj_AjavW.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [293/683] src/d/actor/d_a_obj_Itnak.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [294/683] src/d/actor/d_a_obj_Vds.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [295/683] src/d/actor/d_a_obj_Vteng.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [296/683] src/d/actor/d_a_obj_YLzou.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [297/683] src/d/actor/d_a_obj_Yboil.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [298/683] src/d/actor/d_a_obj_Ygush00.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [299/683] src/d/actor/d_a_obj_adnno.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [300/683] src/d/actor/d_a_obj_ajav.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [301/683] src/d/actor/d_a_obj_akabe.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [302/683] src/d/actor/d_a_obj_apzl.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [303/683] src/d/actor/d_a_obj_ashut.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [304/683] src/d/actor/d_a_obj_auzu.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [305/683] src/d/actor/d_a_obj_aygr.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [306/683] src/d/actor/d_a_obj_balancelift.cpp              preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [307/683] src/d/actor/d_a_obj_barrel.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [308/683] src/d/actor/d_a_obj_barrel2.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [309/683] src/d/actor/d_a_obj_barrier.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [310/683] src/d/actor/d_a_obj_bemos.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [311/683] src/d/actor/d_a_obj_bscurtain.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [312/683] src/d/actor/d_a_obj_buoyflag.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [313/683] src/d/actor/d_a_obj_buoyrace.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [314/683] src/d/actor/d_a_obj_cafelmp.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [315/683] src/d/actor/d_a_obj_canon.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [316/683] src/d/actor/d_a_obj_coming.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [317/683] src/d/actor/d_a_obj_correct.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [318/683] src/d/actor/d_a_obj_demo_barrel.cpp              preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [319/683] src/d/actor/d_a_obj_dmgroom.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [320/683] src/d/actor/d_a_obj_doguu.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [321/683] src/d/actor/d_a_obj_doguu_demo.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [322/683] src/d/actor/d_a_obj_dragonhead.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [323/683] src/d/actor/d_a_obj_drift.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [324/683] src/d/actor/d_a_obj_eayogn.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [325/683] src/d/actor/d_a_obj_ebomzo.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [326/683] src/d/actor/d_a_obj_eff.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [327/683] src/d/actor/d_a_obj_ekskz.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [328/683] src/d/actor/d_a_obj_eskban.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [329/683] src/d/actor/d_a_obj_ferris.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [330/683] src/d/actor/d_a_obj_figure.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [331/683] src/d/actor/d_a_obj_firewall.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [332/683] src/d/actor/d_a_obj_flame.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [333/683] src/d/actor/d_a_obj_ftree.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [334/683] src/d/actor/d_a_obj_ganonbed.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [335/683] src/d/actor/d_a_obj_gaship.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [336/683] src/d/actor/d_a_obj_gaship2.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [337/683] src/d/actor/d_a_obj_gnnbtltaki.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [338/683] src/d/actor/d_a_obj_gnndemotakie.cpp             preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [339/683] src/d/actor/d_a_obj_gnndemotakis.cpp             preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [340/683] src/d/actor/d_a_obj_gong.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [341/683] src/d/actor/d_a_obj_gryw00.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [342/683] src/d/actor/d_a_obj_gtaki.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [343/683] src/d/actor/d_a_obj_hami2.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [344/683] src/d/actor/d_a_obj_hami3.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [345/683] src/d/actor/d_a_obj_hami4.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [346/683] src/d/actor/d_a_obj_hat.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [347/683] src/d/actor/d_a_obj_hbrf1.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [348/683] src/d/actor/d_a_obj_hcbh.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [349/683] src/d/actor/d_a_obj_hfuck1.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [350/683] src/d/actor/d_a_obj_hha.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [351/683] src/d/actor/d_a_obj_hlift.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [352/683] src/d/actor/d_a_obj_hole.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [353/683] src/d/actor/d_a_obj_homen.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [354/683] src/d/actor/d_a_obj_homensmoke.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [355/683] src/d/actor/d_a_obj_hsehi1.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [356/683] src/d/actor/d_a_obj_htetu1.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [357/683] src/d/actor/d_a_obj_ice.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [358/683] src/d/actor/d_a_obj_iceisland.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [359/683] src/d/actor/d_a_obj_ikada.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [360/683] src/d/actor/d_a_obj_jump.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [361/683] src/d/actor/d_a_obj_kanat.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [362/683] src/d/actor/d_a_obj_kanoke.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [363/683] src/d/actor/d_a_obj_ladder.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [364/683] src/d/actor/d_a_obj_leaves.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [365/683] src/d/actor/d_a_obj_light.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [366/683] src/d/actor/d_a_obj_lpalm.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [367/683] src/d/actor/d_a_obj_magmarock.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [368/683] src/d/actor/d_a_obj_majyuu_door.cpp              preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [369/683] src/d/actor/d_a_obj_mkie.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [370/683] src/d/actor/d_a_obj_mkiek.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [371/683] src/d/actor/d_a_obj_mknjd.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [372/683] src/d/actor/d_a_obj_mmrr.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [373/683] src/d/actor/d_a_obj_monument.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [374/683] src/d/actor/d_a_obj_movebox.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [375/683] src/d/actor/d_a_obj_msdan.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [376/683] src/d/actor/d_a_obj_msdan2.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [377/683] src/d/actor/d_a_obj_msdan_sub.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [378/683] src/d/actor/d_a_obj_msdan_sub2.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [379/683] src/d/actor/d_a_obj_mshokki.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [380/683] src/d/actor/d_a_obj_mtest.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [381/683] src/d/actor/d_a_obj_nest.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [382/683] src/d/actor/d_a_obj_ohatch.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [383/683] src/d/actor/d_a_obj_ojtree.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [384/683] src/d/actor/d_a_obj_ospbox.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [385/683] src/d/actor/d_a_obj_otble.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [386/683] src/d/actor/d_a_obj_paper.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [387/683] src/d/actor/d_a_obj_pbco.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [388/683] src/d/actor/d_a_obj_pbka.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [389/683] src/d/actor/d_a_obj_pfall.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [390/683] src/d/actor/d_a_obj_pirateship.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [391/683] src/d/actor/d_a_obj_plant.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [392/683] src/d/actor/d_a_obj_quake.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [393/683] src/d/actor/d_a_obj_rcloud.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [394/683] src/d/actor/d_a_obj_rflw.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [395/683] src/d/actor/d_a_obj_rforce.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [396/683] src/d/actor/d_a_obj_roten.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [397/683] src/d/actor/d_a_himo2.cpp                        preset=dolzel   ver=1.3.2   4/124    ✓
+[import] [398/683] src/d/actor/d_a_obj_shelf.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [399/683] src/d/actor/d_a_obj_shmrgrd.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [400/683] src/d/actor/d_a_obj_smplbg.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [401/683] src/d/actor/d_a_obj_stair.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [402/683] src/d/actor/d_a_obj_swflat.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [403/683] src/d/actor/d_a_obj_swhammer.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [404/683] src/d/actor/d_a_obj_swheavy.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [405/683] src/d/actor/d_a_obj_swlight.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [406/683] src/d/actor/d_a_obj_swpush.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [407/683] src/d/actor/d_a_obj_table.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [408/683] src/d/actor/d_a_obj_tapestry.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [409/683] src/d/actor/d_a_obj_tenmado.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [410/683] src/d/actor/d_a_obj_tide.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [411/683] src/d/actor/d_a_obj_timer.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [412/683] src/d/actor/d_a_obj_tntrap.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [413/683] src/d/actor/d_a_obj_toripost.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [414/683] src/d/actor/d_a_obj_tousekiki.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [415/683] src/d/actor/d_a_obj_tower.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [416/683] src/d/actor/d_a_obj_trap.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [417/683] src/d/actor/d_a_obj_tribox.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [418/683] src/d/actor/d_a_obj_try.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [419/683] src/d/actor/d_a_obj_usovmc.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [420/683] src/d/actor/d_a_obj_vfan.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [421/683] src/d/actor/d_a_obj_vgnfd.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [422/683] src/d/actor/d_a_obj_vmc.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [423/683] src/d/actor/d_a_obj_vmsdz.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [424/683] src/d/actor/d_a_obj_vmsms.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [425/683] src/d/actor/d_a_obj_volcano.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [426/683] src/d/actor/d_a_obj_vtil.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [427/683] src/d/actor/d_a_obj_vyasi.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [428/683] src/d/actor/d_a_obj_warpt.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [429/683] src/d/actor/d_a_obj_wood.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [430/683] src/d/actor/d_a_obj_xfuta.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [431/683] src/d/actor/d_a_obj_zouK.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [432/683] src/d/actor/d_a_oq.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [433/683] src/d/actor/d_a_oship.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [434/683] src/d/actor/d_a_pedestal.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [435/683] src/d/actor/d_a_ph.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [436/683] src/d/actor/d_a_pirate_flag.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [437/683] src/d/actor/d_a_ib.cpp                           preset=dolzel   ver=1.3.2   0/94     ·
+[import] [438/683] src/d/actor/d_a_nh.cpp                           preset=dolzel   ver=1.3.2   0/94     ·
+[import] [439/683] src/d/actor/d_a_player_main.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [440/683] src/d/actor/d_a_pt.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [441/683] src/d/actor/d_a_pw.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [442/683] src/d/actor/d_a_pz.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [443/683] src/d/actor/d_a_race_item.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [444/683] src/d/actor/d_a_rd.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [445/683] src/d/actor/d_a_rectangle.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [446/683] src/d/actor/d_a_sail.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [447/683] src/d/actor/d_a_saku.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [448/683] src/d/actor/d_a_salvage.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [449/683] src/d/actor/d_a_salvage_tbox.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [450/683] src/d/actor/d_a_sbox.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [451/683] src/d/actor/d_a_scene_change.cpp                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [452/683] src/d/actor/d_a_player_npc.cpp                   preset=dolzel   ver=1.3.2   0/15     ·
+[import] [453/683] src/d/actor/d_a_seatag.cpp                       preset=dolzel   ver=1.3.2   0/5      ·
+[import] [454/683] src/d/actor/d_a_shand.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [455/683] src/d/actor/d_a_ship.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [456/683] src/d/actor/d_a_shop_item.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [457/683] src/d/actor/d_a_shutter.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [458/683] src/d/actor/d_a_shutter2.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [459/683] src/d/actor/d_a_sie_flag.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [460/683] src/d/actor/d_a_sitem.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [461/683] src/d/actor/d_a_sk.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [462/683] src/d/actor/d_a_sk2.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [463/683] src/d/actor/d_a_sea.cpp                          preset=dolzel   ver=1.3.2   0/42     ·
+[import] [464/683] src/d/actor/d_a_spotbox.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [465/683] src/d/actor/d_a_ss.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [466/683] src/d/actor/d_a_ssk.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [467/683] src/d/actor/d_a_sss.cpp                          preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [468/683] src/d/actor/d_a_st.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [469/683] src/d/actor/d_a_steam_tag.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [470/683] src/d/actor/d_a_stone.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [471/683] src/d/actor/d_a_stone2.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [472/683] src/d/actor/d_a_swattack.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [473/683] src/d/actor/d_a_swc00.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [474/683] src/d/actor/d_a_swhit0.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [475/683] src/d/actor/d_a_switem.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [476/683] src/d/actor/d_a_swpropeller.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [477/683] src/d/actor/d_a_swtact.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [478/683] src/d/actor/d_a_swtdoor.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [479/683] src/d/actor/d_a_syan.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [480/683] src/d/actor/d_a_tag_attention.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [481/683] src/d/actor/d_a_tag_ba1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [482/683] src/d/actor/d_a_tag_etc.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [483/683] src/d/actor/d_a_tag_event.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [484/683] src/d/actor/d_a_tag_evsw.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [485/683] src/d/actor/d_a_tag_ghostship.cpp                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [486/683] src/d/actor/d_a_tag_hint.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [487/683] src/d/actor/d_a_tag_island.cpp                   preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [488/683] src/d/actor/d_a_tag_kb_item.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [489/683] src/d/actor/d_a_tag_kf1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [490/683] src/d/actor/d_a_tag_kk1.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [491/683] src/d/actor/d_a_tag_light.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [492/683] src/d/actor/d_a_tag_md_cb.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [493/683] src/d/actor/d_a_tag_mk.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [494/683] src/d/actor/d_a_tag_msg.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [495/683] src/d/actor/d_a_tag_photo.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [496/683] src/d/actor/d_a_tag_ret.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [497/683] src/d/actor/d_a_tag_so.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [498/683] src/d/actor/d_a_tag_volcano.cpp                  preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [499/683] src/d/actor/d_a_tag_waterlevel.cpp               preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [500/683] src/d/actor/d_a_tama.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [501/683] src/d/actor/d_a_tbox.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [502/683] src/d/actor/d_a_title.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [503/683] src/d/actor/d_a_tn.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [504/683] src/d/actor/d_a_toge.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [505/683] src/d/actor/d_a_tori_flag.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [506/683] src/d/actor/d_a_tornado.cpp                      preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [507/683] src/d/actor/d_a_tpota.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [508/683] src/d/actor/d_a_tsubo.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [509/683] src/d/actor/d_a_player.cpp                       preset=dolzel   ver=1.3.2   0/17     ·
+[import] [510/683] src/d/actor/d_a_vrbox.cpp                        preset=dolzel   ver=1.3.2   1/11     ✓
+[import] [511/683] src/d/actor/d_a_wall.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [512/683] src/d/actor/d_a_warpdm20.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [513/683] src/d/actor/d_a_warpf.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [514/683] src/d/actor/d_a_warpfout.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [515/683] src/d/actor/d_a_warpgn.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [516/683] src/d/actor/d_a_warphr.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [517/683] src/d/actor/d_a_warpls.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [518/683] src/d/actor/d_a_warpmj.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [519/683] src/d/actor/d_a_waterfall.cpp                    preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [520/683] src/d/actor/d_a_wbird.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [521/683] src/d/actor/d_a_wind_tag.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [522/683] src/d/actor/d_a_windmill.cpp                     preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [523/683] src/d/actor/d_a_wz.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [524/683] src/d/actor/d_a_ygcwp.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [525/683] src/d/actor/d_a_ykgr.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [526/683] src/d/actor/d_a_yougan.cpp                       preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [527/683] src/JSystem/J3DGraphLoader/J3DMaterialFactory.cpp preset=jsystem  ver=1.3.2   7/233    ✓
+[import] [528/683] src/d/d_a_boko_static.cpp                        preset=dolzel   ver=1.3.2   0/3      ·
+[import] [529/683] src/d/actor/d_a_spc_item01.cpp                   preset=dolzel   ver=1.3.2   0/55     ·
+[import] [530/683] src/d/d_a_branch_static.cpp                      preset=dolzel   ver=1.3.2   0/1      ·
+[import] [531/683] src/d/actor/d_a_vrbox2.cpp                       preset=dolzel   ver=1.3.2   1/15     ✓
+[import] [532/683] src/d/d_a_item_static.cpp                        preset=dolzel   ver=1.3.2   0/7      ·
+[import] [533/683] src/d/d_a_leaflift_static.cpp                    preset=dolzel   ver=1.3.2   0/3      ·
+[import] [534/683] src/d/d_a_itembase_static.cpp                    preset=dolzel   ver=1.3.2   0/12     ·
+[import] [535/683] src/d/d_a_bomb_static.cpp                        preset=dolzel   ver=1.3.2   0/27     ·
+[import] [536/683] src/d/d_a_npc_cb1_static.cpp                     preset=dolzel   ver=1.3.2   0/1      ·
+[import] [537/683] src/d/d_a_mgameboard_static.cpp                  preset=dolzel   ver=1.3.2   0/6      ·
+[import] [538/683] src/d/d_a_obj_tribox_static.cpp                  preset=dolzel   ver=1.3.2   0/3      ·
+[import] [539/683] src/d/d_a_race_item_static.cpp                   preset=dolzel   ver=1.3.2   0/7      ·
+[import] [540/683] src/d/d_a_ship_static.cpp                        preset=dolzel   ver=1.3.2   0/1      ·
+[import] [541/683] src/d/actor/d_a_npc_fa1.cpp                      preset=dolzel   ver=1.3.2   0/140    ·
+[import] [542/683] src/d/d_att_dist.cpp                             preset=dolzel   ver=1.3.2   0/0      ·
+[import] [543/683] src/d/d_a_shop_item_static.cpp                   preset=dolzel   ver=1.3.2   0/5      ·
+[import] [544/683] src/d/d_attention.cpp                            preset=dolzel   ver=1.3.2   0/74     ·
+[import] [545/683] src/d/d_bg_s.cpp                                 preset=dolzel   ver=1.3.2   0/55     ·
+[import] [546/683] src/d/d_a_obj.cpp                                preset=dolzel   ver=1.3.2   0/18     ·
+[import] [547/683] src/d/d_2dnumber.cpp                             preset=dolzel   ver=1.3.2   0/32     ·
+[import] [548/683] src/d/d_bg_s_lin_chk.cpp                         preset=dolzel   ver=1.3.2   0/1      ·
+[import] [549/683] src/d/d_a_npc_mk_static.cpp                      preset=dolzel   ver=1.3.2   0/13     ·
+[import] [550/683] src/d/d_bg_s_movebg_actor.cpp                    preset=dolzel   ver=1.3.2   0/14     ·
+[import] [551/683] src/d/d_bg_s_func.cpp                            preset=dolzel   ver=1.3.2   0/28     ·
+[import] [552/683] src/d/d_bg_s_spl_grp_chk.cpp                     preset=dolzel   ver=1.3.2   0/14     ·
+[import] [553/683] src/d/d_bg_w_deform.cpp                          preset=dolzel   ver=1.3.2   0/1      ·
+[import] [554/683] src/d/d_bg_s_wtr_chk.cpp                         preset=dolzel   ver=1.3.2   0/16     ·
+[import] [555/683] src/d/d_bg_s_acch.cpp                            preset=dolzel   ver=1.3.2   0/63     ·
+[import] [556/683] src/d/d_boss_magma.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [557/683] src/d/d_bg_w_hf.cpp                              preset=dolzel   ver=1.3.2   0/12     ·
+[import] [558/683] src/d/d_cam_style.cpp                            preset=dolzel   ver=1.3.2   0/0      ·
+[import] [559/683] src/d/d_cam_type.cpp                             preset=dolzel   ver=1.3.2   0/0      ·
+[import] [560/683] src/d/d_bg_w.cpp                                 preset=dolzel   ver=1.3.2   0/33     ·
+[import] [561/683] src/d/d_bg_w_sv.cpp                              preset=dolzel   ver=1.3.2   0/9      ·
+[import] [562/683] src/d/d_cam_type2.cpp                            preset=dolzel   ver=1.3.2   0/0      ·
+[import] [563/683] src/d/d_cc_mass_s.cpp                            preset=dolzel   ver=1.3.2   1/31     ✓
+[import] [564/683] src/d/d_cam_param.cpp                            preset=dolzel   ver=1.3.2   0/31     ·
+[import] [565/683] src/d/d_cc_uty.cpp                               preset=dolzel   ver=1.3.2   0/10     ·
+[import] [566/683] src/d/d_chain.cpp                                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [567/683] src/d/d_cloth_packet.cpp                         preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [568/683] src/d/d_cc_d.cpp                                 preset=dolzel   ver=1.3.2   0/66     ·
+[import] [569/683] src/d/d_com_lib_game.cpp                         preset=dolzel   ver=1.3.2   0/1      ·
+[import] [570/683] src/d/d_cc_s.cpp                                 preset=dolzel   ver=1.3.2   0/39     ·
+[import] [571/683] src/d/actor/d_a_obj_search.cpp                   preset=dolzel   ver=1.3.2   0/50     ·
+[import] [572/683] src/d/d_detect.cpp                               preset=dolzel   ver=1.3.2   0/14     ·
+[import] [573/683] src/d/d_com_static.cpp                           preset=dolzel   ver=1.3.2   0/35     ·
+[import] [574/683] src/d/d_drawlist.cpp                             preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [575/683] src/d/d_envse.cpp                                preset=dolzel   ver=1.3.2   0/11     ·
+[import] [576/683] src/d/d_demo.cpp                                 preset=dolzel   ver=1.3.2   0/81     ·
+[import] [577/683] src/d/d_com_inf_game.cpp                         preset=dolzel   ver=1.3.2   2/118    ✓
+[import] [578/683] src/d/d_auction_screen.cpp                       preset=dolzel   ver=1.3.2   0/38     ·
+[import] [579/683] src/d/d_door.cpp                                 preset=dolzel   ver=1.3.2   1/67     ✓
+[import] [580/683] src/d/d_event_data.cpp                           preset=dolzel   ver=1.3.2   0/25     ·
+[import] [581/683] src/d/d_event.cpp                                preset=dolzel   ver=1.3.2   0/40     ·
+[import] [582/683] src/d/d_event_manager.cpp                        preset=dolzel   ver=1.3.2   1/56     ✓
+[import] [583/683] src/d/d_file_error.cpp                           preset=dolzel   ver=1.3.2   0/39     ·
+[import] [584/683] src/d/d_grass.cpp                                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [585/683] src/d/d_gameover.cpp                             preset=dolzel   ver=1.3.2   0/29     ·
+[import] [586/683] src/d/d_item_data.cpp                            preset=dolzel   ver=1.3.2   0/5      ·
+[import] [587/683] src/d/d_jnt_hit.cpp                              preset=dolzel   ver=1.3.2   0/12     ·
+[import] [588/683] src/JSystem/J3DGraphBase/J3DMatBlock.cpp         preset=jsystem  ver=1.3.2   118/568  ✓
+[import] [589/683] src/d/d_file_select.cpp                          preset=dolzel   ver=1.3.2   1/109    ✓
+[import] [590/683] src/d/d_kankyo_demo.cpp                          preset=dolzel   ver=1.3.2   0/3      ·
+[import] [591/683] src/d/d_kankyo_data.cpp                          preset=dolzel   ver=1.3.2   0/8      ·
+[import] [592/683] src/d/d_flower.cpp                               preset=dolzel   ver=1.3.2   0/20     ·
+[import] [593/683] src/d/d_ky_thunder.cpp                           preset=dolzel   ver=1.3.2   0/14     ·
+[import] [594/683] src/d/d_camera.cpp                               preset=dolzel   ver=1.3.2   3/239    ✓
+[import] [595/683] src/d/d_kyeff.cpp                                preset=dolzel   ver=1.3.2   0/9      ·
+[import] [596/683] src/d/d_kyeff2.cpp                               preset=dolzel   ver=1.3.2   0/6      ·
+[import] [597/683] src/d/d_level_se.cpp                             preset=dolzel   ver=1.3.2   0/4      ·
+[import] [598/683] src/d/d_letter.cpp                               preset=dolzel   ver=1.3.2   0/10     ·
+[import] [599/683] src/d/d_magma.cpp                                preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [600/683] src/d/d_lib.cpp                                  preset=dolzel   ver=1.3.2   1/38     ✓
+[import] [601/683] src/d/d_material.cpp                             preset=dolzel   ver=1.3.2   0/16     ·
+[import] [602/683] src/d/d_menu_cloth.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [603/683] src/d/d_kankyo_rain.cpp                          preset=dolzel   ver=1.3.2   1/79     ✓
+[import] [604/683] src/d/d_menu_dmap.cpp                            preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [605/683] src/d/d_ev_camera.cpp                            preset=dolzel   ver=1.3.2   0/39     ·
+[import] [606/683] src/d/d_menu_fmap2.cpp                           preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [607/683] src/d/d_kankyo_wether.cpp                        preset=dolzel   ver=1.3.2   1/116    ✓
+[import] [608/683] src/d/d_kankyo.cpp                               preset=dolzel   ver=1.3.2   1/185    ✓
+[import] [609/683] src/d/d_menu_option.cpp                          preset=dolzel   ver=1.3.2   0/34     ·
+[import] [610/683] src/d/d_menu_window.cpp                          preset=dolzel   ver=1.3.2   0/61     ·
+[import] [611/683] src/d/d_item.cpp                                 preset=dolzel   ver=1.3.2   0/389    ·
+[import] [612/683] src/d/d_mesg.cpp                                 preset=dolzel   ver=1.3.2   0/97     ·
+[import] [613/683] src/d/d_map.cpp                                  preset=dolzel   ver=1.3.2   0/147    ·
+[import] [614/683] src/d/d_meter.cpp                                preset=dolzel   ver=1.3.2   0/219    ·
+[import] [615/683] src/d/d_metronome.cpp                            preset=dolzel   ver=1.3.2   0/21     ·
+[import] [616/683] src/d/d_menu_item.cpp                            preset=dolzel   ver=1.3.2   0/63     ·
+[import] [617/683] src/d/d_menu_collect.cpp                         preset=dolzel   ver=1.3.2   0/70     ·
+[import] [618/683] src/d/d_msg.cpp                                  preset=dolzel   ver=1.3.2   0/76     ·
+[import] [619/683] src/d/d_name.cpp                                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [620/683] src/d/d_minigame_starter.cpp                     preset=dolzel   ver=1.3.2   0/17     ·
+[import] [621/683] src/d/d_npc.cpp                                  preset=dolzel   ver=1.3.2   0/72     ·
+[import] [622/683] src/d/d_ovlp_fade.cpp                            preset=dolzel   ver=1.3.2   0/8      ·
+[import] [623/683] src/d/d_ovlp_fade2.cpp                           preset=dolzel   ver=1.3.2   0/16     ·
+[import] [624/683] src/d/d_ovlp_fade3.cpp                           preset=dolzel   ver=1.3.2   0/4      ·
+[import] [625/683] src/d/d_message.cpp                              preset=dolzel   ver=1.3.2   0/44     ·
+[import] [626/683] src/d/d_ovlp_fade4.cpp                           preset=dolzel   ver=1.3.2   0/25     ·
+[import] [627/683] src/d/d_particle_name.cpp                        preset=dolzel   ver=1.3.2   0/0      ·
+[import] [628/683] src/d/d_path.cpp                                 preset=dolzel   ver=1.3.2   0/5      ·
+[import] [629/683] src/d/d_message_paper.cpp                        preset=dolzel   ver=1.3.2   0/50     ·
+[import] [630/683] src/d/d_place_name.cpp                           preset=dolzel   ver=1.3.2   0/16     ·
+[import] [631/683] src/d/d_point_wind.cpp                           preset=dolzel   ver=1.3.2   0/4      ·
+[import] [632/683] src/d/d_minigame_terminater.cpp                  preset=dolzel   ver=1.3.2   0/30     ·
+[import] [633/683] src/d/d_s_actor_data_mng.cpp                     preset=dolzel   ver=1.3.2   0/9      ·
+[import] [634/683] src/d/d_resorce.cpp                              preset=dolzel   ver=1.3.2   0/35     ·
+[import] [635/683] src/d/d_operate_wind.cpp                         preset=dolzel   ver=1.3.2   0/37     ·
+[import] [636/683] src/d/d_s_menu.cpp                               preset=dolzel   ver=1.3.2   5/17     ✓
+[import] [637/683] src/d/d_s_logo.cpp                               preset=dolzel   ver=1.3.2   0/26     ·
+[import] [638/683] src/d/d_s_open.cpp                               preset=dolzel   ver=1.3.2   0/10     ·
+[import] [639/683] src/d/d_s_open_sub.cpp                           preset=dolzel   ver=1.3.2   0/12     ·
+[import] [640/683] src/d/d_s_play.cpp                               preset=dolzel   ver=1.3.2   0/38     ·
+[import] [641/683] src/d/d_menu_save.cpp                            preset=dolzel   ver=1.3.2   0/86     ·
+[import] [642/683] src/d/d_s_title.cpp                              preset=dolzel   ver=1.3.2   0/5      ·
+[import] [643/683] src/d/d_s_room.cpp                               preset=dolzel   ver=1.3.2   2/19     ✓
+[import] [644/683] src/d/d_save_init.cpp                            preset=dolzel   ver=1.3.2   0/1      ·
+[import] [645/683] src/d/d_salvage.cpp                              preset=dolzel   ver=1.3.2   0/29     ·
+[import] [646/683] src/d/d_seafightgame.cpp                         preset=dolzel   ver=1.3.2   0/4      ·
+[import] [647/683] src/d/d_shop.cpp                                 preset=dolzel   ver=1.3.2   1/40     ✓
+[import] [648/683] src/d/d_snap.cpp                                 preset=dolzel   ver=1.3.2   0/53     ·
+[import] [649/683] src/d/d_spline_path.cpp                          preset=dolzel   ver=1.3.2   0/5      ·
+[import] [650/683] src/d/d_save.cpp                                 preset=dolzel   ver=1.3.2   1/154    ✓
+[import] [651/683] src/d/d_particle.cpp                             preset=dolzel   ver=1.3.2   0/139    ·
+[import] [652/683] src/d/d_throwstone.cpp                           preset=dolzel   ver=1.3.2   0/7      ·
+[import] [653/683] src/d/d_tree.cpp                                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [654/683] src/d/d_vib_pattern.cpp                          preset=dolzel   ver=1.3.2   0/0      ·
+[import] [655/683] src/d/d_vibration.cpp                            preset=dolzel   ver=1.3.2   0/15     ·
+[import] [656/683] src/d/d_timer.cpp                                preset=dolzel   ver=1.3.2   0/43     ·
+[import] [657/683] src/d/d_s_name.cpp                               preset=dolzel   ver=1.3.2   1/82     ✓
+[import] [658/683] src/d/d_wind_arrow.cpp                           preset=dolzel   ver=1.3.2   0/13     ·
+[import] [659/683] src/d/d_wood.cpp                                 preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [660/683] src/d/d_water_mark.cpp                           preset=dolzel   ver=1.3.2   0/7      ·
+[import] [661/683] src/m_Do/m_Do_DVDError.cpp                       preset=dolzel   ver=1.3.2   0/4      ·
+[import] [662/683] src/m_Do/m_Do_MemCard.cpp                        preset=dolzel   ver=1.3.2   0/22     ·
+[import] [663/683] src/m_Do/m_Do_MemCardRWmng.cpp                   preset=dolzel   ver=1.3.2   0/12     ·
+[import] [664/683] src/m_Do/m_Do_Reset.cpp                          preset=dolzel   ver=1.3.2   0/4      ·
+[import] [665/683] src/d/d_wpot_water.cpp                           preset=dolzel   ver=1.3.2   0/41     ·
+[import] [666/683] src/m_Do/m_Do_controller_pad.cpp                 preset=dolzel   ver=1.3.2   0/3      ·
+[import] [667/683] src/m_Do/m_Do_audio.cpp                          preset=dolzel   ver=1.3.2   0/17     ·
+[import] [668/683] src/m_Do/m_Do_ext.cpp                            preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [669/683] src/d/d_wpillar.cpp                              preset=dolzel   ver=1.3.2   0/11     ·
+[import] [670/683] src/m_Do/m_Do_graphic.cpp                        preset=dolzel   COMPILE_FAIL (1.3.2,1.2.5n)
+[import] [671/683] src/m_Do/m_Do_dvd_thread.cpp                     preset=dolzel   ver=1.3.2   1/32     ✓
+[import] [672/683] src/m_Do/m_Do_hostIO.cpp                         preset=dolzel   ver=1.3.2   0/12     ·
+[import] [673/683] src/m_Do/m_Do_machine.cpp                        preset=dolzel   ver=1.3.2   0/9      ·
+[import] [674/683] src/d/d_stage.cpp                                preset=dolzel   ver=1.3.2   40/261   ✓
+[import] [675/683] src/m_Do/m_Do_lib.cpp                            preset=dolzel   ver=1.3.2   0/8      ·
+[import] [676/683] src/d/d_menu_fmap.cpp                            preset=dolzel   ver=1.3.2   0/134    ·
+[import] [677/683] src/m_Do/m_Do_machine_exception.cpp              preset=dolzel   ver=1.3.2   0/7      ·
+[import] [678/683] src/m_Do/m_Do_main.cpp                           preset=dolzel   ver=1.3.2   0/12     ·
+[import] [679/683] src/m_Do/m_Do_gba_com.cpp                        preset=dolzel   ver=1.3.2   0/50     ·
+[import] [680/683] src/m_Do/m_Do_printf.cpp                         preset=dolzel   ver=1.3.2   0/15     ·
+[import] [681/683] src/m_Do/m_Do_mtx.cpp                            preset=dolzel   ver=1.3.2   0/26     ·
+[import] [682/683] src/d/d_picture_box.cpp                          preset=dolzel   ver=1.3.2   0/56     ·
+[import] [683/683] src/d/d_scope.cpp                                preset=dolzel   ver=1.3.2   0/41     ·
+
+[import] Summary: 238 hits, 6581 misses, 1849 ambiguous, 433 compile fails across 683 files
+[import] Hits by winning compiler: GC/1.3.2=238
+[import] Gate 4 (1196+ hits = ≥20% of DOL): FAIL (238 hits = 4.0%)

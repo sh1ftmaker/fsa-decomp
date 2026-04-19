@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+*.db
+*.db-journal
+.venv/
+.env
+.ruff_cache/
+.pytest_cache/
+dist/
+build/
+*.egg-info/
+state.db
+
+# Runtime work queue (ephemeral per-session prompts and responses)
+work/*/*.prompt.md
+work/*/*.response.*
+work/*/*.meta.json
+work/*/last_errors.json
+work/*/done/

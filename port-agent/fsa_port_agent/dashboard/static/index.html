@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FSA Port Agent — Command Center</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <span class="logo">▲</span>
+      <h1>FSA Port Agent</h1>
+      <span class="subtitle">Browser Port Command Center</span>
+    </div>
+    <div class="status-chip" id="db-status">state.db&nbsp;···</div>
+  </header>
+
+  <main>
+    <!-- Gate 4 banner -->
+    <section class="gate4 card">
+      <div class="gate4-top">
+        <h2>Gate 4 — TWW mass-import coverage</h2>
+        <span id="gate4-verdict" class="verdict">···</span>
+      </div>
+      <div class="progress">
+        <div id="gate4-bar" class="bar"></div>
+        <div id="gate4-threshold" class="threshold-mark"></div>
+      </div>
+      <div class="gate4-readout">
+        <span id="gate4-matched">0</span> matched via TWW /
+        <span id="gate4-total">5981</span> DOL fns
+        (<span id="gate4-pct">0</span>%) —
+        need <span id="gate4-threshold-val">1197</span> to pass
+      </div>
+    </section>
+
+    <!-- Chart row -->
+    <section class="chart-row">
+      <div class="card">
+        <h3>States</h3>
+        <div id="chart-states" class="chart"></div>
+        <div id="legend-states" class="legend"></div>
+      </div>
+      <div class="card">
+        <h3>Tags</h3>
+        <div id="chart-tags" class="chart"></div>
+      </div>
+      <div class="card">
+        <h3>Totals</h3>
+        <div id="big-numbers" class="big-numbers"></div>
+      </div>
+    </section>
+
+    <!-- DOL address strip -->
+    <section class="card">
+      <h3>DOL address map</h3>
+      <div class="strip-wrap">
+        <div id="address-strip" class="strip"></div>
+        <div class="strip-axis">
+          <span id="strip-lo">0x80003100</span>
+          <span id="strip-hi">0x804fffff</span>
+        </div>
+      </div>
+      <div class="strip-legend">
+        <span class="sw s-BUILDS"></span>BUILDS
+        <span class="sw s-CLEANED"></span>CLEANED
+        <span class="sw s-MATCHED_TWW"></span>MATCHED_TWW
+        <span class="sw s-SIG_MATCHED"></span>SIG_MATCHED
+        <span class="sw s-TRIAGED"></span>TRIAGED
+        <span class="sw s-FAILED"></span>FAILED
+        <span class="sw s-UNKNOWN"></span>UNKNOWN
+      </div>
+    </section>
+
+    <!-- Queue + actions -->
+    <section class="two-col">
+      <div class="card">
+        <h3>Work queue</h3>
+        <div id="queue-grid" class="queue-grid"></div>
+      </div>
+      <div class="card">
+        <h3>Actions</h3>
+        <div class="actions">
+          <button data-action="triage" class="btn primary">Run Triage</button>
+          <button data-action="import_dry" class="btn">TWW Import (dry-run)</button>
+          <button data-action="import_real" class="btn warn">TWW Import (real)</button>
+          <button data-action="cleanup_prepare_10" class="btn">Prepare 10 cleanup</button>
+          <button data-action="cleanup_prepare_50" class="btn">Prepare 50 cleanup</button>
+          <button data-action="cleanup_apply" class="btn primary">Apply cleanup responses</button>
+          <button data-action="cleanup_status" class="btn ghost">Queue status</button>
+          <button data-action="hal" class="btn">HAL scaffold</button>
+          <button data-action="build_check_limit_50" class="btn">Build-check 50 segs</button>
+          <button data-action="build_prepare_10" class="btn">Prepare 10 fix_build</button>
+          <button data-action="build_apply" class="btn primary">Apply fix_build diffs</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Functions table -->
+    <section class="card">
+      <div class="table-head">
+        <h3>Functions</h3>
+        <div class="filters">
+          <label>state
+            <select id="filter-state">
+              <option value="">all</option>
+            </select>
+          </label>
+          <label>tag
+            <select id="filter-tag">
+              <option value="">all</option>
+            </select>
+          </label>
+          <button id="refresh-fns" class="btn ghost">refresh</button>
+        </div>
+      </div>
+      <table id="fn-table">
+        <thead>
+          <tr>
+            <th>addr</th><th>name</th><th>size</th>
+            <th>tag</th><th>state</th><th>unit</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Job log -->
+    <section class="card job-card">
+      <div class="table-head">
+        <h3>Job output</h3>
+        <span id="job-status" class="verdict">idle</span>
+      </div>
+      <pre id="job-log">(no job yet — click an action button)</pre>
+    </section>
+  </main>
+
+  <footer>
+    <span>fsa-port-agent dashboard</span>
+    <span id="last-refresh">—</span>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

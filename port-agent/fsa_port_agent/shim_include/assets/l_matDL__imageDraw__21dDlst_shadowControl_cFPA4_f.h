@@ -1,0 +1,4 @@
+#ifndef STUB_l_matDL__imageDraw__21dDlst_shadowControl_cFPA4_f
+#define STUB_l_matDL__imageDraw__21dDlst_shadowControl_cFPA4_f
+static unsigned char l_matDL__imageDraw__21dDlst_shadowControl_cFPA4_f[] = {0};
+#endif

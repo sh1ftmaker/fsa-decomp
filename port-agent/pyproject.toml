@@ -1,0 +1,16 @@
+[project]
+name = "fsa-port-agent"
+version = "0.1.0"
+description = "Automated pipeline: FSA decompilation → WASM browser port"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+fsa-port-agent = "fsa_port_agent.__main__:main"
+
+[tool.uv]
+dev-dependencies = ["ruff", "pytest"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"

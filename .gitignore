@@ -29,6 +29,15 @@ __pycache__/
 # OS
 .DS_Store
 
+# Port agent runtime state (ephemeral per-session)
+port-agent/state.db
+port-agent/state.db-journal
+port-agent/work/*/*.prompt.md
+port-agent/work/*/*.response.*
+port-agent/work/*/*.meta.json
+port-agent/work/*/last_errors.json
+port-agent/work/*/done/
+
 # Backup files from setup
 configure_tww_backup.py
 configure_tww_original.py
